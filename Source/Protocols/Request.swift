@@ -8,7 +8,7 @@ public protocol Request {
   func parse(j: JSON) -> Result<ResponseType, NSError>
 }
 
-extension Request where ResponseType: Decodable, ResponseType.DecodedType == ResponseType {
+public extension Request where ResponseType: Decodable, ResponseType.DecodedType == ResponseType {
   func parse(j: JSON) -> Result<ResponseType, NSError> {
     return .fromDecoded(ResponseType.decode(j))
   }
