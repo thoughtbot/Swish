@@ -16,9 +16,9 @@
 		F88ED06B1B966EC00069F56C /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88ED06A1B966EC00069F56C /* Argo.framework */; };
 		F88ED06D1B96736B0069F56C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED06C1B96736B0069F56C /* APIClient.swift */; settings = {ASSET_TAGS = (); }; };
 		F88ED06F1B967BCB0069F56C /* APIClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED06E1B967BCB0069F56C /* APIClientSpec.swift */; settings = {ASSET_TAGS = (); }; };
-		F88ED0761B967DCE0069F56C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0711B967C4A0069F56C /* Result.swift */; settings = {ASSET_TAGS = (); }; };
 		F88ED0791B96847E0069F56C /* FakeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0781B96847E0069F56C /* FakeRequest.swift */; settings = {ASSET_TAGS = (); }; };
 		F88ED07B1B9684B40069F56C /* FakeRequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED07A1B9684B40069F56C /* FakeRequestPerformer.swift */; settings = {ASSET_TAGS = (); }; };
+		F88EE3141B976747001EEB44 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0711B967C4A0069F56C /* Result.swift */; settings = {ASSET_TAGS = (); }; };
 		F8C39B511B969A71005E065F /* FakeDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C39B501B969A71005E065F /* FakeDataTask.swift */; settings = {ASSET_TAGS = (); }; };
 		F8DF3B861B964B20003177CD /* FakeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B811B964B20003177CD /* FakeSession.swift */; settings = {ASSET_TAGS = (); }; };
 		F8DF3B881B964B20003177CD /* NetworkRequestPerformerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B851B964B20003177CD /* NetworkRequestPerformerSpec.swift */; settings = {ASSET_TAGS = (); }; };
@@ -308,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F88EE3141B976747001EEB44 /* Result.swift in Sources */,
 				F8DF3B8E1B964BED003177CD /* HTTPResponse.swift in Sources */,
 				F88ED0691B966E650069F56C /* Request.swift in Sources */,
 				F80695141B962C5300C61B4A /* RequestPerformer.swift in Sources */,
@@ -325,7 +326,6 @@
 				F8DF3B861B964B20003177CD /* FakeSession.swift in Sources */,
 				F88ED0791B96847E0069F56C /* FakeRequest.swift in Sources */,
 				F88ED07B1B9684B40069F56C /* FakeRequestPerformer.swift in Sources */,
-				F88ED0761B967DCE0069F56C /* Result.swift in Sources */,
 				F88ED06F1B967BCB0069F56C /* APIClientSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
