@@ -14,7 +14,7 @@ public extension APIClient {
   func performRequest<T: Request>(request: T, completionHandler: Result<T.ResponseType, NSError> -> Void) {
     requestPerformer.performRequest(request.build()) { result in
       let object = result >>- deserialize >>- { request.parse($0) }
-      completionHandler(object)
+      dispatch_async(dispatch_get_main_queue()) { completionHandler(object) }
     }
   }
 }

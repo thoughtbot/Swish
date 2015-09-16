@@ -30,7 +30,7 @@ class APIClientSpec: QuickSpec {
 
               client.performRequest(request) { result = $0 }
 
-              expect(result?.value).to(equal("hello world"))
+              expect(result?.value).toEventually(equal("hello world"))
             }
           }
 
@@ -42,13 +42,13 @@ class APIClientSpec: QuickSpec {
               )
 
               let client = APIClient(requestPerformer: performer)
-              var result: Result<String, NSError>?
+              var message: NSString?
 
-              client.performRequest(request) { result = $0 }
+              client.performRequest(request) {
+                message = $0.error?.userInfo[NSLocalizedDescriptionKey] as? NSString
+              }
 
-              let message = result?.error?.userInfo[NSLocalizedDescriptionKey] as? NSString
-
-              expect(message).to(equal("MissingKey(text)"))
+              expect(message).toEventually(equal("MissingKey(text)"))
             }
           }
 
@@ -58,14 +58,30 @@ class APIClientSpec: QuickSpec {
               let performer = FakeRequestPerformer()
 
               let client = APIClient(requestPerformer: performer)
-              var result: Result<String, NSError>?
+              var message: NSString?
 
-              client.performRequest(request) { result = $0 }
+              client.performRequest(request) {
+                message = $0.error?.userInfo[NSLocalizedDescriptionKey] as? NSString
+              }
 
-              let message = result?.error?.userInfo[NSLocalizedDescriptionKey] as? NSString
-
-              expect(message).to(equal("No response data"))
+              expect(message).toEventually(equal("No response data"))
             }
+          }
+        }
+
+        describe("completionHandler") {
+          it("performs on the main thread") {
+            let request = FakeRequest()
+            let performer = FakeRequestPerformer()
+
+            let client = APIClient(requestPerformer: performer)
+            var isMainThread = false
+
+            client.performRequest(request) { _ in
+              isMainThread = NSThread.currentThread() == NSThread.mainThread()
+            }
+
+            expect(isMainThread).toEventually(beTrue())
           }
         }
       }
