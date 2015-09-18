@@ -1,2 +1,2 @@
 github "antitypical/Result" "0.6.0-beta.3"
-github "thoughtbot/Argo" "td-swift-2"
+github "thoughtbot/Argo" "master"
