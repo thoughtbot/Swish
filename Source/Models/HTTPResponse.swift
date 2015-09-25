@@ -9,4 +9,3 @@ public struct HTTPResponse {
     self.code = (response as? NSHTTPURLResponse)?.statusCode ?? 500
   }
 }
-

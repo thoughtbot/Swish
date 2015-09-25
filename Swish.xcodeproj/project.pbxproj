@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E506EC7E1BB5BE380032E941 /* NimbleMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */; settings = {ASSET_TAGS = (); }; };
 		F80694FC1B962BB900C61B4A /* Swish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80694F11B962BB900C61B4A /* Swish.framework */; settings = {ASSET_TAGS = (); }; };
 		F80695131B962C5300C61B4A /* NetworkRequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950D1B962C5300C61B4A /* NetworkRequestPerformer.swift */; settings = {ASSET_TAGS = (); }; };
 		F80695141B962C5300C61B4A /* RequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950F1B962C5300C61B4A /* RequestPerformer.swift */; settings = {ASSET_TAGS = (); }; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbleMatchers.swift; sourceTree = "<group>"; };
 		F80694F11B962BB900C61B4A /* Swish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80694FB1B962BB900C61B4A /* SwishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F806950D1B962C5300C61B4A /* NetworkRequestPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestPerformer.swift; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E506EC7C1BB5BE1B0032E941 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F80694E71B962BB900C61B4A = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +178,7 @@
 		F8DF3B7F1B964B20003177CD /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				E506EC7C1BB5BE1B0032E941 /* Helpers */,
 				F8DF3B801B964B20003177CD /* Fakes */,
 				F8DF3B821B964B20003177CD /* Resources */,
 				F8DF3B841B964B20003177CD /* Tests */,
@@ -329,6 +340,7 @@
 				F8C39B511B969A71005E065F /* FakeDataTask.swift in Sources */,
 				F8DF3B861B964B20003177CD /* FakeSession.swift in Sources */,
 				F88ED0791B96847E0069F56C /* FakeRequest.swift in Sources */,
+				E506EC7E1BB5BE380032E941 /* NimbleMatchers.swift in Sources */,
 				F88ED07B1B9684B40069F56C /* FakeRequestPerformer.swift in Sources */,
 				F88ED06F1B967BCB0069F56C /* APIClientSpec.swift in Sources */,
 			);

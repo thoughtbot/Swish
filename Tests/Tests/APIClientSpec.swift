@@ -6,83 +6,159 @@ import Result
 class APIClientSpec: QuickSpec {
   override func spec() {
     describe("APIClient") {
-      describe("performRequest(completionHandler:") {
-        it("passes the request's request object to the request performer") {
-          let request = FakeRequest()
-          let performer = FakeRequestPerformer()
-          let client = APIClient(requestPerformer: performer)
+      context("when the status code is in the 200 range") {
+        describe("performRequest(completionHandler:") {
+          it("passes the request's request object to the request performer") {
+            let request = FakeRequest()
+            let performer = FakeRequestPerformer()
+            let client = APIClient(requestPerformer: performer)
 
-          client.performRequest(request) { _ in }
+            client.performRequest(request) { _ in }
 
-          expect(performer.passedRequest).to(equal(request.build()))
-        }
-
-        describe("parsing") {
-          context("when the parsing operation is successful") {
-            it("returns the parsed object to the completion block") {
-              let request = FakeRequest()
-              let performer = FakeRequestPerformer(returnedJSON:
-                ["text": "hello world"]
-              )
-
-              let client = APIClient(requestPerformer: performer)
-              var result: Result<String, NSError>?
-
-              client.performRequest(request) { result = $0 }
-
-              expect(result?.value).toEventually(equal("hello world"))
-            }
+            expect(performer.passedRequest).to(equal(request.build()))
           }
 
-          context("when the parsing operation fails") {
-            it("returns a failure state to the completion block") {
-              let request = FakeRequest()
-              let performer = FakeRequestPerformer(returnedJSON:
-                ["foo": "bar"]
-              )
+          describe("parsing") {
+            context("when the parsing operation is successful") {
+              it("returns the parsed object to the completion block") {
+                let request = FakeRequest()
+                let performer = FakeRequestPerformer(returnedJSON:
+                  ["text": "hello world"]
+                )
 
-              let client = APIClient(requestPerformer: performer)
-              var message: NSString?
+                let client = APIClient(requestPerformer: performer)
+                var result: Result<String, NSError>?
 
-              client.performRequest(request) {
-                message = $0.error?.userInfo[NSLocalizedDescriptionKey] as? NSString
+                client.performRequest(request) { result = $0 }
+
+                expect(result?.value).toEventually(equal("hello world"))
               }
+            }
 
-              expect(message).toEventually(equal("MissingKey(text)"))
+            context("when the parsing operation fails") {
+              it("returns a failure state to the completion block") {
+                let request = FakeRequest()
+                let performer = FakeRequestPerformer(returnedJSON:
+                  ["foo": "bar"]
+                )
+
+                let client = APIClient(requestPerformer: performer)
+                var message: NSString?
+
+                client.performRequest(request) {
+                  message = $0.error?.userInfo[NSLocalizedDescriptionKey] as? NSString
+                }
+
+                expect(message).toEventually(equal("MissingKey(text)"))
+              }
+            }
+
+            context("when the data is `nil`") {
+              it("returns a null JSON object") {
+                let request = FakeNullDataRequest()
+                let performer = FakeRequestPerformer()
+
+                let client = APIClient(requestPerformer: performer)
+                var result: Result<(), NSError>?
+
+                client.performRequest(request) { result = $0 }
+
+                expect(result!.value!).toEventually(beVoid())
+              }
             }
           }
 
-          context("when the data is `nil`") {
-            it("returns a failure state describing the issue") {
+          describe("completionHandler") {
+            it("performs on the main thread") {
               let request = FakeRequest()
               let performer = FakeRequestPerformer()
 
               let client = APIClient(requestPerformer: performer)
-              var message: NSString?
+              var isMainThread = false
 
-              client.performRequest(request) {
-                message = $0.error?.userInfo[NSLocalizedDescriptionKey] as? NSString
+              client.performRequest(request) { _ in
+                isMainThread = NSThread.currentThread() == NSThread.mainThread()
               }
 
-              expect(message).toEventually(equal("No response data"))
+              expect(isMainThread).toEventually(beTrue())
             }
           }
         }
+      }
 
-        describe("completionHandler") {
-          it("performs on the main thread") {
-            let request = FakeRequest()
-            let performer = FakeRequestPerformer()
+      context("when the status code is in the 300 range") {
+        it("returns the appropriate error") {
+          let request = FakeRequest()
+          let performer = FakeRequestPerformer(
+            returnedJSON: ["foo": "bar"],
+            statusCode: 301
+          )
 
-            let client = APIClient(requestPerformer: performer)
-            var isMainThread = false
+          let client = APIClient(requestPerformer: performer)
+          var message: NSString?
 
-            client.performRequest(request) { _ in
-              isMainThread = NSThread.currentThread() == NSThread.mainThread()
-            }
-
-            expect(isMainThread).toEventually(beTrue())
+          client.performRequest(request) {
+            message = $0.error?.userInfo[NSLocalizedDescriptionKey] as? NSString
           }
+
+          expect(message).toEventually(equal("Multiple choices: 301"))
+        }
+      }
+
+      context("when the status code is in the 400 range") {
+        it("returns the appropriate error") {
+          let request = FakeRequest()
+          let performer = FakeRequestPerformer(
+            returnedJSON: ["foo": "bar"],
+            statusCode: 401
+          )
+
+          let client = APIClient(requestPerformer: performer)
+          var message: NSString?
+
+          client.performRequest(request) {
+            message = $0.error?.userInfo[NSLocalizedDescriptionKey] as? NSString
+          }
+
+          expect(message).toEventually(equal("Bad request: 401"))
+        }
+      }
+
+      context("when the status code is in the 500 range") {
+        it("returns the appropriate error") {
+          let request = FakeRequest()
+          let performer = FakeRequestPerformer(
+            returnedJSON: ["foo": "bar"],
+            statusCode: 500
+          )
+
+          let client = APIClient(requestPerformer: performer)
+          var message: NSString?
+
+          client.performRequest(request) {
+            message = $0.error?.userInfo[NSLocalizedDescriptionKey] as? NSString
+          }
+
+          expect(message).toEventually(equal("Server error: 500"))
+        }
+      }
+
+      context("when the status code is in the not between 200...599") {
+        it("returns the appropriate error") {
+          let request = FakeRequest()
+          let performer = FakeRequestPerformer(
+            returnedJSON: ["foo": "bar"],
+            statusCode: 600
+          )
+
+          let client = APIClient(requestPerformer: performer)
+          var message: NSString?
+
+          client.performRequest(request) {
+            message = $0.error?.userInfo[NSLocalizedDescriptionKey] as? NSString
+          }
+
+          expect(message).toEventually(equal("Unknown error: 600"))
         }
       }
     }
