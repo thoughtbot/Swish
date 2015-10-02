@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E506EC7E1BB5BE380032E941 /* NimbleMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */; settings = {ASSET_TAGS = (); }; };
+		E5D7E0A11BBF2021002A3738 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E0A01BBF2021002A3738 /* Client.swift */; settings = {ASSET_TAGS = (); }; };
 		F80694FC1B962BB900C61B4A /* Swish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80694F11B962BB900C61B4A /* Swish.framework */; settings = {ASSET_TAGS = (); }; };
 		F80695131B962C5300C61B4A /* NetworkRequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950D1B962C5300C61B4A /* NetworkRequestPerformer.swift */; settings = {ASSET_TAGS = (); }; };
 		F80695141B962C5300C61B4A /* RequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950F1B962C5300C61B4A /* RequestPerformer.swift */; settings = {ASSET_TAGS = (); }; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbleMatchers.swift; sourceTree = "<group>"; };
+		E5D7E0A01BBF2021002A3738 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		F80694F11B962BB900C61B4A /* Swish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80694FB1B962BB900C61B4A /* SwishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F806950D1B962C5300C61B4A /* NetworkRequestPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestPerformer.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				F806950F1B962C5300C61B4A /* RequestPerformer.swift */,
 				F88ED0681B966E650069F56C /* Request.swift */,
+				E5D7E0A01BBF2021002A3738 /* Client.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F88EE3141B976747001EEB44 /* Result.swift in Sources */,
+				E5D7E0A11BBF2021002A3738 /* Client.swift in Sources */,
 				F8DF3B8E1B964BED003177CD /* HTTPResponse.swift in Sources */,
 				F88ED0691B966E650069F56C /* Request.swift in Sources */,
 				F80695141B962C5300C61B4A /* RequestPerformer.swift in Sources */,
