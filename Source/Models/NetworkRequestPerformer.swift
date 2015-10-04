@@ -4,7 +4,7 @@ import Result
 public struct NetworkRequestPerformer: RequestPerformer {
   private let session: NSURLSession
 
-  init(session: NSURLSession = NSURLSession.sharedSession()) {
+  public init(session: NSURLSession = NSURLSession.sharedSession()) {
     self.session = session
   }
 }
