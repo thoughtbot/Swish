@@ -1,7 +1,7 @@
 import Foundation
 import Result
 
-struct NetworkRequestPerformer: RequestPerformer {
+public struct NetworkRequestPerformer: RequestPerformer {
   private let session: NSURLSession
 
   init(session: NSURLSession = NSURLSession.sharedSession()) {
@@ -9,7 +9,7 @@ struct NetworkRequestPerformer: RequestPerformer {
   }
 }
 
-extension NetworkRequestPerformer {
+public extension NetworkRequestPerformer {
   func performRequest(request: NSURLRequest, completionHandler: Result<HTTPResponse, NSError> -> Void) {
     session.dataTaskWithRequest(request) { data, response, error in
       if let error = error {
