@@ -14,6 +14,7 @@
 		F80695141B962C5300C61B4A /* RequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950F1B962C5300C61B4A /* RequestPerformer.swift */; settings = {ASSET_TAGS = (); }; };
 		F80695161B962C5300C61B4A /* Swish.h in Headers */ = {isa = PBXBuildFile; fileRef = F80695121B962C5300C61B4A /* Swish.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F80695181B9633C400C61B4A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80695171B9633C400C61B4A /* Result.framework */; };
+		F867938C1BD29E37007D9E98 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867938B1BD29E37007D9E98 /* RequestMethod.swift */; settings = {ASSET_TAGS = (); }; };
 		F88ED0691B966E650069F56C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0681B966E650069F56C /* Request.swift */; settings = {ASSET_TAGS = (); }; };
 		F88ED06B1B966EC00069F56C /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88ED06A1B966EC00069F56C /* Argo.framework */; };
 		F88ED06D1B96736B0069F56C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED06C1B96736B0069F56C /* APIClient.swift */; settings = {ASSET_TAGS = (); }; };
@@ -50,6 +51,7 @@
 		F80695111B962C5300C61B4A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F80695121B962C5300C61B4A /* Swish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Swish.h; sourceTree = "<group>"; };
 		F80695171B9633C400C61B4A /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "Carthage/Checkouts/Result/build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
+		F867938B1BD29E37007D9E98 /* RequestMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 		F88ED0681B966E650069F56C /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		F88ED06A1B966EC00069F56C /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = "Carthage/Checkouts/Argo/build/Debug-iphoneos/Argo.framework"; sourceTree = "<group>"; };
 		F88ED06C1B96736B0069F56C /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		F806950C1B962C5300C61B4A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F867938B1BD29E37007D9E98 /* RequestMethod.swift */,
 				F806950D1B962C5300C61B4A /* NetworkRequestPerformer.swift */,
 				F8DF3B8D1B964BED003177CD /* HTTPResponse.swift */,
 				F88ED06C1B96736B0069F56C /* APIClient.swift */,
@@ -325,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F867938C1BD29E37007D9E98 /* RequestMethod.swift in Sources */,
 				F88EE3141B976747001EEB44 /* Result.swift in Sources */,
 				E5D7E0A11BBF2021002A3738 /* Client.swift in Sources */,
 				F8DF3B8E1B964BED003177CD /* HTTPResponse.swift in Sources */,
