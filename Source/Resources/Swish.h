@@ -6,7 +6,7 @@
 //  Copyright © 2015 thoughtbot. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for Swish.
 FOUNDATION_EXPORT double SwishVersionNumber;
