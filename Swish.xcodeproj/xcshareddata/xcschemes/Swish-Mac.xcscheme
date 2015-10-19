@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F80694F01B962BB900C61B4A"
+               BlueprintIdentifier = "2C721E3F1BD5A77700846414"
                BuildableName = "Swish.framework"
-               BlueprintName = "Swish"
+               BlueprintName = "Swish-Mac"
                ReferencedContainer = "container:Swish.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F80694FA1B962BB900C61B4A"
-               BuildableName = "SwishTests.xctest"
-               BlueprintName = "SwishTests"
+               BlueprintIdentifier = "2C721E481BD5A77700846414"
+               BuildableName = "Swish-MacTests.xctest"
+               BlueprintName = "Swish-MacTests"
                ReferencedContainer = "container:Swish.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F80694F01B962BB900C61B4A"
+            BlueprintIdentifier = "2C721E3F1BD5A77700846414"
             BuildableName = "Swish.framework"
-            BlueprintName = "Swish"
+            BlueprintName = "Swish-Mac"
             ReferencedContainer = "container:Swish.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F80694F01B962BB900C61B4A"
+            BlueprintIdentifier = "2C721E3F1BD5A77700846414"
             BuildableName = "Swish.framework"
-            BlueprintName = "Swish"
+            BlueprintName = "Swish-Mac"
             ReferencedContainer = "container:Swish.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F80694F01B962BB900C61B4A"
+            BlueprintIdentifier = "2C721E3F1BD5A77700846414"
             BuildableName = "Swish.framework"
-            BlueprintName = "Swish"
+            BlueprintName = "Swish-Mac"
             ReferencedContainer = "container:Swish.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

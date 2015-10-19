@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C6DC9761BD5AA04006B4C96 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88ED06A1B966EC00069F56C /* Argo.framework */; settings = {ASSET_TAGS = (); }; };
+		2C6DC9771BD5AA04006B4C96 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80695171B9633C400C61B4A /* Result.framework */; settings = {ASSET_TAGS = (); }; };
+		2C6DC9781BD5AA0E006B4C96 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DF3B891B964B83003177CD /* Nimble.framework */; settings = {ASSET_TAGS = (); }; };
+		2C6DC9791BD5AA0E006B4C96 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DF3B8A1B964B83003177CD /* Quick.framework */; settings = {ASSET_TAGS = (); }; };
+		2C6DC97A1BD5AA3B006B4C96 /* NimbleMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */; };
+		2C6DC97B1BD5AA3B006B4C96 /* FakeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B811B964B20003177CD /* FakeSession.swift */; };
+		2C6DC97C1BD5AA3B006B4C96 /* FakeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0781B96847E0069F56C /* FakeRequest.swift */; };
+		2C6DC97D1BD5AA3B006B4C96 /* FakeRequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED07A1B9684B40069F56C /* FakeRequestPerformer.swift */; };
+		2C6DC97E1BD5AA3B006B4C96 /* FakeDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C39B501B969A71005E065F /* FakeDataTask.swift */; };
+		2C6DC97F1BD5AA3B006B4C96 /* NetworkRequestPerformerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B851B964B20003177CD /* NetworkRequestPerformerSpec.swift */; };
+		2C6DC9801BD5AA3B006B4C96 /* RequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A00DE61BB5C86200169A46 /* RequestSpec.swift */; };
+		2C6DC9811BD5AA3B006B4C96 /* APIClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED06E1B967BCB0069F56C /* APIClientSpec.swift */; };
+		2C721E4A1BD5A77700846414 /* Swish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C721E401BD5A77700846414 /* Swish.framework */; settings = {ASSET_TAGS = (); }; };
+		2C721E571BD5A7C500846414 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0711B967C4A0069F56C /* Result.swift */; };
+		2C721E581BD5A7C500846414 /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B8D1B964BED003177CD /* HTTPResponse.swift */; };
+		2C721E591BD5A7C500846414 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E0A01BBF2021002A3738 /* Client.swift */; };
+		2C721E5A1BD5A7D400846414 /* RequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950F1B962C5300C61B4A /* RequestPerformer.swift */; };
+		2C721E5B1BD5A7D400846414 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0681B966E650069F56C /* Request.swift */; };
+		2C721E5C1BD5A7E800846414 /* NetworkRequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950D1B962C5300C61B4A /* NetworkRequestPerformer.swift */; };
+		2C721E5D1BD5A7E800846414 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED06C1B96736B0069F56C /* APIClient.swift */; };
+		2C721E5E1BD5A83B00846414 /* Swish.h in Headers */ = {isa = PBXBuildFile; fileRef = F80695121B962C5300C61B4A /* Swish.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E506EC7E1BB5BE380032E941 /* NimbleMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */; settings = {ASSET_TAGS = (); }; };
 		E5D7E0A11BBF2021002A3738 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E0A01BBF2021002A3738 /* Client.swift */; settings = {ASSET_TAGS = (); }; };
 		F80694FC1B962BB900C61B4A /* Swish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80694F11B962BB900C61B4A /* Swish.framework */; settings = {ASSET_TAGS = (); }; };
@@ -31,6 +52,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2C721E4B1BD5A77700846414 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F80694E81B962BB900C61B4A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C721E3F1BD5A77700846414;
+			remoteInfo = Swish;
+		};
 		F80694FD1B962BB900C61B4A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F80694E81B962BB900C61B4A /* Project object */;
@@ -41,17 +69,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C721E401BD5A77700846414 /* Swish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C721E491BD5A77700846414 /* Swish-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swish-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbleMatchers.swift; sourceTree = "<group>"; };
 		E5D7E0A01BBF2021002A3738 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		F80694F11B962BB900C61B4A /* Swish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F80694FB1B962BB900C61B4A /* SwishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F80694FB1B962BB900C61B4A /* Swish-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swish-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F806950D1B962C5300C61B4A /* NetworkRequestPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestPerformer.swift; sourceTree = "<group>"; };
 		F806950F1B962C5300C61B4A /* RequestPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestPerformer.swift; sourceTree = "<group>"; };
 		F80695111B962C5300C61B4A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F80695121B962C5300C61B4A /* Swish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Swish.h; sourceTree = "<group>"; };
-		F80695171B9633C400C61B4A /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "Carthage/Checkouts/Result/build/Debug-iphoneos/Result.framework"; sourceTree = "<group>"; };
+		F80695171B9633C400C61B4A /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F88ED0681B966E650069F56C /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		F88ED06A1B966EC00069F56C /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = "Carthage/Checkouts/Argo/build/Debug-iphoneos/Argo.framework"; sourceTree = "<group>"; };
+		F88ED06A1B966EC00069F56C /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Argo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F88ED06C1B96736B0069F56C /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		F88ED06E1B967BCB0069F56C /* APIClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClientSpec.swift; sourceTree = "<group>"; };
 		F88ED0711B967C4A0069F56C /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -62,12 +92,31 @@
 		F8DF3B811B964B20003177CD /* FakeSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeSession.swift; sourceTree = "<group>"; };
 		F8DF3B831B964B20003177CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8DF3B851B964B20003177CD /* NetworkRequestPerformerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestPerformerSpec.swift; sourceTree = "<group>"; };
-		F8DF3B891B964B83003177CD /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "Carthage/Checkouts/Nimble/build/Debug-iphoneos/Nimble.framework"; sourceTree = "<group>"; };
-		F8DF3B8A1B964B83003177CD /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "Carthage/Checkouts/Quick/build/Debug-iphoneos/Quick.framework"; sourceTree = "<group>"; };
+		F8DF3B891B964B83003177CD /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8DF3B8A1B964B83003177CD /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DF3B8D1B964BED003177CD /* HTTPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2C721E3C1BD5A77700846414 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C6DC9761BD5AA04006B4C96 /* Argo.framework in Frameworks */,
+				2C6DC9771BD5AA04006B4C96 /* Result.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C721E461BD5A77700846414 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C6DC9781BD5AA0E006B4C96 /* Nimble.framework in Frameworks */,
+				2C6DC9791BD5AA0E006B4C96 /* Quick.framework in Frameworks */,
+				2C721E4A1BD5A77700846414 /* Swish.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F80694ED1B962BB900C61B4A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,7 +163,9 @@
 			isa = PBXGroup;
 			children = (
 				F80694F11B962BB900C61B4A /* Swish.framework */,
-				F80694FB1B962BB900C61B4A /* SwishTests.xctest */,
+				F80694FB1B962BB900C61B4A /* Swish-iOSTests.xctest */,
+				2C721E401BD5A77700846414 /* Swish.framework */,
+				2C721E491BD5A77700846414 /* Swish-MacTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,6 +272,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		2C721E3D1BD5A77700846414 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C721E5E1BD5A83B00846414 /* Swish.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F80694EE1B962BB900C61B4A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,9 +291,45 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F80694F01B962BB900C61B4A /* Swish */ = {
+		2C721E3F1BD5A77700846414 /* Swish-Mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F80695051B962BB900C61B4A /* Build configuration list for PBXNativeTarget "Swish" */;
+			buildConfigurationList = 2C721E511BD5A77700846414 /* Build configuration list for PBXNativeTarget "Swish-Mac" */;
+			buildPhases = (
+				2C721E3B1BD5A77700846414 /* Sources */,
+				2C721E3C1BD5A77700846414 /* Frameworks */,
+				2C721E3D1BD5A77700846414 /* Headers */,
+				2C721E3E1BD5A77700846414 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Swish-Mac";
+			productName = Swish;
+			productReference = 2C721E401BD5A77700846414 /* Swish.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2C721E481BD5A77700846414 /* Swish-MacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C721E541BD5A77700846414 /* Build configuration list for PBXNativeTarget "Swish-MacTests" */;
+			buildPhases = (
+				2C721E451BD5A77700846414 /* Sources */,
+				2C721E461BD5A77700846414 /* Frameworks */,
+				2C721E471BD5A77700846414 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C721E4C1BD5A77700846414 /* PBXTargetDependency */,
+			);
+			name = "Swish-MacTests";
+			productName = SwishTests;
+			productReference = 2C721E491BD5A77700846414 /* Swish-MacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F80694F01B962BB900C61B4A /* Swish-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F80695051B962BB900C61B4A /* Build configuration list for PBXNativeTarget "Swish-iOS" */;
 			buildPhases = (
 				F80694EC1B962BB900C61B4A /* Sources */,
 				F80694ED1B962BB900C61B4A /* Frameworks */,
@@ -245,14 +340,14 @@
 			);
 			dependencies = (
 			);
-			name = Swish;
+			name = "Swish-iOS";
 			productName = Swish;
 			productReference = F80694F11B962BB900C61B4A /* Swish.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F80694FA1B962BB900C61B4A /* SwishTests */ = {
+		F80694FA1B962BB900C61B4A /* Swish-iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F80695081B962BB900C61B4A /* Build configuration list for PBXNativeTarget "SwishTests" */;
+			buildConfigurationList = F80695081B962BB900C61B4A /* Build configuration list for PBXNativeTarget "Swish-iOSTests" */;
 			buildPhases = (
 				F80694F71B962BB900C61B4A /* Sources */,
 				F80694F81B962BB900C61B4A /* Frameworks */,
@@ -263,9 +358,9 @@
 			dependencies = (
 				F80694FE1B962BB900C61B4A /* PBXTargetDependency */,
 			);
-			name = SwishTests;
+			name = "Swish-iOSTests";
 			productName = SwishTests;
-			productReference = F80694FB1B962BB900C61B4A /* SwishTests.xctest */;
+			productReference = F80694FB1B962BB900C61B4A /* Swish-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -277,6 +372,12 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = thoughtbot;
 				TargetAttributes = {
+					2C721E3F1BD5A77700846414 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					2C721E481BD5A77700846414 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
 					F80694F01B962BB900C61B4A = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -297,13 +398,29 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F80694F01B962BB900C61B4A /* Swish */,
-				F80694FA1B962BB900C61B4A /* SwishTests */,
+				F80694F01B962BB900C61B4A /* Swish-iOS */,
+				F80694FA1B962BB900C61B4A /* Swish-iOSTests */,
+				2C721E3F1BD5A77700846414 /* Swish-Mac */,
+				2C721E481BD5A77700846414 /* Swish-MacTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2C721E3E1BD5A77700846414 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C721E471BD5A77700846414 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F80694EF1B962BB900C61B4A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -321,6 +438,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2C721E3B1BD5A77700846414 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C721E5D1BD5A7E800846414 /* APIClient.swift in Sources */,
+				2C721E591BD5A7C500846414 /* Client.swift in Sources */,
+				2C721E581BD5A7C500846414 /* HTTPResponse.swift in Sources */,
+				2C721E5C1BD5A7E800846414 /* NetworkRequestPerformer.swift in Sources */,
+				2C721E571BD5A7C500846414 /* Result.swift in Sources */,
+				2C721E5B1BD5A7D400846414 /* Request.swift in Sources */,
+				2C721E5A1BD5A7D400846414 /* RequestPerformer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C721E451BD5A77700846414 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C6DC9811BD5AA3B006B4C96 /* APIClientSpec.swift in Sources */,
+				2C6DC97E1BD5AA3B006B4C96 /* FakeDataTask.swift in Sources */,
+				2C6DC97C1BD5AA3B006B4C96 /* FakeRequest.swift in Sources */,
+				2C6DC97D1BD5AA3B006B4C96 /* FakeRequestPerformer.swift in Sources */,
+				2C6DC97B1BD5AA3B006B4C96 /* FakeSession.swift in Sources */,
+				2C6DC97F1BD5AA3B006B4C96 /* NetworkRequestPerformerSpec.swift in Sources */,
+				2C6DC97A1BD5AA3B006B4C96 /* NimbleMatchers.swift in Sources */,
+				2C6DC9801BD5AA3B006B4C96 /* RequestSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F80694EC1B962BB900C61B4A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,14 +499,85 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2C721E4C1BD5A77700846414 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C721E3F1BD5A77700846414 /* Swish-Mac */;
+			targetProxy = 2C721E4B1BD5A77700846414 /* PBXContainerItemProxy */;
+		};
 		F80694FE1B962BB900C61B4A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F80694F01B962BB900C61B4A /* Swish */;
+			target = F80694F01B962BB900C61B4A /* Swish-iOS */;
 			targetProxy = F80694FD1B962BB900C61B4A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		2C721E521BD5A77700846414 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Swish/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.Swish;
+				PRODUCT_NAME = Swish;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2C721E531BD5A77700846414 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = Swish/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.Swish;
+				PRODUCT_NAME = Swish;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2C721E551BD5A77700846414 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SwishTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.SwishTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2C721E561BD5A77700846414 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SwishTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.SwishTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		F80695031B962BB900C61B4A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -461,7 +678,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.Swish;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Swish;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -479,7 +696,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.Swish;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Swish;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -507,6 +724,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2C721E511BD5A77700846414 /* Build configuration list for PBXNativeTarget "Swish-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C721E521BD5A77700846414 /* Debug */,
+				2C721E531BD5A77700846414 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C721E541BD5A77700846414 /* Build configuration list for PBXNativeTarget "Swish-MacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C721E551BD5A77700846414 /* Debug */,
+				2C721E561BD5A77700846414 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F80694EB1B962BB900C61B4A /* Build configuration list for PBXProject "Swish" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -516,7 +751,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F80695051B962BB900C61B4A /* Build configuration list for PBXNativeTarget "Swish" */ = {
+		F80695051B962BB900C61B4A /* Build configuration list for PBXNativeTarget "Swish-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F80695061B962BB900C61B4A /* Debug */,
@@ -525,7 +760,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F80695081B962BB900C61B4A /* Build configuration list for PBXNativeTarget "SwishTests" */ = {
+		F80695081B962BB900C61B4A /* Build configuration list for PBXNativeTarget "Swish-iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F80695091B962BB900C61B4A /* Debug */,
