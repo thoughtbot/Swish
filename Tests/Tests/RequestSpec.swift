@@ -28,8 +28,8 @@ struct DecodableCollectionRequest: Request {
   }
 }
 
-struct VoidResponseRequest: Request {
-  typealias ResponseType = Void
+struct EmptyResponseRequest: Request {
+  typealias ResponseType = EmptyResponse
   
   func build() -> NSURLRequest {
     return NSURLRequest()
@@ -60,9 +60,9 @@ class RequestSpec: QuickSpec {
           expect(result.value?.first?.name).to(equal("giles"))
         }
         
-        context("when the ResponseType is Void") {
+        context("when the ResponseType is an EmptyResponse") {
           it("should have a nil Result value") {
-            let request = VoidResponseRequest()
+            let request = EmptyResponseRequest()
             let json = JSON.parse([])
             let result = request.parse(json)
             
