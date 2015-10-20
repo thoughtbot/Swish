@@ -28,6 +28,14 @@ struct DecodableCollectionRequest: Request {
   }
 }
 
+struct VoidResponseRequest: Request {
+  typealias ResponseType = Void
+  
+  func build() -> NSURLRequest {
+    return NSURLRequest()
+  }
+}
+
 class RequestSpec: QuickSpec {
   override func spec() {
     describe("Request") {
@@ -50,6 +58,21 @@ class RequestSpec: QuickSpec {
           
           expect(result.value?.count).to(equal(2))
           expect(result.value?.first?.name).to(equal("giles"))
+        }
+        
+        context("when the ResponseType is Void") {
+          it("should have a nil Result value") {
+            let request = VoidResponseRequest()
+            let json = JSON.parse([])
+            let result = request.parse(json)
+            
+            switch result {
+            case .Success:
+              XCTAssert(true)
+            default:
+              XCTFail("Unexpected Failure")
+            }            
+          }
         }
       }
     }
