@@ -19,3 +19,9 @@ public extension Request where ResponseType: CollectionType, ResponseType.Genera
     return .fromDecoded(ResponseType.decode(j))
   }
 }
+
+public extension Request where ResponseType == Void {
+  func parse(j: JSON) -> Result<ResponseType, NSError> {
+    return .Success()
+  }
+}
