@@ -2,6 +2,8 @@ import Foundation
 import Argo
 import Result
 
+public typealias EmptyResponse = Void
+
 public protocol Request {
   typealias ResponseType
   func build() -> NSURLRequest
@@ -20,7 +22,7 @@ public extension Request where ResponseType: CollectionType, ResponseType.Genera
   }
 }
 
-public extension Request where ResponseType == Void {
+public extension Request where ResponseType == EmptyResponse {
   func parse(j: JSON) -> Result<ResponseType, NSError> {
     return .Success()
   }
