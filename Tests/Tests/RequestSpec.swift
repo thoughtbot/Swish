@@ -63,8 +63,7 @@ class RequestSpec: QuickSpec {
         context("when the ResponseType is an EmptyResponse") {
           it("should have a nil Result value") {
             let request = EmptyResponseRequest()
-            let json = JSON.parse([])
-            let result = request.parse(json)
+            let result = request.parse(.Null)
             
             switch result {
             case .Success:
