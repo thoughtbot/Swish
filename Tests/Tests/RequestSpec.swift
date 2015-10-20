@@ -61,16 +61,11 @@ class RequestSpec: QuickSpec {
         }
         
         context("when the ResponseType is an EmptyResponse") {
-          it("should have a nil Result value") {
+          it("should result in Success") {
             let request = EmptyResponseRequest()
             let result = request.parse(.Null)
             
-            switch result {
-            case .Success:
-              XCTAssert(true)
-            default:
-              XCTFail("Unexpected Failure")
-            }            
+            expect(result).to(beSuccessful())
           }
         }
       }
