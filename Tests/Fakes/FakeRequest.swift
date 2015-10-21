@@ -30,3 +30,19 @@ struct FakeNullDataRequest: Request {
     }
   }
 }
+
+struct FakeEmptyDataRequest: Request {
+  typealias ResponseType = EmptyResponse
+  
+  func build() -> NSURLRequest {
+    return NSURLRequest(URL: NSURL(string: "http://example.com")!)
+  }
+  
+  func parse(j: JSON) -> Result<EmptyResponse, NSError> {
+    switch j {
+    case JSON.Null: return Result.Success(())
+    default:
+      return Result.Failure(Result<EmptyResponse, NSError>.error())
+    }
+  }
+}
