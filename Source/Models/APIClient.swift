@@ -35,7 +35,7 @@ private func deserialize(response: HTTPResponse) -> Result<JSON, NSError> {
 }
 
 private func parseJSON(response: HTTPResponse) -> Result<JSON, NSError> {
-  guard let data = response.data else {
+  guard let data = response.data where data.length > 0 else {
     return .Success(JSON.Null)
   }
 
