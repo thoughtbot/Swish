@@ -95,7 +95,7 @@ As an example of a custom `parse` function, let's assume that in the example
 above, the API returns an array of objects, and we want to parse only the first
 one into a `Comment`, or otherwise fail:
 
-```
+```swift
 struct CommentRequest: Request {
   typealias ResponseType = Comment
 
