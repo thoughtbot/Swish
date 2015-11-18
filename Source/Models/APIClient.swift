@@ -13,7 +13,7 @@ public struct APIClient {
 extension APIClient: Client {
   public func performRequest<T: Request>(request: T, completionHandler: Result<T.ResponseType, NSError> -> Void) {
     requestPerformer.performRequest(request.build()) { result in
-      let object = result >>- deserialize >>- { request.parse($0) }
+      let object = result >>- deserialize >>- request.parse
       dispatch_async(dispatch_get_main_queue()) { completionHandler(object) }
     }
   }
