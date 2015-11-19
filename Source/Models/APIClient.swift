@@ -2,6 +2,8 @@ import Foundation
 import Argo
 import Result
 
+public let SwishNetworkErrorNotification = "com.thoughtbot.swish.didEncounterNetworkErrorNotification"
+
 public struct APIClient {
   private let requestPerformer: RequestPerformer
 
@@ -14,8 +16,17 @@ extension APIClient: Client {
   public func performRequest<T: Request>(request: T, completionHandler: Result<T.ResponseType, NSError> -> Void) {
     requestPerformer.performRequest(request.build()) { result in
       let object = result >>- deserialize >>- request.parse
+      notifyError(object)
       onMain { completionHandler(object) }
     }
+  }
+}
+
+private func notifyError<T>(result: Result<T, NSError>) {
+  guard let error = result.error else { return }
+  onMain {
+    NSNotificationCenter.defaultCenter()
+      .postNotificationName(SwishNetworkErrorNotification, object: error)
   }
 }
 
