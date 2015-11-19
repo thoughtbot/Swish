@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C61A39E1BD726E10087B295 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867938B1BD29E37007D9E98 /* RequestMethod.swift */; settings = {ASSET_TAGS = (); }; };
-		2C6DC9761BD5AA04006B4C96 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88ED06A1B966EC00069F56C /* Argo.framework */; settings = {ASSET_TAGS = (); }; };
-		2C6DC9771BD5AA04006B4C96 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80695171B9633C400C61B4A /* Result.framework */; settings = {ASSET_TAGS = (); }; };
-		2C6DC9781BD5AA0E006B4C96 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DF3B891B964B83003177CD /* Nimble.framework */; settings = {ASSET_TAGS = (); }; };
-		2C6DC9791BD5AA0E006B4C96 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DF3B8A1B964B83003177CD /* Quick.framework */; settings = {ASSET_TAGS = (); }; };
+		2C61A39E1BD726E10087B295 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867938B1BD29E37007D9E98 /* RequestMethod.swift */; };
+		2C6DC9761BD5AA04006B4C96 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88ED06A1B966EC00069F56C /* Argo.framework */; };
+		2C6DC9771BD5AA04006B4C96 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80695171B9633C400C61B4A /* Result.framework */; };
+		2C6DC9781BD5AA0E006B4C96 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DF3B891B964B83003177CD /* Nimble.framework */; };
+		2C6DC9791BD5AA0E006B4C96 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DF3B8A1B964B83003177CD /* Quick.framework */; };
 		2C6DC97A1BD5AA3B006B4C96 /* NimbleMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */; };
 		2C6DC97B1BD5AA3B006B4C96 /* FakeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B811B964B20003177CD /* FakeSession.swift */; };
 		2C6DC97C1BD5AA3B006B4C96 /* FakeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0781B96847E0069F56C /* FakeRequest.swift */; };
@@ -20,7 +20,7 @@
 		2C6DC97F1BD5AA3B006B4C96 /* NetworkRequestPerformerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B851B964B20003177CD /* NetworkRequestPerformerSpec.swift */; };
 		2C6DC9801BD5AA3B006B4C96 /* RequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A00DE61BB5C86200169A46 /* RequestSpec.swift */; };
 		2C6DC9811BD5AA3B006B4C96 /* APIClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED06E1B967BCB0069F56C /* APIClientSpec.swift */; };
-		2C721E4A1BD5A77700846414 /* Swish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C721E401BD5A77700846414 /* Swish.framework */; settings = {ASSET_TAGS = (); }; };
+		2C721E4A1BD5A77700846414 /* Swish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C721E401BD5A77700846414 /* Swish.framework */; };
 		2C721E571BD5A7C500846414 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0711B967C4A0069F56C /* Result.swift */; };
 		2C721E581BD5A7C500846414 /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B8D1B964BED003177CD /* HTTPResponse.swift */; };
 		2C721E591BD5A7C500846414 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E0A01BBF2021002A3738 /* Client.swift */; };
@@ -29,32 +29,36 @@
 		2C721E5C1BD5A7E800846414 /* NetworkRequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950D1B962C5300C61B4A /* NetworkRequestPerformer.swift */; };
 		2C721E5D1BD5A7E800846414 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED06C1B96736B0069F56C /* APIClient.swift */; };
 		2C721E5E1BD5A83B00846414 /* Swish.h in Headers */ = {isa = PBXBuildFile; fileRef = F80695121B962C5300C61B4A /* Swish.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E506EC7E1BB5BE380032E941 /* NimbleMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */; settings = {ASSET_TAGS = (); }; };
-		E5915B211BDABC4B005E5D63 /* NSURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */; settings = {ASSET_TAGS = (); }; };
-		E5915B221BDABC4B005E5D63 /* NSURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */; settings = {ASSET_TAGS = (); }; };
-		E5915B241BDAD1A3005E5D63 /* NSURLRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B231BDAD1A3005E5D63 /* NSURLRequestSpec.swift */; settings = {ASSET_TAGS = (); }; };
-		E5915B251BDAD1A3005E5D63 /* NSURLRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B231BDAD1A3005E5D63 /* NSURLRequestSpec.swift */; settings = {ASSET_TAGS = (); }; };
-		E5D7E0A11BBF2021002A3738 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E0A01BBF2021002A3738 /* Client.swift */; settings = {ASSET_TAGS = (); }; };
-		F80694FC1B962BB900C61B4A /* Swish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80694F11B962BB900C61B4A /* Swish.framework */; settings = {ASSET_TAGS = (); }; };
-		F80695131B962C5300C61B4A /* NetworkRequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950D1B962C5300C61B4A /* NetworkRequestPerformer.swift */; settings = {ASSET_TAGS = (); }; };
-		F80695141B962C5300C61B4A /* RequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950F1B962C5300C61B4A /* RequestPerformer.swift */; settings = {ASSET_TAGS = (); }; };
+		E506EC7E1BB5BE380032E941 /* NimbleMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */; };
+		E5915B211BDABC4B005E5D63 /* NSURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */; };
+		E5915B221BDABC4B005E5D63 /* NSURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */; };
+		E5915B241BDAD1A3005E5D63 /* NSURLRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B231BDAD1A3005E5D63 /* NSURLRequestSpec.swift */; };
+		E5915B251BDAD1A3005E5D63 /* NSURLRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B231BDAD1A3005E5D63 /* NSURLRequestSpec.swift */; };
+		E5D7E0A11BBF2021002A3738 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E0A01BBF2021002A3738 /* Client.swift */; };
+		F80694FC1B962BB900C61B4A /* Swish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80694F11B962BB900C61B4A /* Swish.framework */; };
+		F80695131B962C5300C61B4A /* NetworkRequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950D1B962C5300C61B4A /* NetworkRequestPerformer.swift */; };
+		F80695141B962C5300C61B4A /* RequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950F1B962C5300C61B4A /* RequestPerformer.swift */; };
 		F80695161B962C5300C61B4A /* Swish.h in Headers */ = {isa = PBXBuildFile; fileRef = F80695121B962C5300C61B4A /* Swish.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F80695181B9633C400C61B4A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80695171B9633C400C61B4A /* Result.framework */; };
-		F867938C1BD29E37007D9E98 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867938B1BD29E37007D9E98 /* RequestMethod.swift */; settings = {ASSET_TAGS = (); }; };
-		F88ED0691B966E650069F56C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0681B966E650069F56C /* Request.swift */; settings = {ASSET_TAGS = (); }; };
+		F867938C1BD29E37007D9E98 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867938B1BD29E37007D9E98 /* RequestMethod.swift */; };
+		F88ED0691B966E650069F56C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0681B966E650069F56C /* Request.swift */; };
 		F88ED06B1B966EC00069F56C /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88ED06A1B966EC00069F56C /* Argo.framework */; };
-		F88ED06D1B96736B0069F56C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED06C1B96736B0069F56C /* APIClient.swift */; settings = {ASSET_TAGS = (); }; };
-		F88ED06F1B967BCB0069F56C /* APIClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED06E1B967BCB0069F56C /* APIClientSpec.swift */; settings = {ASSET_TAGS = (); }; };
-		F88ED0791B96847E0069F56C /* FakeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0781B96847E0069F56C /* FakeRequest.swift */; settings = {ASSET_TAGS = (); }; };
-		F88ED07B1B9684B40069F56C /* FakeRequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED07A1B9684B40069F56C /* FakeRequestPerformer.swift */; settings = {ASSET_TAGS = (); }; };
-		F88EE3141B976747001EEB44 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0711B967C4A0069F56C /* Result.swift */; settings = {ASSET_TAGS = (); }; };
-		F8A00DE71BB5C86200169A46 /* RequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A00DE61BB5C86200169A46 /* RequestSpec.swift */; settings = {ASSET_TAGS = (); }; };
-		F8C39B511B969A71005E065F /* FakeDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C39B501B969A71005E065F /* FakeDataTask.swift */; settings = {ASSET_TAGS = (); }; };
-		F8DF3B861B964B20003177CD /* FakeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B811B964B20003177CD /* FakeSession.swift */; settings = {ASSET_TAGS = (); }; };
-		F8DF3B881B964B20003177CD /* NetworkRequestPerformerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B851B964B20003177CD /* NetworkRequestPerformerSpec.swift */; settings = {ASSET_TAGS = (); }; };
+		F88ED06D1B96736B0069F56C /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED06C1B96736B0069F56C /* APIClient.swift */; };
+		F88ED06F1B967BCB0069F56C /* APIClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED06E1B967BCB0069F56C /* APIClientSpec.swift */; };
+		F88ED0791B96847E0069F56C /* FakeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0781B96847E0069F56C /* FakeRequest.swift */; };
+		F88ED07B1B9684B40069F56C /* FakeRequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED07A1B9684B40069F56C /* FakeRequestPerformer.swift */; };
+		F88EE3141B976747001EEB44 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0711B967C4A0069F56C /* Result.swift */; };
+		F8A00DE71BB5C86200169A46 /* RequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A00DE61BB5C86200169A46 /* RequestSpec.swift */; };
+		F8C39B511B969A71005E065F /* FakeDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C39B501B969A71005E065F /* FakeDataTask.swift */; };
+		F8D09FB91BFD360A00FB2433 /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D09FB81BFD360A00FB2433 /* NSError.swift */; };
+		F8D09FBA1BFD363100FB2433 /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D09FB81BFD360A00FB2433 /* NSError.swift */; };
+		F8D09FBC1BFD48F200FB2433 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D09FBB1BFD48F200FB2433 /* GCD.swift */; };
+		F8D09FBD1BFD48F200FB2433 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D09FBB1BFD48F200FB2433 /* GCD.swift */; };
+		F8DF3B861B964B20003177CD /* FakeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B811B964B20003177CD /* FakeSession.swift */; };
+		F8DF3B881B964B20003177CD /* NetworkRequestPerformerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B851B964B20003177CD /* NetworkRequestPerformerSpec.swift */; };
 		F8DF3B8B1B964B83003177CD /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DF3B891B964B83003177CD /* Nimble.framework */; };
 		F8DF3B8C1B964B83003177CD /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DF3B8A1B964B83003177CD /* Quick.framework */; };
-		F8DF3B8E1B964BED003177CD /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B8D1B964BED003177CD /* HTTPResponse.swift */; settings = {ASSET_TAGS = (); }; };
+		F8DF3B8E1B964BED003177CD /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B8D1B964BED003177CD /* HTTPResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +102,8 @@
 		F88ED07A1B9684B40069F56C /* FakeRequestPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeRequestPerformer.swift; sourceTree = "<group>"; };
 		F8A00DE61BB5C86200169A46 /* RequestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestSpec.swift; sourceTree = "<group>"; };
 		F8C39B501B969A71005E065F /* FakeDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeDataTask.swift; sourceTree = "<group>"; };
+		F8D09FB81BFD360A00FB2433 /* NSError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSError.swift; sourceTree = "<group>"; };
+		F8D09FBB1BFD48F200FB2433 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		F8DF3B811B964B20003177CD /* FakeSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeSession.swift; sourceTree = "<group>"; };
 		F8DF3B831B964B20003177CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8DF3B851B964B20003177CD /* NetworkRequestPerformerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestPerformerSpec.swift; sourceTree = "<group>"; };
@@ -223,8 +229,10 @@
 		F88ED0701B967C320069F56C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F8D09FB81BFD360A00FB2433 /* NSError.swift */,
 				E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */,
 				F88ED0711B967C4A0069F56C /* Result.swift */,
+				F8D09FBB1BFD48F200FB2433 /* GCD.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -461,8 +469,10 @@
 				2C721E581BD5A7C500846414 /* HTTPResponse.swift in Sources */,
 				2C721E5C1BD5A7E800846414 /* NetworkRequestPerformer.swift in Sources */,
 				2C721E571BD5A7C500846414 /* Result.swift in Sources */,
+				F8D09FBD1BFD48F200FB2433 /* GCD.swift in Sources */,
 				2C721E5B1BD5A7D400846414 /* Request.swift in Sources */,
 				2C721E5A1BD5A7D400846414 /* RequestPerformer.swift in Sources */,
+				F8D09FBA1BFD363100FB2433 /* NSError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,8 +503,10 @@
 				F88ED0691B966E650069F56C /* Request.swift in Sources */,
 				F80695141B962C5300C61B4A /* RequestPerformer.swift in Sources */,
 				F88ED06D1B96736B0069F56C /* APIClient.swift in Sources */,
+				F8D09FBC1BFD48F200FB2433 /* GCD.swift in Sources */,
 				E5915B211BDABC4B005E5D63 /* NSURLRequest.swift in Sources */,
 				F80695131B962C5300C61B4A /* NetworkRequestPerformer.swift in Sources */,
+				F8D09FB91BFD360A00FB2433 /* NSError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
