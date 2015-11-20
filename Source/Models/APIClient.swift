@@ -20,29 +20,28 @@ extension APIClient: Client {
 }
 
 private func deserialize(response: HTTPResponse) -> Result<JSON, NSError> {
-  switch response.code {
-  case 200...299:
-    return parseJSON(response)
-  case 300...399:
-    return .Failure(.error("Multiple choices: \(response.code)"))
-  case 400...499:
-    return .Failure(.error("Bad request: \(response.code)"))
-  case 500...599:
-    return .Failure(.error("Server error: \(response.code)"))
-  default:
-    return .Failure(.error("Unknown error: \(response.code)"))
+  let json = parseJSON(response)
+
+  switch (response.code, json) {
+
+  case let (_, .Failure(e)):
+    return .Failure(e)
+
+  case let (200...299, .Success(j)):
+    return .Success(JSON.parse(j))
+
+  case let (code, .Success(j)):
+    return .Failure(.error(code, json: j))
   }
 }
 
-private func parseJSON(response: HTTPResponse) -> Result<JSON, NSError> {
+private func parseJSON(response: HTTPResponse) -> Result<AnyObject, NSError> {
   guard let data = response.data where data.length > 0 else {
-    return .Success(JSON.Null)
+    return .Success(NSNull())
   }
 
-  do {
-    let object = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0))
-    return .Success(JSON.parse(object))
-  } catch let error as NSError {
-    return .Failure(error)
-  }
+  return Result(
+    try NSJSONSerialization
+      .JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0))
+  )
 }

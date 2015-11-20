@@ -175,6 +175,26 @@ class APIClientSpec: QuickSpec {
           expect(message).toEventually(equal("Unknown error: 600"))
         }
       }
+
+      context("when there is an error") {
+        it("returns the JSON with the error") {
+          let expectedJSON = ["foo": "bar"]
+          let request = FakeRequest()
+          let performer = FakeRequestPerformer(
+            returnedJSON: expectedJSON,
+            statusCode: 600
+          )
+
+          let client = APIClient(requestPerformer: performer)
+          var returnedJSON: [String: String]?
+
+          client.performRequest(request) {
+            returnedJSON = $0.error?.userInfo[NetworkErrorJSONKey] as? [String: String]
+          }
+
+          expect(returnedJSON).toEventually(equal(expectedJSON))
+        }
+      }
     }
   }
 }
