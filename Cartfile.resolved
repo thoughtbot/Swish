@@ -1,4 +1,4 @@
-github "thoughtbot/Argo" "3f1327de255a9d27dceb350628a93d82a4406b89"
+github "thoughtbot/Argo" "v2.2.0"
 github "Quick/Nimble" "v2.0.0-rc.3"
 github "Quick/Quick" "v0.6.0"
 github "antitypical/Result" "0.6.0-beta.5"

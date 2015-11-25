@@ -1,2 +1,2 @@
 github "antitypical/Result" "0.6.0-beta.5"
-github "thoughtbot/Argo" "master"
+github "thoughtbot/Argo" ~> 2.0.0
