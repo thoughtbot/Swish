@@ -29,11 +29,12 @@ for up to date installation instructions.
 ```swift
 import Swish
 
-func baseRequest(url url: String, method: RequestMethod) {
+func baseRequest(url url: String, method: RequestMethod) -> NSURLRequest {
   let url = NSURL(string: url)!
   let request = NSMutableURLRequest(URL: url)
 
   request.HTTPMethod = method.rawValue
+  return request
 }
 
 struct CommentRequest: Request {
@@ -52,7 +53,7 @@ struct Comment: Decodable {
   let id: Int
   let text: String
   let username: String
- 
+
   static func decode(j: JSON) -> Decoded<Comment> {
     return curry(Comment.init)
       <^> j <| "id"
