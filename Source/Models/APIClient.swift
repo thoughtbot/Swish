@@ -11,9 +11,9 @@ public struct APIClient {
 }
 
 extension APIClient: Client {
-  public func performRequest<T: Request>(request: T, completionHandler: Result<T.ResponseObject, NSError> -> Void) -> NSURLSessionDataTask {
+  public func performRequest<T: Request>(request: T, completionHandler: Result<T.ResponseObject, T.ResponseError> -> Void) -> NSURLSessionDataTask {
     return requestPerformer.performRequest(request.build()) { result in
-      let object = result >>- deserialize >>- request.parse
+      let object = (result >>- deserialize >>- request.parse).mapError(request.transformError)
       onMain { completionHandler(object) }
     }
   }
