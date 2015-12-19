@@ -12,7 +12,7 @@ class FakeRequestPerformer: RequestPerformer {
     self.statusCode = statusCode
   }
 
-  func performRequest(request: NSURLRequest, completionHandler: Result<HTTPResponse, NSError> -> Void) {
+  func performRequest(request: NSURLRequest, completionHandler: Result<HTTPResponse, NSError> -> Void) -> NSURLSessionDataTask {
     passedRequest = request
     let data = returnedJSON.flatMap {
       try? NSJSONSerialization.dataWithJSONObject($0, options: NSJSONWritingOptions(rawValue: 0))
@@ -26,6 +26,8 @@ class FakeRequestPerformer: RequestPerformer {
     let result: Result<HTTPResponse, NSError> = .Success(HTTPResponse(data: data, response: response))
 
     completionHandler(result)
+
+    return NSURLSessionDataTask()
   }
 }
 
@@ -37,7 +39,7 @@ class FakeEmptyResponseRequestPerformer: RequestPerformer {
     self.statusCode = statusCode
   }
   
-  func performRequest(request: NSURLRequest, completionHandler: Result<HTTPResponse, NSError> -> Void) {
+  func performRequest(request: NSURLRequest, completionHandler: Result<HTTPResponse, NSError> -> Void) -> NSURLSessionDataTask {
     passedRequest = request
     let data = NSData()
     
@@ -49,5 +51,7 @@ class FakeEmptyResponseRequestPerformer: RequestPerformer {
     let result: Result<HTTPResponse, NSError> = .Success(HTTPResponse(data: data, response: response))
     
     completionHandler(result)
+
+    return NSURLSessionDataTask()
   }
 }
