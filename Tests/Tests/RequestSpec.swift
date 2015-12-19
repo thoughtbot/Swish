@@ -44,7 +44,7 @@ class RequestSpec: QuickSpec {
           let request = DecodableRequest()
           let json = JSON.parse(["name": "gvg"])
           let result = request.parse(json)
-          
+
           expect(result.value?.name).to(equal("gvg"))
         }
 
@@ -55,7 +55,7 @@ class RequestSpec: QuickSpec {
             ["name": "gordon"]
           ])
           let result = request.parse(json)
-          
+
           expect(result.value?.count).to(equal(2))
           expect(result.value?.first?.name).to(equal("giles"))
         }
@@ -64,7 +64,7 @@ class RequestSpec: QuickSpec {
           it("should result in Success") {
             let request = EmptyResponseRequest()
             let result = request.parse(.Null)
-            
+
             expect(result).to(beSuccessful())
           }
         }
