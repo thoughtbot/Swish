@@ -53,20 +53,6 @@ class APIClientSpec: QuickSpec {
               }
             }
 
-            context("when the data is `nil`") {
-              it("returns a null JSON object") {
-                let request = FakeNullDataRequest()
-                let performer = FakeRequestPerformer()
-
-                let client = APIClient(requestPerformer: performer)
-                var result: Result<(), NSError>?
-
-                client.performRequest(request) { result = $0 }
-
-                expect(result!.value!).toEventually(beVoid())
-              }
-            }
-
             context("when the data is empty") {
               it("returns a null JSON object") {
                 let request = FakeEmptyDataRequest()
