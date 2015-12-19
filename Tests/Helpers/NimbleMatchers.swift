@@ -18,7 +18,7 @@ public func beVoid() -> MatcherFunc<Void> {
 public func beSuccessful<T, E>() -> NonNilMatcherFunc<Result<T, E>> {
   return NonNilMatcherFunc { actual, failure in
     let result = try actual.evaluate()
-    
+
     switch result {
     case .Success?: return true
     default: return false
