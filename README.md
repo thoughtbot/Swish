@@ -37,7 +37,7 @@ func baseRequest(url url: String, method: RequestMethod) {
 }
 
 struct CommentRequest: Request {
-  typealias ResponseType = Comment
+  typealias ResponseObject = Comment
 
   let id: Int
 
@@ -69,13 +69,13 @@ APIClient().performRequest(request) { (response: Result<Comment, NSError>) in
 
 We declare a struct that conforms to the `Request` protocol, which forces us to:
 
-* Declare a `ResponseType` that should be `Decodable`, which allows Swish to use
+* Declare a `ResponseObject` that should be `Decodable`, which allows Swish to use
   Argo to decode the HTTP response into the appropriate model.
 * Declare a `build` function, which defines the request to perform.
   HTTP method to use.
 
 Then, we can use `APIClient#performRequest` to actually perform the request, and
-its callback will have an argument of type `Result<ResponseType, NSError>`.
+its callback will have an argument of type `Result<ResponseObject, NSError>`.
 
 ## Advanced Usage
 One can additionally override the default implementation of both
@@ -89,7 +89,7 @@ The default `APIClient#performRequest` does the following:
 * Pass this `JSON` to the `Request#parse` function.
 
 The default `Request#parse` just passes the `JSON` it is called with to the
-`ResponseType.decode` function.
+`ResponseObject.decode` function.
 
 As an example of a custom `parse` function, let's assume that in the example
 above, the API returns an array of objects, and we want to parse only the first
@@ -97,7 +97,7 @@ one into a `Comment`, or otherwise fail:
 
 ```swift
 struct CommentRequest: Request {
-  typealias ResponseType = Comment
+  typealias ResponseObject = Comment
 
   let id: Int
 

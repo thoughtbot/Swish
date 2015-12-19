@@ -5,25 +5,25 @@ import Result
 public typealias EmptyResponse = Void
 
 public protocol Request {
-  typealias ResponseType
+  typealias ResponseObject
   func build() -> NSURLRequest
-  func parse(j: JSON) -> Result<ResponseType, NSError>
+  func parse(j: JSON) -> Result<ResponseObject, NSError>
 }
 
-public extension Request where ResponseType: Decodable, ResponseType.DecodedType == ResponseType {
-  func parse(j: JSON) -> Result<ResponseType, NSError> {
-    return .fromDecoded(ResponseType.decode(j))
+public extension Request where ResponseObject: Decodable, ResponseObject.DecodedType == ResponseObject {
+  func parse(j: JSON) -> Result<ResponseObject, NSError> {
+    return .fromDecoded(ResponseObject.decode(j))
   }
 }
 
-public extension Request where ResponseType: CollectionType, ResponseType.Generator.Element: Decodable, ResponseType.Generator.Element.DecodedType == ResponseType.Generator.Element {
-  func parse(j: JSON) -> Result<[ResponseType.Generator.Element], NSError> {
-    return .fromDecoded(ResponseType.decode(j))
+public extension Request where ResponseObject: CollectionType, ResponseObject.Generator.Element: Decodable, ResponseObject.Generator.Element.DecodedType == ResponseObject.Generator.Element {
+  func parse(j: JSON) -> Result<[ResponseObject.Generator.Element], NSError> {
+    return .fromDecoded(ResponseObject.decode(j))
   }
 }
 
-public extension Request where ResponseType == EmptyResponse {
-  func parse(j: JSON) -> Result<ResponseType, NSError> {
+public extension Request where ResponseObject == EmptyResponse {
+  func parse(j: JSON) -> Result<ResponseObject, NSError> {
     return .Success()
   }
 }

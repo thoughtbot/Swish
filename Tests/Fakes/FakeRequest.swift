@@ -4,7 +4,7 @@ import Argo
 import Result
 
 struct FakeRequest: Request {
-  typealias ResponseType = String
+  typealias ResponseObject = String
 
   func build() -> NSURLRequest {
     return NSURLRequest(URL: NSURL(string: "http://example.com")!)
@@ -16,7 +16,7 @@ struct FakeRequest: Request {
 }
 
 struct FakeNullDataRequest: Request {
-  typealias ResponseType = ()
+  typealias ResponseObject = ()
 
   func build() -> NSURLRequest {
     return NSURLRequest(URL: NSURL(string: "http://example.com")!)
@@ -32,7 +32,7 @@ struct FakeNullDataRequest: Request {
 }
 
 struct FakeEmptyDataRequest: Request {
-  typealias ResponseType = EmptyResponse
+  typealias ResponseObject = EmptyResponse
   
   func build() -> NSURLRequest {
     return NSURLRequest(URL: NSURL(string: "http://example.com")!)
