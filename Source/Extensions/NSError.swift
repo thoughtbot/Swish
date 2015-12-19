@@ -1,21 +1,34 @@
 import Foundation
 
-public let NetworkErrorJSONKey = "com.thoughtbot.swish.errorJSON"
+private let swishDomain = "com.thoughtbot.swish"
+
+public let NetworkErrorJSONKey = swishDomain + ".errorJSON"
 
 extension NSError {
-  static func error(statusCode: Int, json: AnyObject, function: String = __FUNCTION__, file: String = __FILE__, line: Int = __LINE__) -> NSError {
-    let domain = "com.thoughtbot.swish"
+  static func error(message: String, function: String = __FUNCTION__, file: String = __FILE__, line: Int = __LINE__) -> NSError {
+    var info = userInfoFor(function, file, line)
 
-    let userInfo: [String: AnyObject] = [
-      "\(domain).function": function,
-      "\(domain).file": file,
-      "\(domain).line": line,
-      NSLocalizedDescriptionKey: messageForStatusCode(statusCode),
-      NetworkErrorJSONKey: json
-    ]
+    info[NSLocalizedDescriptionKey] = message
 
-    return NSError(domain: domain, code: statusCode, userInfo: userInfo)
+    return NSError(domain: swishDomain, code: 0, userInfo: info)
   }
+
+  static func error(statusCode: Int, json: AnyObject, function: String = __FUNCTION__, file: String = __FILE__, line: Int = __LINE__) -> NSError {
+    var info = userInfoFor(function, file, line)
+
+    info[NSLocalizedDescriptionKey] = messageForStatusCode(statusCode)
+    info[NetworkErrorJSONKey] = json
+
+    return NSError(domain: swishDomain, code: statusCode, userInfo: info)
+  }
+}
+
+private func userInfoFor(function: String, _ file: String, _ line: Int) -> [String: AnyObject] {
+  return [
+    "\(swishDomain).function": function,
+    "\(swishDomain).file": file,
+    "\(swishDomain).line": line,
+  ]
 }
 
 private func messageForStatusCode(code: Int) -> String {

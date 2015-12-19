@@ -7,7 +7,7 @@ public extension Result {
     case let .Success(obj):
       return .Success(obj)
     case let .Failure(decodedError):
-      return .Failure(error(decodedError.description))
+      return .Failure(.error(decodedError.description))
     }
   }
 }
