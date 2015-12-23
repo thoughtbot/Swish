@@ -34,22 +34,22 @@ class FakeRequestPerformer: RequestPerformer {
 class FakeEmptyResponseRequestPerformer: RequestPerformer {
   let statusCode: Int
   var passedRequest: NSURLRequest?
-  
+
   init(statusCode: Int = 204) {
     self.statusCode = statusCode
   }
-  
+
   func performRequest(request: NSURLRequest, completionHandler: Result<HTTPResponse, NSError> -> Void) -> NSURLSessionDataTask {
     passedRequest = request
     let data = NSData()
-    
+
     var response: NSHTTPURLResponse? = .None
     if let url = request.URL {
       response = NSHTTPURLResponse(URL: url, statusCode: statusCode, HTTPVersion: .None, headerFields: .None)
     }
-    
+
     let result: Result<HTTPResponse, NSError> = .Success(HTTPResponse(data: data, response: response))
-    
+
     completionHandler(result)
 
     return NSURLSessionDataTask()
