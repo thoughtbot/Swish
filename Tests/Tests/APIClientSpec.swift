@@ -10,7 +10,9 @@ class APIClientSpec: QuickSpec {
         describe("performRequest(completionHandler:") {
           it("passes the request's request object to the request performer") {
             let request = FakeRequest()
-            let performer = FakeRequestPerformer()
+            let performer = FakeRequestPerformer(
+              responseData: .JSON([:])
+            )
             let client = APIClient(requestPerformer: performer)
 
             client.performRequest(request) { _ in }
@@ -22,8 +24,8 @@ class APIClientSpec: QuickSpec {
             context("when the parsing operation is successful") {
               it("returns the parsed object to the completion block") {
                 let request = FakeRequest()
-                let performer = FakeRequestPerformer(returnedJSON:
-                  ["text": "hello world"]
+                let performer = FakeRequestPerformer(
+                  responseData: .JSON(["text": "hello world"])
                 )
 
                 let client = APIClient(requestPerformer: performer)
@@ -38,8 +40,8 @@ class APIClientSpec: QuickSpec {
             context("when the parsing operation fails") {
               it("returns a failure state to the completion block") {
                 let request = FakeRequest()
-                let performer = FakeRequestPerformer(returnedJSON:
-                  ["foo": "bar"]
+                let performer = FakeRequestPerformer(
+                  responseData: .JSON( ["foo": "bar"])
                 )
 
                 let client = APIClient(requestPerformer: performer)
@@ -56,14 +58,16 @@ class APIClientSpec: QuickSpec {
             context("when the data is empty") {
               it("returns a null JSON object") {
                 let request = FakeEmptyDataRequest()
-                let performer = FakeEmptyResponseRequestPerformer()
+                let performer = FakeRequestPerformer(
+                  responseData: .Data(NSData())
+                )
 
                 let client = APIClient(requestPerformer: performer)
                 var result: Result<EmptyResponse, NSError>?
 
                 client.performRequest(request) { result = $0 }
 
-                expect(result!.value!).toEventually(beVoid())
+                expect(result?.value).toEventually(beVoid())
               }
             }
           }
@@ -71,7 +75,9 @@ class APIClientSpec: QuickSpec {
           describe("completionHandler") {
             it("performs on the main thread") {
               let request = FakeRequest()
-              let performer = FakeRequestPerformer()
+              let performer = FakeRequestPerformer(
+                responseData: .JSON([:])
+              )
 
               let client = APIClient(requestPerformer: performer)
               var isMainThread = false
@@ -90,7 +96,7 @@ class APIClientSpec: QuickSpec {
         it("returns the appropriate error") {
           let request = FakeRequest()
           let performer = FakeRequestPerformer(
-            returnedJSON: ["foo": "bar"],
+            responseData: .JSON(["foo": "bar"]),
             statusCode: 301
           )
 
@@ -109,7 +115,7 @@ class APIClientSpec: QuickSpec {
         it("returns the appropriate error") {
           let request = FakeRequest()
           let performer = FakeRequestPerformer(
-            returnedJSON: ["foo": "bar"],
+            responseData: .JSON(["foo": "bar"]),
             statusCode: 401
           )
 
@@ -128,7 +134,7 @@ class APIClientSpec: QuickSpec {
         it("returns the appropriate error") {
           let request = FakeRequest()
           let performer = FakeRequestPerformer(
-            returnedJSON: ["foo": "bar"],
+            responseData: .JSON(["foo": "bar"]),
             statusCode: 500
           )
 
@@ -147,7 +153,7 @@ class APIClientSpec: QuickSpec {
         it("returns the appropriate error") {
           let request = FakeRequest()
           let performer = FakeRequestPerformer(
-            returnedJSON: ["foo": "bar"],
+            responseData: .JSON(["foo": "bar"]),
             statusCode: 600
           )
 
@@ -167,7 +173,7 @@ class APIClientSpec: QuickSpec {
           let expectedJSON = ["foo": "bar"]
           let request = FakeRequest()
           let performer = FakeRequestPerformer(
-            returnedJSON: expectedJSON,
+            responseData: .JSON(expectedJSON),
             statusCode: 600
           )
 

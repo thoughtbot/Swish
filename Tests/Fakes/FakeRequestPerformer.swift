@@ -2,55 +2,45 @@ import Foundation
 @testable import Swish
 import Result
 
-class FakeRequestPerformer: RequestPerformer {
-  let returnedJSON: [String: AnyObject]?
-  let statusCode: Int
-  var passedRequest: NSURLRequest?
+func serializeJSON(j: [String: AnyObject]) -> NSData? {
+  return try? NSJSONSerialization
+    .dataWithJSONObject(j, options: NSJSONWritingOptions(rawValue: 0))
+}
 
-  init(returnedJSON: [String: AnyObject]? = .None, statusCode: Int = 200) {
-    self.returnedJSON = returnedJSON
-    self.statusCode = statusCode
-  }
+enum ResponseData {
+  case Data(NSData?)
+  case JSON([String: AnyObject])
+}
 
-  func performRequest(request: NSURLRequest, completionHandler: Result<HTTPResponse, NSError> -> Void) -> NSURLSessionDataTask {
-    passedRequest = request
-    let data = returnedJSON.flatMap {
-      try? NSJSONSerialization.dataWithJSONObject($0, options: NSJSONWritingOptions(rawValue: 0))
+extension ResponseData {
+  var data: NSData? {
+    switch self {
+    case let .Data(d): return d
+    case let .JSON(j): return serializeJSON(j)
     }
-
-    var response: NSHTTPURLResponse? = .None
-    if let url = request.URL {
-      response = NSHTTPURLResponse(URL: url, statusCode: statusCode, HTTPVersion: .None, headerFields: .None)
-    }
-
-    let result: Result<HTTPResponse, NSError> = .Success(HTTPResponse(data: data, response: response))
-
-    completionHandler(result)
-
-    return NSURLSessionDataTask()
   }
 }
 
-class FakeEmptyResponseRequestPerformer: RequestPerformer {
+class FakeRequestPerformer: RequestPerformer {
   let statusCode: Int
+  let data: NSData?
   var passedRequest: NSURLRequest?
 
-  init(statusCode: Int = 204) {
+  init(responseData: ResponseData, statusCode: Int = 200) {
+    self.data = responseData.data
     self.statusCode = statusCode
   }
 
   func performRequest(request: NSURLRequest, completionHandler: Result<HTTPResponse, NSError> -> Void) -> NSURLSessionDataTask {
     passedRequest = request
-    let data = NSData()
 
-    var response: NSHTTPURLResponse? = .None
-    if let url = request.URL {
-      response = NSHTTPURLResponse(URL: url, statusCode: statusCode, HTTPVersion: .None, headerFields: .None)
+    let response = request.URL.flatMap {
+      NSHTTPURLResponse(URL: $0, statusCode: statusCode, HTTPVersion: .None, headerFields: .None)
     }
 
-    let result: Result<HTTPResponse, NSError> = .Success(HTTPResponse(data: data, response: response))
-
-    completionHandler(result)
+    completionHandler(
+      .Success(HTTPResponse(data: data, response: response))
+    )
 
     return NSURLSessionDataTask()
   }
