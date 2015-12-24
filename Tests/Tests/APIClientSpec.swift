@@ -70,6 +70,22 @@ class APIClientSpec: QuickSpec {
                 expect(result?.value).toEventually(beVoid())
               }
             }
+
+            context("when the data is .None") {
+              it("returns a null JSON object") {
+                let request = FakeEmptyDataRequest()
+                let performer = FakeRequestPerformer(
+                  responseData: .Data(.None)
+                )
+
+                let client = APIClient(requestPerformer: performer)
+                var result: Result<EmptyResponse, NSError>?
+
+                client.performRequest(request) { result = $0 }
+
+                expect(result?.value).toEventually(beVoid())
+              }
+            }
           }
 
           describe("completionHandler") {
