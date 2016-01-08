@@ -40,6 +40,7 @@
 		F80695141B962C5300C61B4A /* RequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950F1B962C5300C61B4A /* RequestPerformer.swift */; };
 		F80695161B962C5300C61B4A /* Swish.h in Headers */ = {isa = PBXBuildFile; fileRef = F80695121B962C5300C61B4A /* Swish.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F80695181B9633C400C61B4A /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80695171B9633C400C61B4A /* Result.framework */; };
+		F84374CE1C4032020092E844 /* SwishError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F59BB51C2B34B60020B5BE /* SwishError.swift */; };
 		F867938C1BD29E37007D9E98 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867938B1BD29E37007D9E98 /* RequestMethod.swift */; };
 		F88ED0691B966E650069F56C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0681B966E650069F56C /* Request.swift */; };
 		F88ED06B1B966EC00069F56C /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F88ED06A1B966EC00069F56C /* Argo.framework */; };
@@ -59,6 +60,7 @@
 		F8DF3B8B1B964B83003177CD /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DF3B891B964B83003177CD /* Nimble.framework */; };
 		F8DF3B8C1B964B83003177CD /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DF3B8A1B964B83003177CD /* Quick.framework */; };
 		F8DF3B8E1B964BED003177CD /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B8D1B964BED003177CD /* HTTPResponse.swift */; };
+		F8F59BB61C2B34B60020B5BE /* SwishError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F59BB51C2B34B60020B5BE /* SwishError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,7 @@
 		F8DF3B891B964B83003177CD /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DF3B8A1B964B83003177CD /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DF3B8D1B964BED003177CD /* HTTPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
+		F8F59BB51C2B34B60020B5BE /* SwishError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwishError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +202,7 @@
 		F806950C1B962C5300C61B4A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F8F59BB51C2B34B60020B5BE /* SwishError.swift */,
 				F867938B1BD29E37007D9E98 /* RequestMethod.swift */,
 				F806950D1B962C5300C61B4A /* NetworkRequestPerformer.swift */,
 				F8DF3B8D1B964BED003177CD /* HTTPResponse.swift */,
@@ -469,6 +473,7 @@
 				2C721E581BD5A7C500846414 /* HTTPResponse.swift in Sources */,
 				2C721E5C1BD5A7E800846414 /* NetworkRequestPerformer.swift in Sources */,
 				2C721E571BD5A7C500846414 /* Result.swift in Sources */,
+				F84374CE1C4032020092E844 /* SwishError.swift in Sources */,
 				F8D09FBD1BFD48F200FB2433 /* GCD.swift in Sources */,
 				2C721E5B1BD5A7D400846414 /* Request.swift in Sources */,
 				2C721E5A1BD5A7D400846414 /* RequestPerformer.swift in Sources */,
@@ -503,6 +508,7 @@
 				F88ED0691B966E650069F56C /* Request.swift in Sources */,
 				F80695141B962C5300C61B4A /* RequestPerformer.swift in Sources */,
 				F88ED06D1B96736B0069F56C /* APIClient.swift in Sources */,
+				F8F59BB61C2B34B60020B5BE /* SwishError.swift in Sources */,
 				F8D09FBC1BFD48F200FB2433 /* GCD.swift in Sources */,
 				E5915B211BDABC4B005E5D63 /* NSURLRequest.swift in Sources */,
 				F80695131B962C5300C61B4A /* NetworkRequestPerformer.swift in Sources */,

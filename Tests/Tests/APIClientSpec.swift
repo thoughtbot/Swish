@@ -41,7 +41,7 @@ class APIClientSpec: QuickSpec {
               it("returns a failure state to the completion block") {
                 let request = FakeRequest()
                 let performer = FakeRequestPerformer(
-                  responseData: .JSON( ["foo": "bar"])
+                  responseData: .JSON(["foo": "bar"])
                 )
 
                 let client = APIClient(requestPerformer: performer)

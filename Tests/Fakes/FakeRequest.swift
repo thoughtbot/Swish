@@ -10,7 +10,7 @@ struct FakeRequest: Request {
     return NSURLRequest(URL: NSURL(string: "http://example.com")!)
   }
 
-  func parse(j: JSON) -> Result<String, NSError> {
+  func parse(j: JSON) -> Result<String, SwishError> {
     return .fromDecoded(j <| "text")
   }
 }

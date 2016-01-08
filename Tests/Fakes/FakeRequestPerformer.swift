@@ -31,7 +31,7 @@ class FakeRequestPerformer: RequestPerformer {
     self.statusCode = statusCode
   }
 
-  func performRequest(request: NSURLRequest, completionHandler: Result<HTTPResponse, NSError> -> Void) -> NSURLSessionDataTask {
+  func performRequest(request: NSURLRequest, completionHandler: Result<HTTPResponse, SwishError> -> Void) -> NSURLSessionDataTask {
     passedRequest = request
 
     let response = request.URL.flatMap {
