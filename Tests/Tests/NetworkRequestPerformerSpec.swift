@@ -55,7 +55,7 @@ class RequestPerformerSpec: QuickSpec {
 
             let performer = NetworkRequestPerformer(session: fakeSession)
             performer.performRequest(exampleRequest()) { result in
-              returnedError = result.error!
+              returnedError = result.error?.rawError
             }
 
             expect(returnedError).to(equal(error))

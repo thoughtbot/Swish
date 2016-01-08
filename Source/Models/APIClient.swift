@@ -19,7 +19,7 @@ extension APIClient: Client {
   }
 }
 
-private func deserialize(response: HTTPResponse) -> Result<JSON, NSError> {
+private func deserialize(response: HTTPResponse) -> Result<JSON, SwishError> {
   let json = parseJSON(response)
 
   switch (response.code, json) {
@@ -31,17 +31,19 @@ private func deserialize(response: HTTPResponse) -> Result<JSON, NSError> {
     return .Success(JSON.parse(j))
 
   case let (code, .Success(j)):
-    return .Failure(.error(code, json: j))
+    return .Failure(.ServerError(code: code, json: j))
   }
 }
 
-private func parseJSON(response: HTTPResponse) -> Result<AnyObject, NSError> {
+private func parseJSON(response: HTTPResponse) -> Result<AnyObject, SwishError> {
   guard let data = response.data where data.length > 0 else {
     return .Success(NSNull())
   }
 
-  return Result(
+  let result = materialize(
     try NSJSONSerialization
       .JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0))
   )
+
+  return result.mapError(SwishError.JSONSerializationError)
 }
