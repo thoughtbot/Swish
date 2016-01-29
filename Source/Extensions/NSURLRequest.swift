@@ -1,14 +1,19 @@
 import Foundation
 
 public extension NSURLRequest {
-  var jsonPayload: NSDictionary {
+  var jsonPayload: AnyObject {
     let json = HTTPBody.flatMap { try? NSJSONSerialization.JSONObjectWithData($0, options: NSJSONReadingOptions(rawValue: 0)) }
-    return (json as? [String: AnyObject]) ?? [:]
+    if let jsonDict = json as? [String: AnyObject] {
+      return jsonDict
+    }
+
+    let jsonArray = json as? [AnyObject]
+    return jsonArray ?? [:]
   }
 }
 
 public extension NSMutableURLRequest {
-  override var jsonPayload: NSDictionary {
+  override var jsonPayload: AnyObject {
     get {
       return super.jsonPayload
     }
