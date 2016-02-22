@@ -1,3 +1,5 @@
+<img src="https://raw.githubusercontent.com/thoughtbot/Swish/gh-pages/swish-logo-v4.jpg" width="600">
+
 # Swish [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg?style=flat-square)](https://github.com/Carthage/Carthage)
 
 Nothing but net(working).
