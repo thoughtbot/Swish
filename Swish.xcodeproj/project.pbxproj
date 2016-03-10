@@ -30,6 +30,9 @@
 		2C721E5D1BD5A7E800846414 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED06C1B96736B0069F56C /* APIClient.swift */; };
 		2C721E5E1BD5A83B00846414 /* Swish.h in Headers */ = {isa = PBXBuildFile; fileRef = F80695121B962C5300C61B4A /* Swish.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E506EC7E1BB5BE380032E941 /* NimbleMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */; };
+		E58AD6331C91049300AD2CDE /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6321C91049300AD2CDE /* Deserializer.swift */; };
+		E58AD6351C91053000AD2CDE /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6341C91053000AD2CDE /* Parser.swift */; };
+		E58AD6371C91055200AD2CDE /* JSONDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6361C91055200AD2CDE /* JSONDeserializer.swift */; };
 		E5915B211BDABC4B005E5D63 /* NSURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */; };
 		E5915B221BDABC4B005E5D63 /* NSURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */; };
 		E5915B241BDAD1A3005E5D63 /* NSURLRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B231BDAD1A3005E5D63 /* NSURLRequestSpec.swift */; };
@@ -84,6 +87,9 @@
 		2C721E401BD5A77700846414 /* Swish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C721E491BD5A77700846414 /* Swish-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swish-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbleMatchers.swift; sourceTree = "<group>"; };
+		E58AD6321C91049300AD2CDE /* Deserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deserializer.swift; sourceTree = "<group>"; };
+		E58AD6341C91053000AD2CDE /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		E58AD6361C91055200AD2CDE /* JSONDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializer.swift; sourceTree = "<group>"; };
 		E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLRequest.swift; sourceTree = "<group>"; };
 		E5915B231BDAD1A3005E5D63 /* NSURLRequestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLRequestSpec.swift; sourceTree = "<group>"; };
 		E5D7E0A01BBF2021002A3738 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
@@ -207,6 +213,7 @@
 				F806950D1B962C5300C61B4A /* NetworkRequestPerformer.swift */,
 				F8DF3B8D1B964BED003177CD /* HTTPResponse.swift */,
 				F88ED06C1B96736B0069F56C /* APIClient.swift */,
+				E58AD6361C91055200AD2CDE /* JSONDeserializer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,6 +224,8 @@
 				F806950F1B962C5300C61B4A /* RequestPerformer.swift */,
 				F88ED0681B966E650069F56C /* Request.swift */,
 				E5D7E0A01BBF2021002A3738 /* Client.swift */,
+				E58AD6321C91049300AD2CDE /* Deserializer.swift */,
+				E58AD6341C91053000AD2CDE /* Parser.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -505,6 +514,9 @@
 				F88EE3141B976747001EEB44 /* Result.swift in Sources */,
 				E5D7E0A11BBF2021002A3738 /* Client.swift in Sources */,
 				F8DF3B8E1B964BED003177CD /* HTTPResponse.swift in Sources */,
+				E58AD6371C91055200AD2CDE /* JSONDeserializer.swift in Sources */,
+				E58AD6351C91053000AD2CDE /* Parser.swift in Sources */,
+				E58AD6331C91049300AD2CDE /* Deserializer.swift in Sources */,
 				F88ED0691B966E650069F56C /* Request.swift in Sources */,
 				F80695141B962C5300C61B4A /* RequestPerformer.swift in Sources */,
 				F88ED06D1B96736B0069F56C /* APIClient.swift in Sources */,

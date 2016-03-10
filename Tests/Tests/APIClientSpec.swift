@@ -125,7 +125,7 @@ class APIClientSpec: QuickSpec {
             error = $0.error
           }
 
-          expect(error).toEventually(equal(SwishError.ServerError(code: expectedCode, json: expectedJSON)))
+          expect(error).toEventually(equal(SwishError.ServerError(code: expectedCode, data: performer.data)))
         }
       }
 
@@ -146,7 +146,7 @@ class APIClientSpec: QuickSpec {
             error = $0.error
           }
 
-          expect(error).toEventually(equal(SwishError.ServerError(code: expectedCode, json: expectedJSON)))
+          expect(error).toEventually(equal(SwishError.ServerError(code: expectedCode, data: performer.data)))
         }
       }
 
@@ -167,7 +167,7 @@ class APIClientSpec: QuickSpec {
             error = $0.error
           }
 
-          expect(error).toEventually(equal(SwishError.ServerError(code: expectedCode, json: expectedJSON)))
+          expect(error).toEventually(equal(SwishError.ServerError(code: expectedCode, data: performer.data)))
         }
       }
 
@@ -188,7 +188,7 @@ class APIClientSpec: QuickSpec {
             error = $0.error
           }
 
-          expect(error).toEventually(equal(SwishError.ServerError(code: expectedCode, json: expectedJSON)))
+          expect(error).toEventually(equal(SwishError.ServerError(code: expectedCode, data: performer.data)))
         }
       }
     }
