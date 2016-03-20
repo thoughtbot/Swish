@@ -30,6 +30,10 @@
 		2C721E5D1BD5A7E800846414 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED06C1B96736B0069F56C /* APIClient.swift */; };
 		2C721E5E1BD5A83B00846414 /* Swish.h in Headers */ = {isa = PBXBuildFile; fileRef = F80695121B962C5300C61B4A /* Swish.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E506EC7E1BB5BE380032E941 /* NimbleMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */; };
+		E509EA141C9D9FF80069B21D /* NSURLQueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA131C9D9FF80069B21D /* NSURLQueryItem.swift */; };
+		E509EA151C9D9FF80069B21D /* NSURLQueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA131C9D9FF80069B21D /* NSURLQueryItem.swift */; };
+		E509EA171C9DF3DB0069B21D /* NSURLQueryItemSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA161C9DF3DB0069B21D /* NSURLQueryItemSpec.swift */; };
+		E509EA181C9DF3DB0069B21D /* NSURLQueryItemSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA161C9DF3DB0069B21D /* NSURLQueryItemSpec.swift */; };
 		E5915B211BDABC4B005E5D63 /* NSURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */; };
 		E5915B221BDABC4B005E5D63 /* NSURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */; };
 		E5915B241BDAD1A3005E5D63 /* NSURLRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B231BDAD1A3005E5D63 /* NSURLRequestSpec.swift */; };
@@ -82,6 +86,8 @@
 		2C721E401BD5A77700846414 /* Swish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C721E491BD5A77700846414 /* Swish-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swish-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbleMatchers.swift; sourceTree = "<group>"; };
+		E509EA131C9D9FF80069B21D /* NSURLQueryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLQueryItem.swift; sourceTree = "<group>"; };
+		E509EA161C9DF3DB0069B21D /* NSURLQueryItemSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLQueryItemSpec.swift; sourceTree = "<group>"; };
 		E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLRequest.swift; sourceTree = "<group>"; };
 		E5915B231BDAD1A3005E5D63 /* NSURLRequestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLRequestSpec.swift; sourceTree = "<group>"; };
 		E5D7E0A01BBF2021002A3738 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
@@ -231,6 +237,7 @@
 			children = (
 				F8D09FB81BFD360A00FB2433 /* NSError.swift */,
 				E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */,
+				E509EA131C9D9FF80069B21D /* NSURLQueryItem.swift */,
 				F88ED0711B967C4A0069F56C /* Result.swift */,
 				F8D09FBB1BFD48F200FB2433 /* GCD.swift */,
 			);
@@ -285,6 +292,7 @@
 				F8A00DE61BB5C86200169A46 /* RequestSpec.swift */,
 				F88ED06E1B967BCB0069F56C /* APIClientSpec.swift */,
 				E5915B231BDAD1A3005E5D63 /* NSURLRequestSpec.swift */,
+				E509EA161C9DF3DB0069B21D /* NSURLQueryItemSpec.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -470,6 +478,7 @@
 				2C721E5C1BD5A7E800846414 /* NetworkRequestPerformer.swift in Sources */,
 				2C721E571BD5A7C500846414 /* Result.swift in Sources */,
 				F8D09FBD1BFD48F200FB2433 /* GCD.swift in Sources */,
+				E509EA151C9D9FF80069B21D /* NSURLQueryItem.swift in Sources */,
 				2C721E5B1BD5A7D400846414 /* Request.swift in Sources */,
 				2C721E5A1BD5A7D400846414 /* RequestPerformer.swift in Sources */,
 				F8A7CADC1BFD5EBD008B9224 /* NSError.swift in Sources */,
@@ -481,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C6DC9811BD5AA3B006B4C96 /* APIClientSpec.swift in Sources */,
+				E509EA181C9DF3DB0069B21D /* NSURLQueryItemSpec.swift in Sources */,
 				2C6DC97E1BD5AA3B006B4C96 /* FakeDataTask.swift in Sources */,
 				2C6DC97C1BD5AA3B006B4C96 /* FakeRequest.swift in Sources */,
 				E5915B251BDAD1A3005E5D63 /* NSURLRequestSpec.swift in Sources */,
@@ -504,6 +514,7 @@
 				F80695141B962C5300C61B4A /* RequestPerformer.swift in Sources */,
 				F88ED06D1B96736B0069F56C /* APIClient.swift in Sources */,
 				F8D09FBC1BFD48F200FB2433 /* GCD.swift in Sources */,
+				E509EA141C9D9FF80069B21D /* NSURLQueryItem.swift in Sources */,
 				E5915B211BDABC4B005E5D63 /* NSURLRequest.swift in Sources */,
 				F80695131B962C5300C61B4A /* NetworkRequestPerformer.swift in Sources */,
 				F8D09FB91BFD360A00FB2433 /* NSError.swift in Sources */,
@@ -515,6 +526,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8DF3B881B964B20003177CD /* NetworkRequestPerformerSpec.swift in Sources */,
+				E509EA171C9DF3DB0069B21D /* NSURLQueryItemSpec.swift in Sources */,
 				F8A00DE71BB5C86200169A46 /* RequestSpec.swift in Sources */,
 				F8C39B511B969A71005E065F /* FakeDataTask.swift in Sources */,
 				E5915B241BDAD1A3005E5D63 /* NSURLRequestSpec.swift in Sources */,
