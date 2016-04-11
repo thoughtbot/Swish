@@ -32,6 +32,6 @@ public extension Request where ResponseObject == EmptyResponse {
 
 public extension Request where ResponseError == NSError {
   func transformError(error: SwishError) -> ResponseError {
-    return error.rawError
+    return error.NSError
   }
 }

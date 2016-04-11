@@ -3,15 +3,15 @@ import Argo
 
 public enum SwishError {
   case ArgoError(Argo.DecodeError)
-  case InvalidJSONResponse(NSError)
+  case InvalidJSONResponse(Foundation.NSError)
   case ServerError(code: Int, json: AnyObject)
-  case URLSessionError(NSError)
+  case URLSessionError(Foundation.NSError)
 }
 
 extension SwishError: ErrorType { }
 
 public extension SwishError {
-  var rawError: NSError {
+  var NSError: Foundation.NSError {
     switch self {
     case let .URLSessionError(e):
       return e
@@ -20,7 +20,7 @@ public extension SwishError {
     case let .ServerError(code, json):
       return .error(code, json: json)
     case let .ArgoError(e):
-      return .error(String(e))
+      return e as Foundation.NSError
     }
   }
 }
