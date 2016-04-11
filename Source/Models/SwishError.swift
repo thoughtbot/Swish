@@ -2,10 +2,10 @@ import Foundation
 import Argo
 
 public enum SwishError {
-  case SessionError(NSError)
+  case ArgoError(Argo.DecodeError)
+  case InvalidJSONResponse(NSError)
   case ServerError(code: Int, json: AnyObject)
-  case JSONSerializationError(NSError)
-  case ArgoError(DecodeError)
+  case URLSessionError(NSError)
 }
 
 extension SwishError: ErrorType { }
@@ -13,9 +13,9 @@ extension SwishError: ErrorType { }
 public extension SwishError {
   var rawError: NSError {
     switch self {
-    case let .SessionError(e):
+    case let .URLSessionError(e):
       return e
-    case let .JSONSerializationError(e):
+    case let .InvalidJSONResponse(e):
       return e
     case let .ServerError(code, json):
       return .error(code, json: json)

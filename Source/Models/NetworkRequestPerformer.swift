@@ -13,7 +13,7 @@ public extension NetworkRequestPerformer {
   func performRequest(request: NSURLRequest, completionHandler: Result<HTTPResponse, SwishError> -> Void) -> NSURLSessionDataTask {
     let task = session.dataTaskWithRequest(request) { data, response, error in
       if let error = error {
-        completionHandler(.Failure(.SessionError(error)))
+        completionHandler(.Failure(.URLSessionError(error)))
       } else {
         let response = HTTPResponse(data: data, response: response)
         completionHandler(.Success(response))
