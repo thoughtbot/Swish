@@ -45,5 +45,5 @@ private func parseJSON(response: HTTPResponse) -> Result<AnyObject, SwishError> 
       .JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0))
   )
 
-  return result.mapError(SwishError.JSONSerializationError)
+  return result.mapError(SwishError.InvalidJSONResponse)
 }
