@@ -28,7 +28,7 @@ private func deserialize(response: HTTPResponse) -> Result<JSON, SwishError> {
     return .Failure(e)
 
   case let (200...299, .Success(j)):
-    return .Success(JSON.parse(j))
+    return .Success(JSON(j))
 
   case let (code, .Success(j)):
     return .Failure(.ServerError(code: code, json: j))

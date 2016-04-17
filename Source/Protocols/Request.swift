@@ -5,8 +5,8 @@ import Result
 public typealias EmptyResponse = Void
 
 public protocol Request {
-  typealias ResponseObject
-  typealias ResponseError = NSError
+  associatedtype ResponseObject
+  associatedtype ResponseError = NSError
   func build() -> NSURLRequest
   func parse(j: JSON) -> Result<ResponseObject, SwishError>
   func transformError(error: SwishError) -> ResponseError

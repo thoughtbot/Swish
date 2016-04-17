@@ -5,7 +5,7 @@ private let swishDomain = "com.thoughtbot.swish"
 public let NetworkErrorJSONKey = swishDomain + ".errorJSON"
 
 extension NSError {
-  static func error(message: String, function: String = __FUNCTION__, file: String = __FILE__, line: Int = __LINE__) -> NSError {
+  static func error(message: String, function: String = #function, file: String = #file, line: Int = #line) -> NSError {
     var info = userInfoFor(function, file, line)
 
     info[NSLocalizedDescriptionKey] = message
@@ -13,7 +13,7 @@ extension NSError {
     return NSError(domain: swishDomain, code: 0, userInfo: info)
   }
 
-  static func error(statusCode: Int, json: AnyObject, function: String = __FUNCTION__, file: String = __FILE__, line: Int = __LINE__) -> NSError {
+  static func error(statusCode: Int, json: AnyObject, function: String = #function, file: String = #file, line: Int = #line) -> NSError {
     var info = userInfoFor(function, file, line)
 
     info[NSLocalizedDescriptionKey] = messageForStatusCode(statusCode)
