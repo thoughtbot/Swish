@@ -42,7 +42,7 @@ class RequestSpec: QuickSpec {
       describe("default parse implementation") {
         context("when the ResponseObject is decodable") {
           let request = DecodableRequest()
-          let json = JSON.parse(["name": "gvg"])
+          let json = JSON(["name": "gvg"])
           let result = request.parse(json)
 
           expect(result.value?.name).to(equal("gvg"))
@@ -50,7 +50,7 @@ class RequestSpec: QuickSpec {
 
         context("when the ResponseObject is a collection type of decodable objects") {
           let request = DecodableCollectionRequest()
-          let json = JSON.parse([
+          let json = JSON([
             ["name": "giles"],
             ["name": "gordon"]
           ])
