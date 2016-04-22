@@ -1,0 +1,11 @@
+machine:
+  xcode:
+    version: "7.3"
+
+dependencies:
+  override:
+    - git submodule update --init --recursive
+
+test:
+  override:
+    - bin/test
