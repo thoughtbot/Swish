@@ -24,3 +24,20 @@ public extension SwishError {
     }
   }
 }
+
+extension SwishError: Equatable { }
+
+public func == (lhs: SwishError, rhs: SwishError) -> Bool {
+  switch (lhs, rhs) {
+  case let (.ArgoError(l), .ArgoError(r)):
+    return l == r
+  case let (.InvalidJSONResponse(l), .InvalidJSONResponse(r)):
+    return l == r
+  case let (.ServerError(lCode, lJSON), .ServerError(rCode, rJSON)):
+    return lCode == rCode && JSON(lJSON) == JSON(rJSON)
+  case let (.URLSessionError(l), .URLSessionError(r)):
+    return l == r
+  default:
+    return false
+  }
+}

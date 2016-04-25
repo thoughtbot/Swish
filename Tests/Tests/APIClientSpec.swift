@@ -29,7 +29,7 @@ class APIClientSpec: QuickSpec {
                 )
 
                 let client = APIClient(requestPerformer: performer)
-                var result: Result<String, NSError>?
+                var result: Result<String, SwishError>?
 
                 client.performRequest(request) { result = $0 }
 
@@ -45,13 +45,13 @@ class APIClientSpec: QuickSpec {
                 )
 
                 let client = APIClient(requestPerformer: performer)
-                var message: NSString?
+                var error: SwishError?
 
                 client.performRequest(request) {
-                  message = $0.error?.userInfo[NSLocalizedDescriptionKey] as? NSString
+                  error = $0.error
                 }
 
-                expect(message).toEventually(equal("MissingKey(text)"))
+                expect(error).toEventually(equal(SwishError.ArgoError(.MissingKey("text"))))
               }
             }
 
@@ -63,7 +63,7 @@ class APIClientSpec: QuickSpec {
                 )
 
                 let client = APIClient(requestPerformer: performer)
-                var result: Result<EmptyResponse, NSError>?
+                var result: Result<EmptyResponse, SwishError>?
 
                 client.performRequest(request) { result = $0 }
 
@@ -79,7 +79,7 @@ class APIClientSpec: QuickSpec {
                 )
 
                 let client = APIClient(requestPerformer: performer)
-                var result: Result<EmptyResponse, NSError>?
+                var result: Result<EmptyResponse, SwishError>?
 
                 client.performRequest(request) { result = $0 }
 
@@ -111,96 +111,84 @@ class APIClientSpec: QuickSpec {
       context("when the status code is in the 300 range") {
         it("returns the appropriate error") {
           let request = FakeRequest()
+          let expectedJSON = ["foo": "bar"]
+          let expectedCode = 301
           let performer = FakeRequestPerformer(
-            responseData: .JSON(["foo": "bar"]),
-            statusCode: 301
+            responseData: .JSON(expectedJSON),
+            statusCode: expectedCode
           )
 
           let client = APIClient(requestPerformer: performer)
-          var message: NSString?
+          var error: SwishError?
 
           client.performRequest(request) {
-            message = $0.error?.userInfo[NSLocalizedDescriptionKey] as? NSString
+            error = $0.error
           }
 
-          expect(message).toEventually(equal("Multiple choices: 301"))
+          expect(error).toEventually(equal(SwishError.ServerError(code: expectedCode, json: expectedJSON)))
         }
       }
 
       context("when the status code is in the 400 range") {
         it("returns the appropriate error") {
           let request = FakeRequest()
+          let expectedJSON = ["foo": "bar"]
+          let expectedCode = 401
           let performer = FakeRequestPerformer(
-            responseData: .JSON(["foo": "bar"]),
-            statusCode: 401
+            responseData: .JSON(expectedJSON),
+            statusCode: expectedCode
           )
 
           let client = APIClient(requestPerformer: performer)
-          var message: NSString?
+          var error: SwishError?
 
           client.performRequest(request) {
-            message = $0.error?.userInfo[NSLocalizedDescriptionKey] as? NSString
+            error = $0.error
           }
 
-          expect(message).toEventually(equal("Bad request: 401"))
+          expect(error).toEventually(equal(SwishError.ServerError(code: expectedCode, json: expectedJSON)))
         }
       }
 
       context("when the status code is in the 500 range") {
         it("returns the appropriate error") {
           let request = FakeRequest()
+          let expectedJSON = ["foo": "bar"]
+          let expectedCode = 500
           let performer = FakeRequestPerformer(
-            responseData: .JSON(["foo": "bar"]),
-            statusCode: 500
+            responseData: .JSON(expectedJSON),
+            statusCode: expectedCode
           )
 
           let client = APIClient(requestPerformer: performer)
-          var message: NSString?
+          var error: SwishError?
 
           client.performRequest(request) {
-            message = $0.error?.userInfo[NSLocalizedDescriptionKey] as? NSString
+            error = $0.error
           }
 
-          expect(message).toEventually(equal("Server error: 500"))
+          expect(error).toEventually(equal(SwishError.ServerError(code: expectedCode, json: expectedJSON)))
         }
       }
 
       context("when the status code is in the not between 200...599") {
         it("returns the appropriate error") {
           let request = FakeRequest()
-          let performer = FakeRequestPerformer(
-            responseData: .JSON(["foo": "bar"]),
-            statusCode: 600
-          )
-
-          let client = APIClient(requestPerformer: performer)
-          var message: NSString?
-
-          client.performRequest(request) {
-            message = $0.error?.userInfo[NSLocalizedDescriptionKey] as? NSString
-          }
-
-          expect(message).toEventually(equal("Unknown error: 600"))
-        }
-      }
-
-      context("when there is an error") {
-        it("returns the JSON with the error") {
           let expectedJSON = ["foo": "bar"]
-          let request = FakeRequest()
+          let expectedCode = 600
           let performer = FakeRequestPerformer(
             responseData: .JSON(expectedJSON),
-            statusCode: 600
+            statusCode: expectedCode
           )
 
           let client = APIClient(requestPerformer: performer)
-          var returnedJSON: [String: String]?
+          var error: SwishError?
 
           client.performRequest(request) {
-            returnedJSON = $0.error?.userInfo[NetworkErrorJSONKey] as? [String: String]
+            error = $0.error
           }
 
-          expect(returnedJSON).toEventually(equal(expectedJSON))
+          expect(error).toEventually(equal(SwishError.ServerError(code: expectedCode, json: expectedJSON)))
         }
       }
     }

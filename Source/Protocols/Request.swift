@@ -6,10 +6,8 @@ public typealias EmptyResponse = Void
 
 public protocol Request {
   associatedtype ResponseObject
-  associatedtype ResponseError = NSError
   func build() -> NSURLRequest
   func parse(j: JSON) -> Result<ResponseObject, SwishError>
-  func transformError(error: SwishError) -> ResponseError
 }
 
 public extension Request where ResponseObject: Decodable, ResponseObject.DecodedType == ResponseObject {
@@ -27,11 +25,5 @@ public extension Request where ResponseObject: CollectionType, ResponseObject.Ge
 public extension Request where ResponseObject == EmptyResponse {
   func parse(j: JSON) -> Result<ResponseObject, SwishError> {
     return .Success()
-  }
-}
-
-public extension Request where ResponseError == NSError {
-  func transformError(error: SwishError) -> ResponseError {
-    return error.rawError
   }
 }

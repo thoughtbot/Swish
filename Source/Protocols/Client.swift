@@ -3,5 +3,5 @@ import Argo
 import Result
 
 public protocol Client {
-  func performRequest<T: Request>(request: T, completionHandler: Result<T.ResponseObject, T.ResponseError> -> ()) -> NSURLSessionDataTask
+  func performRequest<T: Request>(request: T, completionHandler: Result<T.ResponseObject, SwishError> -> ()) -> NSURLSessionDataTask
 }
