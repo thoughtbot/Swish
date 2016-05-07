@@ -7,7 +7,7 @@ struct JSONDeserializer: Deserializer {
 
     return json.analysis(
       ifSuccess: Result<AnyObject, SwishError>.init,
-      ifFailure: { .Failure(.InvalidJSONResponse($0)) }
+      ifFailure: { .Failure(.InvalidDeserializeError($0)) }
     )
   }
 }

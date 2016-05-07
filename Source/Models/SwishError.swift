@@ -3,7 +3,8 @@ import Argo
 
 public enum SwishError {
   case ArgoError(Argo.DecodeError)
-  case InvalidJSONResponse(NSError)
+  case DeserializationError(NSError)
+  case ParseError(NSError)
   case ServerError(code: Int, data: NSData?)
   case URLSessionError(NSError)
 }
@@ -15,7 +16,9 @@ public extension SwishError {
     switch self {
     case let .URLSessionError(e):
       return e
-    case let .InvalidJSONResponse(e):
+    case let .ParseError(e):
+      return e
+    case let .DeserializationError(e):
       return e
     case let .ServerError(code, json):
       return .error(code, data: json)
@@ -31,7 +34,9 @@ public func == (lhs: SwishError, rhs: SwishError) -> Bool {
   switch (lhs, rhs) {
   case let (.ArgoError(l), .ArgoError(r)):
     return l == r
-  case let (.InvalidJSONResponse(l), .InvalidJSONResponse(r)):
+  case let (.ParseError(l), .ParseError(r)):
+    return l == r
+  case let (.DeserializationError(l), .DeserializationError(r)):
     return l == r
   case let (.ServerError(lCode, lData), .ServerError(rCode, rData)):
     return lCode == rCode && lData == rData
