@@ -33,6 +33,54 @@
 		E51722EF1CEE5D1000B0C915 /* JSONDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6361C91055200AD2CDE /* JSONDeserializer.swift */; };
 		E51722F01CEE5D1A00B0C915 /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6321C91049300AD2CDE /* Deserializer.swift */; };
 		E51722F11CEE5D1D00B0C915 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6341C91053000AD2CDE /* Parser.swift */; };
+		E52E5D991CE7AE3400023C91 /* Swish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52E5D8F1CE7AE3400023C91 /* Swish.framework */; };
+		E52E5DA61CE7AF2500023C91 /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D09FB81BFD360A00FB2433 /* NSError.swift */; };
+		E52E5DA71CE7AF2500023C91 /* NSURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */; };
+		E52E5DA81CE7AF2500023C91 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0711B967C4A0069F56C /* Result.swift */; };
+		E52E5DA91CE7AF2500023C91 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D09FBB1BFD48F200FB2433 /* GCD.swift */; };
+		E52E5DAA1CE7AF2500023C91 /* SwishError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F59BB51C2B34B60020B5BE /* SwishError.swift */; };
+		E52E5DAB1CE7AF2500023C91 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867938B1BD29E37007D9E98 /* RequestMethod.swift */; };
+		E52E5DAC1CE7AF2500023C91 /* NetworkRequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950D1B962C5300C61B4A /* NetworkRequestPerformer.swift */; };
+		E52E5DAD1CE7AF2500023C91 /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B8D1B964BED003177CD /* HTTPResponse.swift */; };
+		E52E5DAE1CE7AF2500023C91 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED06C1B96736B0069F56C /* APIClient.swift */; };
+		E52E5DAF1CE7AF2500023C91 /* JSONDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6361C91055200AD2CDE /* JSONDeserializer.swift */; };
+		E52E5DB01CE7AF2500023C91 /* RequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950F1B962C5300C61B4A /* RequestPerformer.swift */; };
+		E52E5DB11CE7AF2500023C91 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0681B966E650069F56C /* Request.swift */; };
+		E52E5DB21CE7AF2500023C91 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E0A01BBF2021002A3738 /* Client.swift */; };
+		E52E5DB31CE7AF2500023C91 /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6321C91049300AD2CDE /* Deserializer.swift */; };
+		E52E5DB41CE7AF2500023C91 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6341C91053000AD2CDE /* Parser.swift */; };
+		E52E5DB61CE7AF4D00023C91 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52E5DB51CE7AF4D00023C91 /* Argo.framework */; };
+		E52E5DB81CE7AF5500023C91 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52E5DB71CE7AF5500023C91 /* Result.framework */; };
+		E52E5DB91CE7B20B00023C91 /* Swish.h in Headers */ = {isa = PBXBuildFile; fileRef = F80695121B962C5300C61B4A /* Swish.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E52E5DD41CE7B31F00023C91 /* Swish.h in Headers */ = {isa = PBXBuildFile; fileRef = F80695121B962C5300C61B4A /* Swish.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E52E5DD51CE7B36A00023C91 /* NSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D09FB81BFD360A00FB2433 /* NSError.swift */; };
+		E52E5DD61CE7B36A00023C91 /* NSURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */; };
+		E52E5DD71CE7B36A00023C91 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0711B967C4A0069F56C /* Result.swift */; };
+		E52E5DD81CE7B36A00023C91 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D09FBB1BFD48F200FB2433 /* GCD.swift */; };
+		E52E5DD91CE7B36A00023C91 /* SwishError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F59BB51C2B34B60020B5BE /* SwishError.swift */; };
+		E52E5DDA1CE7B36A00023C91 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867938B1BD29E37007D9E98 /* RequestMethod.swift */; };
+		E52E5DDB1CE7B36A00023C91 /* NetworkRequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950D1B962C5300C61B4A /* NetworkRequestPerformer.swift */; };
+		E52E5DDC1CE7B36A00023C91 /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B8D1B964BED003177CD /* HTTPResponse.swift */; };
+		E52E5DDD1CE7B36A00023C91 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED06C1B96736B0069F56C /* APIClient.swift */; };
+		E52E5DDE1CE7B36A00023C91 /* JSONDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6361C91055200AD2CDE /* JSONDeserializer.swift */; };
+		E52E5DDF1CE7B36A00023C91 /* RequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806950F1B962C5300C61B4A /* RequestPerformer.swift */; };
+		E52E5DE01CE7B36A00023C91 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0681B966E650069F56C /* Request.swift */; };
+		E52E5DE11CE7B36A00023C91 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7E0A01BBF2021002A3738 /* Client.swift */; };
+		E52E5DE21CE7B36A00023C91 /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6321C91049300AD2CDE /* Deserializer.swift */; };
+		E52E5DE31CE7B36A00023C91 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6341C91053000AD2CDE /* Parser.swift */; };
+		E52E5DE51CE7B37400023C91 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52E5DE41CE7B37400023C91 /* Argo.framework */; };
+		E52E5DE71CE7B37A00023C91 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52E5DE61CE7B37A00023C91 /* Result.framework */; };
+		E52E5DE81CE7B39E00023C91 /* NimbleMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */; };
+		E52E5DE91CE7B39E00023C91 /* FakeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B811B964B20003177CD /* FakeSession.swift */; };
+		E52E5DEA1CE7B39E00023C91 /* FakeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED0781B96847E0069F56C /* FakeRequest.swift */; };
+		E52E5DEB1CE7B39E00023C91 /* FakeRequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED07A1B9684B40069F56C /* FakeRequestPerformer.swift */; };
+		E52E5DEC1CE7B39E00023C91 /* FakeDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C39B501B969A71005E065F /* FakeDataTask.swift */; };
+		E52E5DED1CE7B39E00023C91 /* NetworkRequestPerformerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B851B964B20003177CD /* NetworkRequestPerformerSpec.swift */; };
+		E52E5DEE1CE7B39E00023C91 /* RequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A00DE61BB5C86200169A46 /* RequestSpec.swift */; };
+		E52E5DEF1CE7B39E00023C91 /* APIClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED06E1B967BCB0069F56C /* APIClientSpec.swift */; };
+		E52E5DF01CE7B39E00023C91 /* NSURLRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B231BDAD1A3005E5D63 /* NSURLRequestSpec.swift */; };
+		E52E5DF21CE7B3BF00023C91 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52E5DF11CE7B3BF00023C91 /* Quick.framework */; };
+		E52E5DF41CE7B3C600023C91 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52E5DF31CE7B3C600023C91 /* Nimble.framework */; };
 		E58AD6331C91049300AD2CDE /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6321C91049300AD2CDE /* Deserializer.swift */; };
 		E58AD6351C91053000AD2CDE /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6341C91053000AD2CDE /* Parser.swift */; };
 		E58AD6371C91055200AD2CDE /* JSONDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6361C91055200AD2CDE /* JSONDeserializer.swift */; };
@@ -77,6 +125,13 @@
 			remoteGlobalIDString = 2C721E3F1BD5A77700846414;
 			remoteInfo = Swish;
 		};
+		E52E5D9A1CE7AE3400023C91 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F80694E81B962BB900C61B4A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E52E5D8E1CE7AE3400023C91;
+			remoteInfo = "Swish-tvOS";
+		};
 		F80694FD1B962BB900C61B4A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F80694E81B962BB900C61B4A /* Project object */;
@@ -90,6 +145,17 @@
 		2C721E401BD5A77700846414 /* Swish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C721E491BD5A77700846414 /* Swish-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swish-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbleMatchers.swift; sourceTree = "<group>"; };
+		E52E5D8F1CE7AE3400023C91 /* Swish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E52E5D981CE7AE3400023C91 /* Swish-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swish-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E52E5DB51CE7AF4D00023C91 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = "Carthage/Checkouts/Argo/build/Debug-appletvos/Argo.framework"; sourceTree = "<group>"; };
+		E52E5DB71CE7AF5500023C91 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "Carthage/Checkouts/Result/build/Debug-appletvos/Result.framework"; sourceTree = "<group>"; };
+		E52E5DC11CE7B25100023C91 /* Swish.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swish.h; sourceTree = "<group>"; };
+		E52E5DC31CE7B25100023C91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E52E5DCC1CE7B2BA00023C91 /* Swish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E52E5DE41CE7B37400023C91 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = "Carthage/Checkouts/Argo/build/Debug-watchos/Argo.framework"; sourceTree = "<group>"; };
+		E52E5DE61CE7B37A00023C91 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = "Carthage/Checkouts/Result/build/Debug-watchos/Result.framework"; sourceTree = "<group>"; };
+		E52E5DF11CE7B3BF00023C91 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "Carthage/Checkouts/Quick/build/Debug-appletvos/Quick.framework"; sourceTree = "<group>"; };
+		E52E5DF31CE7B3C600023C91 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "Carthage/Checkouts/Nimble/build/Debug-appletvos/Nimble.framework"; sourceTree = "<group>"; };
 		E58AD6321C91049300AD2CDE /* Deserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deserializer.swift; sourceTree = "<group>"; };
 		E58AD6341C91053000AD2CDE /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		E58AD6361C91055200AD2CDE /* JSONDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDeserializer.swift; sourceTree = "<group>"; };
@@ -144,6 +210,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E52E5D8B1CE7AE3400023C91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E52E5DB81CE7AF5500023C91 /* Result.framework in Frameworks */,
+				E52E5DB61CE7AF4D00023C91 /* Argo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E52E5D951CE7AE3400023C91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E52E5DF41CE7B3C600023C91 /* Nimble.framework in Frameworks */,
+				E52E5DF21CE7B3BF00023C91 /* Quick.framework in Frameworks */,
+				E52E5D991CE7AE3400023C91 /* Swish.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E52E5DC81CE7B2BA00023C91 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E52E5DE71CE7B37A00023C91 /* Result.framework in Frameworks */,
+				E52E5DE51CE7B37400023C91 /* Argo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F80694ED1B962BB900C61B4A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -174,11 +268,21 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		E52E5DC01CE7B25100023C91 /* Swish */ = {
+			isa = PBXGroup;
+			children = (
+				E52E5DC11CE7B25100023C91 /* Swish.h */,
+				E52E5DC31CE7B25100023C91 /* Info.plist */,
+			);
+			path = Swish;
+			sourceTree = "<group>";
+		};
 		F80694E71B962BB900C61B4A = {
 			isa = PBXGroup;
 			children = (
 				F806950B1B962C5300C61B4A /* Source */,
 				F8DF3B7F1B964B20003177CD /* Tests */,
+				E52E5DC01CE7B25100023C91 /* Swish */,
 				F8DF3B7E1B964AF4003177CD /* Frameworks */,
 				F80694F21B962BB900C61B4A /* Products */,
 			);
@@ -193,6 +297,9 @@
 				F80694FB1B962BB900C61B4A /* Swish-iOSTests.xctest */,
 				2C721E401BD5A77700846414 /* Swish.framework */,
 				2C721E491BD5A77700846414 /* Swish-MacTests.xctest */,
+				E52E5D8F1CE7AE3400023C91 /* Swish.framework */,
+				E52E5D981CE7AE3400023C91 /* Swish-tvOSTests.xctest */,
+				E52E5DCC1CE7B2BA00023C91 /* Swish.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -256,6 +363,12 @@
 		F8DF3B7E1B964AF4003177CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E52E5DF31CE7B3C600023C91 /* Nimble.framework */,
+				E52E5DF11CE7B3BF00023C91 /* Quick.framework */,
+				E52E5DE61CE7B37A00023C91 /* Result.framework */,
+				E52E5DE41CE7B37400023C91 /* Argo.framework */,
+				E52E5DB71CE7AF5500023C91 /* Result.framework */,
+				E52E5DB51CE7AF4D00023C91 /* Argo.framework */,
 				F88ED06A1B966EC00069F56C /* Argo.framework */,
 				F8DF3B891B964B83003177CD /* Nimble.framework */,
 				F8DF3B8A1B964B83003177CD /* Quick.framework */,
@@ -316,6 +429,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E52E5D8C1CE7AE3400023C91 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E52E5DB91CE7B20B00023C91 /* Swish.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E52E5DC91CE7B2BA00023C91 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E52E5DD41CE7B31F00023C91 /* Swish.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F80694EE1B962BB900C61B4A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -363,6 +492,60 @@
 			productReference = 2C721E491BD5A77700846414 /* Swish-MacTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		E52E5D8E1CE7AE3400023C91 /* Swish-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E52E5DA41CE7AE3400023C91 /* Build configuration list for PBXNativeTarget "Swish-tvOS" */;
+			buildPhases = (
+				E52E5D8A1CE7AE3400023C91 /* Sources */,
+				E52E5D8B1CE7AE3400023C91 /* Frameworks */,
+				E52E5D8C1CE7AE3400023C91 /* Headers */,
+				E52E5D8D1CE7AE3400023C91 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Swish-tvOS";
+			productName = "Swish-tvOS";
+			productReference = E52E5D8F1CE7AE3400023C91 /* Swish.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E52E5D971CE7AE3400023C91 /* Swish-tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E52E5DA51CE7AE3400023C91 /* Build configuration list for PBXNativeTarget "Swish-tvOSTests" */;
+			buildPhases = (
+				E52E5D941CE7AE3400023C91 /* Sources */,
+				E52E5D951CE7AE3400023C91 /* Frameworks */,
+				E52E5D961CE7AE3400023C91 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E52E5D9B1CE7AE3400023C91 /* PBXTargetDependency */,
+			);
+			name = "Swish-tvOSTests";
+			productName = "Swish-tvOSTests";
+			productReference = E52E5D981CE7AE3400023C91 /* Swish-tvOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E52E5DCB1CE7B2BA00023C91 /* Swish-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E52E5DD11CE7B2BA00023C91 /* Build configuration list for PBXNativeTarget "Swish-watchOS" */;
+			buildPhases = (
+				E52E5DC71CE7B2BA00023C91 /* Sources */,
+				E52E5DC81CE7B2BA00023C91 /* Frameworks */,
+				E52E5DC91CE7B2BA00023C91 /* Headers */,
+				E52E5DCA1CE7B2BA00023C91 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Swish-watchOS";
+			productName = "Swish-watchOS";
+			productReference = E52E5DCC1CE7B2BA00023C91 /* Swish.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		F80694F01B962BB900C61B4A /* Swish-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F80695051B962BB900C61B4A /* Build configuration list for PBXNativeTarget "Swish-iOS" */;
@@ -405,6 +588,7 @@
 		F80694E81B962BB900C61B4A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = thoughtbot;
 				TargetAttributes = {
@@ -413,6 +597,15 @@
 					};
 					2C721E481BD5A77700846414 = {
 						CreatedOnToolsVersion = 7.0.1;
+					};
+					E52E5D8E1CE7AE3400023C91 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					E52E5D971CE7AE3400023C91 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					E52E5DCB1CE7B2BA00023C91 = {
+						CreatedOnToolsVersion = 7.3;
 					};
 					F80694F01B962BB900C61B4A = {
 						CreatedOnToolsVersion = 7.0;
@@ -438,6 +631,9 @@
 				F80694FA1B962BB900C61B4A /* Swish-iOSTests */,
 				2C721E3F1BD5A77700846414 /* Swish-Mac */,
 				2C721E481BD5A77700846414 /* Swish-MacTests */,
+				E52E5D8E1CE7AE3400023C91 /* Swish-tvOS */,
+				E52E5D971CE7AE3400023C91 /* Swish-tvOSTests */,
+				E52E5DCB1CE7B2BA00023C91 /* Swish-watchOS */,
 			);
 		};
 /* End PBXProject section */
@@ -451,6 +647,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2C721E471BD5A77700846414 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E52E5D8D1CE7AE3400023C91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E52E5D961CE7AE3400023C91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E52E5DCA1CE7B2BA00023C91 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -512,6 +729,66 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E52E5D8A1CE7AE3400023C91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E52E5DA61CE7AF2500023C91 /* NSError.swift in Sources */,
+				E52E5DA71CE7AF2500023C91 /* NSURLRequest.swift in Sources */,
+				E52E5DA81CE7AF2500023C91 /* Result.swift in Sources */,
+				E52E5DA91CE7AF2500023C91 /* GCD.swift in Sources */,
+				E52E5DAA1CE7AF2500023C91 /* SwishError.swift in Sources */,
+				E52E5DAB1CE7AF2500023C91 /* RequestMethod.swift in Sources */,
+				E52E5DAC1CE7AF2500023C91 /* NetworkRequestPerformer.swift in Sources */,
+				E52E5DAD1CE7AF2500023C91 /* HTTPResponse.swift in Sources */,
+				E52E5DAE1CE7AF2500023C91 /* APIClient.swift in Sources */,
+				E52E5DAF1CE7AF2500023C91 /* JSONDeserializer.swift in Sources */,
+				E52E5DB01CE7AF2500023C91 /* RequestPerformer.swift in Sources */,
+				E52E5DB11CE7AF2500023C91 /* Request.swift in Sources */,
+				E52E5DB21CE7AF2500023C91 /* Client.swift in Sources */,
+				E52E5DB31CE7AF2500023C91 /* Deserializer.swift in Sources */,
+				E52E5DB41CE7AF2500023C91 /* Parser.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E52E5D941CE7AE3400023C91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E52E5DE81CE7B39E00023C91 /* NimbleMatchers.swift in Sources */,
+				E52E5DE91CE7B39E00023C91 /* FakeSession.swift in Sources */,
+				E52E5DEA1CE7B39E00023C91 /* FakeRequest.swift in Sources */,
+				E52E5DEB1CE7B39E00023C91 /* FakeRequestPerformer.swift in Sources */,
+				E52E5DEC1CE7B39E00023C91 /* FakeDataTask.swift in Sources */,
+				E52E5DED1CE7B39E00023C91 /* NetworkRequestPerformerSpec.swift in Sources */,
+				E52E5DEE1CE7B39E00023C91 /* RequestSpec.swift in Sources */,
+				E52E5DEF1CE7B39E00023C91 /* APIClientSpec.swift in Sources */,
+				E52E5DF01CE7B39E00023C91 /* NSURLRequestSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E52E5DC71CE7B2BA00023C91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E52E5DD51CE7B36A00023C91 /* NSError.swift in Sources */,
+				E52E5DD61CE7B36A00023C91 /* NSURLRequest.swift in Sources */,
+				E52E5DD71CE7B36A00023C91 /* Result.swift in Sources */,
+				E52E5DD81CE7B36A00023C91 /* GCD.swift in Sources */,
+				E52E5DD91CE7B36A00023C91 /* SwishError.swift in Sources */,
+				E52E5DDA1CE7B36A00023C91 /* RequestMethod.swift in Sources */,
+				E52E5DDB1CE7B36A00023C91 /* NetworkRequestPerformer.swift in Sources */,
+				E52E5DDC1CE7B36A00023C91 /* HTTPResponse.swift in Sources */,
+				E52E5DDD1CE7B36A00023C91 /* APIClient.swift in Sources */,
+				E52E5DDE1CE7B36A00023C91 /* JSONDeserializer.swift in Sources */,
+				E52E5DDF1CE7B36A00023C91 /* RequestPerformer.swift in Sources */,
+				E52E5DE01CE7B36A00023C91 /* Request.swift in Sources */,
+				E52E5DE11CE7B36A00023C91 /* Client.swift in Sources */,
+				E52E5DE21CE7B36A00023C91 /* Deserializer.swift in Sources */,
+				E52E5DE31CE7B36A00023C91 /* Parser.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F80694EC1B962BB900C61B4A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -557,6 +834,11 @@
 			isa = PBXTargetDependency;
 			target = 2C721E3F1BD5A77700846414 /* Swish-Mac */;
 			targetProxy = 2C721E4B1BD5A77700846414 /* PBXContainerItemProxy */;
+		};
+		E52E5D9B1CE7AE3400023C91 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E52E5D8E1CE7AE3400023C91 /* Swish-tvOS */;
+			targetProxy = E52E5D9A1CE7AE3400023C91 /* PBXContainerItemProxy */;
 		};
 		F80694FE1B962BB900C61B4A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -631,6 +913,144 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.SwishTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E52E5DA01CE7AE3400023C91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Argo/build/Debug-appletvos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Result/build/Debug-appletvos",
+				);
+				INFOPLIST_FILE = Source/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thoughtbot.Swish-tvOS";
+				PRODUCT_NAME = Swish;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		E52E5DA11CE7AE3400023C91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Argo/build/Debug-appletvos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Result/build/Debug-appletvos",
+				);
+				INFOPLIST_FILE = Source/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thoughtbot.Swish-tvOS";
+				PRODUCT_NAME = Swish;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		E52E5DA21CE7AE3400023C91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Quick/build/Debug-appletvos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Nimble/build/Debug-appletvos",
+				);
+				INFOPLIST_FILE = Tests/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thoughtbot.Swish-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		E52E5DA31CE7AE3400023C91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Quick/build/Debug-appletvos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Nimble/build/Debug-appletvos",
+				);
+				INFOPLIST_FILE = Tests/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thoughtbot.Swish-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		E52E5DD21CE7B2BA00023C91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Argo/build/Debug-watchos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Result/build/Debug-watchos",
+				);
+				INFOPLIST_FILE = Source/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thoughtbot.Swish-watchOS";
+				PRODUCT_NAME = Swish;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		E52E5DD31CE7B2BA00023C91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Argo/build/Debug-watchos",
+					"$(PROJECT_DIR)/Carthage/Checkouts/Result/build/Debug-watchos",
+				);
+				INFOPLIST_FILE = Source/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thoughtbot.Swish-watchOS";
+				PRODUCT_NAME = Swish;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Release;
 		};
@@ -801,6 +1221,30 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		E52E5DA41CE7AE3400023C91 /* Build configuration list for PBXNativeTarget "Swish-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E52E5DA01CE7AE3400023C91 /* Debug */,
+				E52E5DA11CE7AE3400023C91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E52E5DA51CE7AE3400023C91 /* Build configuration list for PBXNativeTarget "Swish-tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E52E5DA21CE7AE3400023C91 /* Debug */,
+				E52E5DA31CE7AE3400023C91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E52E5DD11CE7B2BA00023C91 /* Build configuration list for PBXNativeTarget "Swish-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E52E5DD21CE7B2BA00023C91 /* Debug */,
+				E52E5DD31CE7B2BA00023C91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		F80694EB1B962BB900C61B4A /* Build configuration list for PBXProject "Swish" */ = {
 			isa = XCConfigurationList;

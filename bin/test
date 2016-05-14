@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-set -o pipefail
+set -e -o pipefail
 
 xcrun xcodebuild \
   -workspace Swish.xcworkspace \
@@ -13,4 +13,19 @@ xcrun xcodebuild \
   -scheme Swish-iOS \
   -destination "platform=iOS Simulator,name=iPhone 6" \
   test \
+  | xcpretty --color
+
+xcrun xcodebuild \
+  -workspace Swish.xcworkspace \
+  -scheme Swish-tvOS \
+  -destination "platform=tvOS Simulator,name=Apple TV 1080p" \
+  test \
+  | xcpretty --color
+
+xcrun xcodebuild \
+  -workspace Swish.xcworkspace \
+  -scheme Swish-watchOS \
+  -destination "generic/platform=watchOS" \
+  CODE_SIGNING_REQUIRED=NO \
+  CODE_SIGN_IDENTITY="" \
   | xcpretty --color
