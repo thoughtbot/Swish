@@ -30,6 +30,9 @@
 		2C721E5D1BD5A7E800846414 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88ED06C1B96736B0069F56C /* APIClient.swift */; };
 		2C721E5E1BD5A83B00846414 /* Swish.h in Headers */ = {isa = PBXBuildFile; fileRef = F80695121B962C5300C61B4A /* Swish.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E506EC7E1BB5BE380032E941 /* NimbleMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */; };
+		E51722EF1CEE5D1000B0C915 /* JSONDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6361C91055200AD2CDE /* JSONDeserializer.swift */; };
+		E51722F01CEE5D1A00B0C915 /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6321C91049300AD2CDE /* Deserializer.swift */; };
+		E51722F11CEE5D1D00B0C915 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6341C91053000AD2CDE /* Parser.swift */; };
 		E58AD6331C91049300AD2CDE /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6321C91049300AD2CDE /* Deserializer.swift */; };
 		E58AD6351C91053000AD2CDE /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6341C91053000AD2CDE /* Parser.swift */; };
 		E58AD6371C91055200AD2CDE /* JSONDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6361C91055200AD2CDE /* JSONDeserializer.swift */; };
@@ -475,10 +478,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E51722F01CEE5D1A00B0C915 /* Deserializer.swift in Sources */,
 				2C61A39E1BD726E10087B295 /* RequestMethod.swift in Sources */,
+				E51722F11CEE5D1D00B0C915 /* Parser.swift in Sources */,
 				2C721E5D1BD5A7E800846414 /* APIClient.swift in Sources */,
 				2C721E591BD5A7C500846414 /* Client.swift in Sources */,
 				E5915B221BDABC4B005E5D63 /* NSURLRequest.swift in Sources */,
+				E51722EF1CEE5D1000B0C915 /* JSONDeserializer.swift in Sources */,
 				2C721E581BD5A7C500846414 /* HTTPResponse.swift in Sources */,
 				2C721E5C1BD5A7E800846414 /* NetworkRequestPerformer.swift in Sources */,
 				2C721E571BD5A7C500846414 /* Result.swift in Sources */,
