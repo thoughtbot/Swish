@@ -191,6 +191,51 @@ class APIClientSpec: QuickSpec {
           expect(error).toEventually(equal(SwishError.ServerError(code: expectedCode, data: performer.data)))
         }
       }
+
+      describe("scheduling completion blocks") {
+        it("dispatches onto the main queue by default") {
+          let performer = FakeRequestPerformer(responseData: .JSON([:]))
+          let client = APIClient(requestPerformer: performer)
+
+          var isOnMain: Bool?
+          client.performRequest(FakeRequest()) { _ in
+            isOnMain = NSThread.isMainThread()
+          }
+
+          expect(isOnMain).toEventually(beTrue())
+        }
+
+        it("doesn't dispatch onto main queue when using the immediate scheduler") {
+          let performer = FakeRequestPerformer(responseData: .JSON([:]), background: true)
+          let client = APIClient(requestPerformer: performer, scheduler: immediateScheduler)
+
+          var isOnMain: Bool?
+          client.performRequest(FakeRequest()) { _ in
+            isOnMain = NSThread.isMainThread()
+          }
+
+          expect(isOnMain).toEventually(beFalse())
+        }
+
+        it("dispatches via a custom scheduler if set") {
+          var calledNoopScheduler = false
+          var completed = false
+
+          let noopScheduler: Scheduler = { _ in
+            calledNoopScheduler = true
+          }
+
+          let performer = FakeRequestPerformer(responseData: .JSON([:]), background: false)
+          let client = APIClient(requestPerformer: performer, scheduler: noopScheduler)
+
+          client.performRequest(FakeRequest()) { _ in
+            completed = true
+          }
+
+          expect(calledNoopScheduler) == true
+          expect(completed) == false
+        }
+      }
     }
   }
 }

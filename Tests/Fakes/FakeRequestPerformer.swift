@@ -24,11 +24,13 @@ extension ResponseData {
 class FakeRequestPerformer: RequestPerformer {
   let statusCode: Int
   let data: NSData?
+  let background: Bool
   var passedRequest: NSURLRequest?
 
-  init(responseData: ResponseData, statusCode: Int = 200) {
+  init(responseData: ResponseData, statusCode: Int = 200, background: Bool = false) {
     self.data = responseData.data
     self.statusCode = statusCode
+    self.background = background
   }
 
   func performRequest(request: NSURLRequest, completionHandler: Result<HTTPResponse, SwishError> -> Void) -> NSURLSessionDataTask {
@@ -38,9 +40,17 @@ class FakeRequestPerformer: RequestPerformer {
       NSHTTPURLResponse(URL: $0, statusCode: statusCode, HTTPVersion: .None, headerFields: .None)
     }
 
-    completionHandler(
-      .Success(HTTPResponse(data: data, response: response))
-    )
+    let complete = { [data] in
+      completionHandler(
+        .Success(HTTPResponse(data: data, response: response))
+      )
+    }
+
+    if background {
+      dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), complete)
+    } else {
+      complete()
+    }
 
     return NSURLSessionDataTask()
   }

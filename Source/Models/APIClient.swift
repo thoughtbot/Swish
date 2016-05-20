@@ -5,23 +5,25 @@ import Result
 public struct APIClient {
   private let requestPerformer: RequestPerformer
   private let deserializer: Deserializer
+  private let scheduler: Scheduler
 
-  public init(requestPerformer: RequestPerformer = NetworkRequestPerformer(), deserializer: Deserializer = JSONDeserializer()) {
+  public init(requestPerformer: RequestPerformer = NetworkRequestPerformer(), deserializer: Deserializer = JSONDeserializer(), scheduler: Scheduler = mainQueueScheduler) {
     self.requestPerformer = requestPerformer
     self.deserializer = deserializer
+    self.scheduler = scheduler
   }
 }
 
 extension APIClient: Client {
   public func performRequest<T: Request>(request: T, completionHandler: Result<T.ResponseObject, SwishError> -> Void) -> NSURLSessionDataTask {
-    return requestPerformer.performRequest(request.build()) { result in
+    return requestPerformer.performRequest(request.build()) { [schedule = scheduler] result in
       let object = result
         >>- self.validateResponse
         >>- self.deserializer.deserialize
         >>- T.ResponseParser.parse
         >>- request.parse
 
-      onMain { completionHandler(object) }
+      schedule { completionHandler(object) }
     }
   }
 }
