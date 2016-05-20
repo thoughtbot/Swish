@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/thoughtbot/Swish/gh-pages/swish-logo-v4.jpg" width="600">
+<div style="text-align:center"><img src="https://raw.githubusercontent.com/thoughtbot/Swish/gh-pages/swish-logo-v5.jpg" width="600"></div>
 
 # Swish [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg?style=flat-square)](https://github.com/Carthage/Carthage)
 
