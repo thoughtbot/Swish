@@ -65,7 +65,7 @@ struct Comment: Decodable {
 }
 
 let request = CommentRequest(id: 1)
-APIClient().performRequest(request) { (response: Result<Comment, NSError>) in
+APIClient().performRequest(request) { (response: Result<Comment, SwishError>) in
   // ...
 }
 ```
@@ -78,7 +78,7 @@ We declare a struct that conforms to the `Request` protocol, which forces us to:
   HTTP method to use.
 
 Then, we can use `APIClient#performRequest` to actually perform the request, and
-its callback will have an argument of type `Result<ResponseObject, NSError>`.
+its callback will have an argument of type `Result<ResponseObject, SwishError>`.
 
 ## Advanced Usage
 One can additionally override the default implementation of both
@@ -110,7 +110,7 @@ struct CommentRequest: Request {
     return baseRequest(endpoint: endpoint, method: .GET)
   }
 
-  func parse(j: JSON) -> Result<Comment, NSError> {
+  func parse(j: JSON) -> Result<Comment, SwishError> {
     let comments = [Comment].decode(j)
     let comment = comments.flatmap { comments -> Decoded<Comment> in
       guard let comment = comments.first else {
@@ -127,7 +127,7 @@ struct CommentRequest: Request {
 
 Here, our parse function will first decode into an array of `Comment` objects,
 and then return the first if found, otherwise an error. The `fromDecoded`
-function converts from Argo's `Decoded<T>` type to `Result<T, NSError>`.
+function converts from Argo's `Decoded<T>` type to `Result<T, SwishError>`.
 
 ## License
 
