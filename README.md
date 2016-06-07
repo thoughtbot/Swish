@@ -27,7 +27,35 @@ for up to date installation instructions.
 
 [carthage-installation]: https://github.com/Carthage/Carthage#adding-frameworks-to-an-application
 
+### [CocoaPods]
+
+[CocoaPods]: http://cocoapods.org
+
+Add the following to your [Podfile](http://guides.cocoapods.org/using/the-podfile.html):
+
+```ruby
+pod 'Swish'
+```
+
+You will also need to make sure you're opting into using frameworks:
+
+```ruby
+use_frameworks!
+```
+
+Then run `pod install` with CocoaPods 0.36 or newer.
+
+### Git Submodules
+
+I guess you could do it this way if that's your thing.
+
+Add this repo as a submodule, and add the Swish project file along with the
+dependency project files to your workspace. You can then link against
+`Swish.framework` along with the dependency frameworks for your application
+target.
+
 ## Basic Usage
+
 ```swift
 import Swish
 
