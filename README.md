@@ -56,11 +56,8 @@ target.
 
 ## Usage
 
-- tl;dr: [Basic Usage][basics]
-- Otherwise, see the [Documentation][docs]
-
-[docs]: [/Documentation]
-[basics]: [/Documentation/Basics.md]
+- tl;dr: [Basic Usage](Documentation/Basics.md)
+- Otherwise, see the [Documentation](Documentation)
 
 ## License
 
