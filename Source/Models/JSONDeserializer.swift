@@ -2,12 +2,12 @@ import Argo
 import Result
 
 struct JSONDeserializer: Deserializer {
-  func deserialize(data: NSData?) -> Result<AnyObject, SwishError> {
+  func deserialize(_ data: Data?) -> Result<AnyObject, SwishError> {
     let json = self.parseJSON(data)
 
     return json.analysis(
       ifSuccess: Result<AnyObject, SwishError>.init,
-      ifFailure: { .Failure(.DeserializationError($0)) }
+      ifFailure: { .Failure(.deserializationError($0)) }
     )
   }
 }
@@ -15,20 +15,20 @@ struct JSONDeserializer: Deserializer {
 extension JSON: Parser {
   public typealias Representation = JSON
 
-  public static func parse(j: AnyObject) -> Result<JSON, SwishError> {
+  public static func parse(_ j: AnyObject) -> Result<JSON, SwishError> {
     return Result(JSON.init(j))
   }
 }
 
 private extension JSONDeserializer {
-  private func parseJSON(data: NSData?) -> Result<AnyObject, NSError> {
-    guard let d = data where d.length > 0 else {
+  private func parseJSON(_ data: Data?) -> Result<AnyObject, NSError> {
+    guard let d = data where (d as NSData).length > 0 else {
       return .Success(NSNull())
     }
 
     return Result(
-      try NSJSONSerialization
-        .JSONObjectWithData(d, options: NSJSONReadingOptions(rawValue: 0))
+      try JSONSerialization
+        .jsonObject(with: d, options: JSONSerialization.ReadingOptions(rawValue: 0))
     )
   }
 }

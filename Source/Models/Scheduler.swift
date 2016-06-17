@@ -5,5 +5,5 @@ public let immediateScheduler: Scheduler = { completion in
 }
 
 public let mainQueueScheduler: Scheduler = { completion in
-  dispatch_async(dispatch_get_main_queue(), completion)
+  DispatchQueue.main.async(execute: completion)
 }
