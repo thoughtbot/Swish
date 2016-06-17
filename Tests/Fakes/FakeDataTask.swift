@@ -1,6 +1,6 @@
 import Foundation
 
-class FakeDataTask: NSURLSessionDataTask {
+class FakeDataTask: URLSessionDataTask {
   var resumedTask = false
 
   override func resume() {

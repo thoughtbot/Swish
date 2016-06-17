@@ -1,11 +1,11 @@
 import Foundation
 
 public struct HTTPResponse {
-  public let data: NSData?
+  public let data: Data?
   public let code: Int
 
-  public init(data: NSData?, response: NSURLResponse?) {
+  public init(data: Data?, response: URLResponse?) {
     self.data = data
-    self.code = (response as? NSHTTPURLResponse)?.statusCode ?? 500
+    self.code = (response as? HTTPURLResponse)?.statusCode ?? 500
   }
 }

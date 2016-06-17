@@ -7,7 +7,7 @@ import Result
 struct User: Decodable {
   let name: String
 
-  static func decode(json: JSON) -> Decoded<User> {
+  static func decode(_ json: JSON) -> Decoded<User> {
     return User.init <^> json <| "name"
   }
 }

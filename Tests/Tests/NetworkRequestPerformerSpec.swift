@@ -11,7 +11,7 @@ func fakeData() -> NSData {
   return "Hello World".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
 }
 
-func fakeResponse(code: Int) -> NSURLResponse {
+func fakeResponse(_ code: Int) -> NSURLResponse {
   return NSHTTPURLResponse(URL: NSURL(), statusCode: code, HTTPVersion: .None, headerFields: .None)!
 }
 
