@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
     'thoughtbot' => nil,
   }
   spec.social_media_url = 'http://twitter.com/thoughtbot'
-  spec.source = { :git => 'https://github.com/thoughtbot/Swish.git', :tag => "v#{spec.version}" }
+  spec.source = { :git => 'https://github.com/the-grid/Swish.git', :tag => "v#{spec.version}" }
   spec.source_files = 'Source/**/*.{h,swift}'
 
   spec.dependency 'Argo', '~> 3.0.0'
