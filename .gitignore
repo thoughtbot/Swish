@@ -29,7 +29,7 @@ build/
 Pods
 
 # Carthage
-Carthage/Build
+Carthage/
 Cartfile.resolved
 
 # AppCode specific files
