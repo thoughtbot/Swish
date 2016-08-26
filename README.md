@@ -1,6 +1,7 @@
 <p align="center"><img src="https://raw.githubusercontent.com/thoughtbot/Swish/gh-pages/swish-logo-v5.jpg" width="600"></p>
 
-# Swish [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg?style=flat-square)](https://github.com/Carthage/Carthage)
+# Swish [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen.svg?style=flat-square)](https://github.com/Carthage/Carthage) [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Swish.svg)](https://img.shields.io/cocoapods/v/Swish.svg)  
+
 
 Nothing but net(working).
 
