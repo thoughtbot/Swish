@@ -4,7 +4,7 @@ private let swishDomain = "com.thoughtbot.swish"
 
 public let NetworkErrorDataKey = swishDomain + ".errorData"
 
-extension NSError {
+public extension NSError {
   static func error(message: String, function: String = #function, file: String = #file, line: Int = #line) -> NSError {
     var info = userInfoFor(function, file, line)
 
