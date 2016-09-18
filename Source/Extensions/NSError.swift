@@ -5,33 +5,33 @@ private let swishDomain = "com.thoughtbot.swish"
 public let NetworkErrorDataKey = swishDomain + ".errorData"
 
 extension NSError {
-  static func error(message: String, function: String = #function, file: String = #file, line: Int = #line) -> NSError {
+  static func error(_ message: String, function: String = #function, file: String = #file, line: Int = #line) -> NSError {
     var info = userInfoFor(function, file, line)
 
-    info[NSLocalizedDescriptionKey] = message
+    info[NSLocalizedDescriptionKey] = message as AnyObject?
 
     return NSError(domain: swishDomain, code: 0, userInfo: info)
   }
 
-  static func error(statusCode: Int, data: AnyObject?, function: String = #function, file: String = #file, line: Int = #line) -> NSError {
+  static func error(_ statusCode: Int, data: AnyObject?, function: String = #function, file: String = #file, line: Int = #line) -> NSError {
     var info = userInfoFor(function, file, line)
 
-    info[NSLocalizedDescriptionKey] = messageForStatusCode(statusCode)
+    info[NSLocalizedDescriptionKey] = messageForStatusCode(statusCode) as AnyObject?
     info[NetworkErrorDataKey] = data
 
     return NSError(domain: swishDomain, code: statusCode, userInfo: info)
   }
 }
 
-private func userInfoFor(function: String, _ file: String, _ line: Int) -> [String: AnyObject] {
+private func userInfoFor(_ function: String, _ file: String, _ line: Int) -> [String: AnyObject] {
   return [
-    "\(swishDomain).function": function,
-    "\(swishDomain).file": file,
-    "\(swishDomain).line": line,
+    "\(swishDomain).function": function as AnyObject,
+    "\(swishDomain).file": file as AnyObject,
+    "\(swishDomain).line": line as AnyObject,
   ]
 }
 
-private func messageForStatusCode(code: Int) -> String {
+private func messageForStatusCode(_ code: Int) -> String {
   switch code {
   case 300...399:
     return "Multiple choices: \(code)"

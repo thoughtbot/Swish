@@ -3,11 +3,11 @@ import Argo
 import Result
 
 public struct APIClient {
-  private let requestPerformer: RequestPerformer
-  private let deserializer: Deserializer
-  private let scheduler: Scheduler
+  fileprivate let requestPerformer: RequestPerformer
+  fileprivate let deserializer: Deserializer
+  fileprivate let scheduler: Scheduler
 
-  public init(requestPerformer: RequestPerformer = NetworkRequestPerformer(), deserializer: Deserializer = JSONDeserializer(), scheduler: Scheduler = mainQueueScheduler) {
+  public init(requestPerformer: RequestPerformer = NetworkRequestPerformer(), deserializer: Deserializer = JSONDeserializer(), scheduler: @escaping Scheduler = mainQueueScheduler) {
     self.requestPerformer = requestPerformer
     self.deserializer = deserializer
     self.scheduler = scheduler
@@ -15,7 +15,8 @@ public struct APIClient {
 }
 
 extension APIClient: Client {
-  public func performRequest<T: Request>(request: T, completionHandler: Result<T.ResponseObject, SwishError> -> Void) -> NSURLSessionDataTask {
+  public func performRequest<T: Request>(_ request: T, completionHandler: @escaping (Result<T.ResponseObject, SwishError>) -> Void) -> URLSessionDataTask {
+
     return requestPerformer.performRequest(request.build()) { [schedule = scheduler] result in
       let object = result
         >>- self.validateResponse
@@ -29,12 +30,12 @@ extension APIClient: Client {
 }
 
 private extension APIClient {
-  func validateResponse(httpResponse: HTTPResponse) -> Result<NSData?, SwishError> {
+  func validateResponse(_ httpResponse: HTTPResponse) -> Result<Data?, SwishError> {
     switch httpResponse.code {
     case (200...299):
-      return .Success(httpResponse.data)
+      return .success(httpResponse.data)
     default:
-      return .Failure(.ServerError(code: httpResponse.code, data: httpResponse.data))
+      return .failure(.serverError(code: httpResponse.code, data: httpResponse.data))
     }
   }
 }

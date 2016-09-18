@@ -6,11 +6,11 @@ import Result
 struct FakeRequest: Request {
   typealias ResponseObject = String
 
-  func build() -> NSURLRequest {
-    return NSURLRequest(URL: NSURL(string: "http://example.com")!)
+  func build() -> URLRequest {
+    return URLRequest(url: URL(string: "http://example.com")!)
   }
 
-  func parse(j: JSON) -> Result<String, SwishError> {
+  func parse(_ j: JSON) -> Result<String, SwishError> {
     return .fromDecoded(j <| "text")
   }
 }
@@ -18,7 +18,7 @@ struct FakeRequest: Request {
 struct FakeEmptyDataRequest: Request {
   typealias ResponseObject = EmptyResponse
 
-  func build() -> NSURLRequest {
-    return NSURLRequest(URL: NSURL(string: "http://example.com")!)
+  func build() -> URLRequest {
+    return URLRequest(url: URL(string: "http://example.com")!)
   }
 }

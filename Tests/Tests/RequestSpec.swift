@@ -3,11 +3,12 @@ import Argo
 import Quick
 import Nimble
 import Result
+import Runes
 
 struct User: Decodable {
   let name: String
 
-  static func decode(json: JSON) -> Decoded<User> {
+  static func decode(_ json: JSON) -> Decoded<User> {
     return User.init <^> json <| "name"
   }
 }
@@ -15,24 +16,24 @@ struct User: Decodable {
 struct DecodableRequest: Request {
   typealias ResponseObject = User
 
-  func build() -> NSURLRequest {
-    return NSURLRequest()
+  func build() -> URLRequest {
+    return URLRequest(url: URL(string: "https://example.com")!)
   }
 }
 
 struct DecodableCollectionRequest: Request {
   typealias ResponseObject = [User]
 
-  func build() -> NSURLRequest {
-    return NSURLRequest()
+  func build() -> URLRequest {
+    return URLRequest(url: URL(string: "https://example.com")!)
   }
 }
 
 struct EmptyResponseRequest: Request {
   typealias ResponseObject = EmptyResponse
 
-  func build() -> NSURLRequest {
-    return NSURLRequest()
+  func build() -> URLRequest {
+    return URLRequest(url: URL(string: "https://example.com")!)
   }
 }
 
@@ -63,7 +64,7 @@ class RequestSpec: QuickSpec {
         context("when the ResponseObject is an EmptyResponse") {
           it("should result in Success") {
             let request = EmptyResponseRequest()
-            let result = request.parse(.Null)
+            let result = request.parse(JSON.null)
 
             expect(result).to(beSuccessful())
           }

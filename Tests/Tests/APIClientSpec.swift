@@ -11,11 +11,11 @@ class APIClientSpec: QuickSpec {
           it("passes the request's request object to the request performer") {
             let request = FakeRequest()
             let performer = FakeRequestPerformer(
-              responseData: .JSON([:])
+              responseData: .json([:])
             )
             let client = APIClient(requestPerformer: performer)
 
-            client.performRequest(request) { _ in }
+            _ = client.performRequest(request) { _ in }
 
             expect(performer.passedRequest).to(equal(request.build()))
           }
@@ -25,13 +25,13 @@ class APIClientSpec: QuickSpec {
               it("returns the parsed object to the completion block") {
                 let request = FakeRequest()
                 let performer = FakeRequestPerformer(
-                  responseData: .JSON(["text": "hello world"])
+                  responseData: .json(["text": "hello world" as AnyObject])
                 )
 
                 let client = APIClient(requestPerformer: performer)
                 var result: Result<String, SwishError>?
 
-                client.performRequest(request) { result = $0 }
+                _ = client.performRequest(request) { result = $0 }
 
                 expect(result?.value).toEventually(equal("hello world"))
               }
@@ -41,17 +41,17 @@ class APIClientSpec: QuickSpec {
               it("returns a failure state to the completion block") {
                 let request = FakeRequest()
                 let performer = FakeRequestPerformer(
-                  responseData: .JSON(["foo": "bar"])
+                  responseData: .json(["foo": "bar" as AnyObject])
                 )
 
                 let client = APIClient(requestPerformer: performer)
                 var error: SwishError?
 
-                client.performRequest(request) {
+                _ = client.performRequest(request) {
                   error = $0.error
                 }
 
-                expect(error).toEventually(equal(SwishError.ArgoError(.MissingKey("text"))))
+                expect(error).toEventually(equal(SwishError.argoError(.missingKey("text"))))
               }
             }
 
@@ -59,13 +59,13 @@ class APIClientSpec: QuickSpec {
               it("returns a null JSON object") {
                 let request = FakeEmptyDataRequest()
                 let performer = FakeRequestPerformer(
-                  responseData: .Data(NSData())
+                  responseData: .data(Data())
                 )
 
                 let client = APIClient(requestPerformer: performer)
                 var result: Result<EmptyResponse, SwishError>?
 
-                client.performRequest(request) { result = $0 }
+                _ = client.performRequest(request) { result = $0 }
 
                 expect(result?.value).toEventually(beVoid())
               }
@@ -75,13 +75,13 @@ class APIClientSpec: QuickSpec {
               it("returns a null JSON object") {
                 let request = FakeEmptyDataRequest()
                 let performer = FakeRequestPerformer(
-                  responseData: .Data(.None)
+                  responseData: .data(.none)
                 )
 
                 let client = APIClient(requestPerformer: performer)
                 var result: Result<EmptyResponse, SwishError>?
 
-                client.performRequest(request) { result = $0 }
+                _ = client.performRequest(request) { result = $0 }
 
                 expect(result?.value).toEventually(beVoid())
               }
@@ -92,14 +92,14 @@ class APIClientSpec: QuickSpec {
             it("performs on the main thread") {
               let request = FakeRequest()
               let performer = FakeRequestPerformer(
-                responseData: .JSON([:])
+                responseData: .json([:])
               )
 
               let client = APIClient(requestPerformer: performer)
               var isMainThread = false
 
-              client.performRequest(request) { _ in
-                isMainThread = NSThread.currentThread() == NSThread.mainThread()
+              _ = client.performRequest(request) { _ in
+                isMainThread = Thread.isMainThread
               }
 
               expect(isMainThread).toEventually(beTrue())
@@ -114,18 +114,18 @@ class APIClientSpec: QuickSpec {
           let expectedJSON = ["foo": "bar"]
           let expectedCode = 301
           let performer = FakeRequestPerformer(
-            responseData: .JSON(expectedJSON),
+            responseData: .json(expectedJSON as [String : AnyObject]),
             statusCode: expectedCode
           )
 
           let client = APIClient(requestPerformer: performer)
           var error: SwishError?
 
-          client.performRequest(request) {
+          _ = client.performRequest(request) {
             error = $0.error
           }
 
-          expect(error).toEventually(equal(SwishError.ServerError(code: expectedCode, data: performer.data)))
+          expect(error).toEventually(equal(SwishError.serverError(code: expectedCode, data: performer.data)))
         }
       }
 
@@ -135,18 +135,18 @@ class APIClientSpec: QuickSpec {
           let expectedJSON = ["foo": "bar"]
           let expectedCode = 401
           let performer = FakeRequestPerformer(
-            responseData: .JSON(expectedJSON),
+            responseData: .json(expectedJSON as [String : AnyObject]),
             statusCode: expectedCode
           )
 
           let client = APIClient(requestPerformer: performer)
           var error: SwishError?
 
-          client.performRequest(request) {
+          _ = client.performRequest(request) {
             error = $0.error
           }
 
-          expect(error).toEventually(equal(SwishError.ServerError(code: expectedCode, data: performer.data)))
+          expect(error).toEventually(equal(SwishError.serverError(code: expectedCode, data: performer.data)))
         }
       }
 
@@ -156,18 +156,18 @@ class APIClientSpec: QuickSpec {
           let expectedJSON = ["foo": "bar"]
           let expectedCode = 500
           let performer = FakeRequestPerformer(
-            responseData: .JSON(expectedJSON),
+            responseData: .json(expectedJSON as [String : AnyObject]),
             statusCode: expectedCode
           )
 
           let client = APIClient(requestPerformer: performer)
           var error: SwishError?
 
-          client.performRequest(request) {
+          _ = client.performRequest(request) {
             error = $0.error
           }
 
-          expect(error).toEventually(equal(SwishError.ServerError(code: expectedCode, data: performer.data)))
+          expect(error).toEventually(equal(SwishError.serverError(code: expectedCode, data: performer.data)))
         }
       }
 
@@ -177,41 +177,41 @@ class APIClientSpec: QuickSpec {
           let expectedJSON = ["foo": "bar"]
           let expectedCode = 600
           let performer = FakeRequestPerformer(
-            responseData: .JSON(expectedJSON),
+            responseData: .json(expectedJSON as [String : AnyObject]),
             statusCode: expectedCode
           )
 
           let client = APIClient(requestPerformer: performer)
           var error: SwishError?
 
-          client.performRequest(request) {
+          _ = client.performRequest(request) {
             error = $0.error
           }
 
-          expect(error).toEventually(equal(SwishError.ServerError(code: expectedCode, data: performer.data)))
+          expect(error).toEventually(equal(SwishError.serverError(code: expectedCode, data: performer.data)))
         }
       }
 
       describe("scheduling completion blocks") {
         it("dispatches onto the main queue by default") {
-          let performer = FakeRequestPerformer(responseData: .JSON([:]))
+          let performer = FakeRequestPerformer(responseData: .json([:]))
           let client = APIClient(requestPerformer: performer)
 
           var isOnMain: Bool?
-          client.performRequest(FakeRequest()) { _ in
-            isOnMain = NSThread.isMainThread()
+          _ = client.performRequest(FakeRequest()) { _ in
+            isOnMain = Thread.isMainThread
           }
 
           expect(isOnMain).toEventually(beTrue())
         }
 
         it("doesn't dispatch onto main queue when using the immediate scheduler") {
-          let performer = FakeRequestPerformer(responseData: .JSON([:]), background: true)
+          let performer = FakeRequestPerformer(responseData: .json([:]), background: true)
           let client = APIClient(requestPerformer: performer, scheduler: immediateScheduler)
 
           var isOnMain: Bool?
-          client.performRequest(FakeRequest()) { _ in
-            isOnMain = NSThread.isMainThread()
+          _ = client.performRequest(FakeRequest()) { _ in
+            isOnMain = Thread.isMainThread
           }
 
           expect(isOnMain).toEventually(beFalse())
@@ -225,10 +225,10 @@ class APIClientSpec: QuickSpec {
             calledNoopScheduler = true
           }
 
-          let performer = FakeRequestPerformer(responseData: .JSON([:]), background: false)
+          let performer = FakeRequestPerformer(responseData: .json([:]), background: false)
           let client = APIClient(requestPerformer: performer, scheduler: noopScheduler)
 
-          client.performRequest(FakeRequest()) { _ in
+          _ = client.performRequest(FakeRequest()) { _ in
             completed = true
           }
 

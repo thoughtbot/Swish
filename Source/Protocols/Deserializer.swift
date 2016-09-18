@@ -2,5 +2,5 @@ import Result
 import Foundation
 
 public protocol Deserializer {
-  func deserialize(data: NSData?) -> Result<AnyObject, SwishError>
+  func deserialize(_ data: Data?) -> Result<AnyObject, SwishError>
 }

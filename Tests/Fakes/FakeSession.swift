@@ -1,28 +1,28 @@
 import Foundation
 
-class FakeSession: NSURLSession {
-  var providedRequest = NSURLRequest()
+class FakeSession: URLSession {
+  var providedRequest = URLRequest(url: URL(string: "https://example.com")!)
   var dataTask = FakeDataTask()
 
-  private let data: NSData?
-  private let response: NSURLResponse?
-  private let error: NSError?
+  fileprivate let data: Data?
+  fileprivate let response: URLResponse?
+  fileprivate let error: NSError?
 
   var performedRequest: Bool {
     return dataTask.resumedTask
   }
 
-  init(data: NSData? = .None, response: NSURLResponse? = .None, error: NSError? = .None) {
+  init(data: Data? = .none, response: URLResponse? = .none, error: NSError? = .none) {
     self.data = data
     self.response = response
     self.error = error
     super.init()
   }
 
-  override func dataTaskWithRequest(request: NSURLRequest, completionHandler: ((NSData?, NSURLResponse?, NSError?) -> Void)?) -> NSURLSessionDataTask {
+  override func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
     providedRequest = request
     dataTask = FakeDataTask()
-    completionHandler?(data, response, error)
+    completionHandler(data, response, error)
     return dataTask
   }
 }

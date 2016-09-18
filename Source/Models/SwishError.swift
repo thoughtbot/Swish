@@ -2,28 +2,28 @@ import Foundation
 import Argo
 
 public enum SwishError {
-  case ArgoError(Argo.DecodeError)
-  case DeserializationError(NSError)
-  case ParseError(NSError)
-  case ServerError(code: Int, data: NSData?)
-  case URLSessionError(NSError)
+  case argoError(Argo.DecodeError)
+  case deserializationError(NSError)
+  case parseError(NSError)
+  case serverError(code: Int, data: Data?)
+  case urlSessionError(NSError)
 }
 
-extension SwishError: ErrorType { }
+extension SwishError: Error { }
 
 public extension SwishError {
   var rawError: NSError {
     switch self {
-    case let .URLSessionError(e):
+    case let .urlSessionError(e):
       return e
-    case let .ParseError(e):
+    case let .parseError(e):
       return e
-    case let .DeserializationError(e):
+    case let .deserializationError(e):
       return e
-    case let .ServerError(code, json):
-      return .error(code, data: json)
-    case let .ArgoError(e):
-      return .error(String(e))
+    case let .serverError(code, json):
+      return .error(code, data: json as AnyObject)
+    case let .argoError(e):
+      return .error(String(describing: e))
     }
   }
 }
@@ -32,15 +32,15 @@ extension SwishError: Equatable { }
 
 public func == (lhs: SwishError, rhs: SwishError) -> Bool {
   switch (lhs, rhs) {
-  case let (.ArgoError(l), .ArgoError(r)):
+  case let (.argoError(l), .argoError(r)):
     return l == r
-  case let (.ParseError(l), .ParseError(r)):
+  case let (.parseError(l), .parseError(r)):
     return l == r
-  case let (.DeserializationError(l), .DeserializationError(r)):
+  case let (.deserializationError(l), .deserializationError(r)):
     return l == r
-  case let (.ServerError(lCode, lData), .ServerError(rCode, rData)):
+  case let (.serverError(lCode, lData), .serverError(rCode, rData)):
     return lCode == rCode && lData == rData
-  case let (.URLSessionError(l), .URLSessionError(r)):
+  case let (.urlSessionError(l), .urlSessionError(r)):
     return l == r
   default:
     return false

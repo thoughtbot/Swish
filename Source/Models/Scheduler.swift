@@ -1,9 +1,9 @@
-public typealias Scheduler = ((() -> Void) -> Void)
+public typealias Scheduler = ((@escaping () -> Void) -> Void)
 
 public let immediateScheduler: Scheduler = { completion in
   completion()
 }
 
 public let mainQueueScheduler: Scheduler = { completion in
-  dispatch_async(dispatch_get_main_queue(), completion)
+  DispatchQueue.main.async(execute: completion)
 }

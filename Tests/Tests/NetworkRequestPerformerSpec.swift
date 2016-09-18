@@ -3,16 +3,16 @@ import Quick
 import Nimble
 import Result
 
-func exampleRequest() -> NSURLRequest {
-  return NSURLRequest(URL: NSURL(string: "http://example.com")!)
+func exampleRequest() -> URLRequest {
+  return URLRequest(url: URL(string: "https://example.com")!)
 }
 
-func fakeData() -> NSData {
-  return "Hello World".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
+func fakeData() -> Data {
+  return "Hello World".data(using: .utf8, allowLossyConversion: false)!
 }
 
-func fakeResponse(code: Int) -> NSURLResponse {
-  return NSHTTPURLResponse(URL: NSURL(), statusCode: code, HTTPVersion: .None, headerFields: .None)!
+func fakeResponse(_ code: Int) -> URLResponse {
+  return HTTPURLResponse(url: URL(string: "https://example.com")!, statusCode: code, httpVersion: .none, headerFields: .none)!
 }
 
 class RequestPerformerSpec: QuickSpec {
@@ -24,7 +24,7 @@ class RequestPerformerSpec: QuickSpec {
           let performer = NetworkRequestPerformer(session: fakeSession)
 
           let request = exampleRequest()
-          performer.performRequest(request) { _ in }
+          _ = performer.performRequest(request) { _ in }
 
           expect(fakeSession.providedRequest).to(equal(request))
           expect(fakeSession.performedRequest).to(beTruthy())
@@ -34,10 +34,10 @@ class RequestPerformerSpec: QuickSpec {
           it("returns a Result with the HTTPResponse") {
             let fakeSession = FakeSession(data: fakeData(), response: fakeResponse(200))
             var returnedCode: Int = 0
-            var returnedData: NSData?
+            var returnedData: Data?
 
             let performer = NetworkRequestPerformer(session: fakeSession)
-            performer.performRequest(exampleRequest()) { result in
+            _ = performer.performRequest(exampleRequest()) { result in
               returnedCode = result.value!.code
               returnedData = result.value!.data
             }
@@ -49,12 +49,12 @@ class RequestPerformerSpec: QuickSpec {
 
         context("when the request produces an error") {
           it("returns a Result with the error") {
-            let error = NSError(domain: "TestDomain", code: 1, userInfo: .None)
+            let error = NSError(domain: "TestDomain", code: 1, userInfo: .none)
             let fakeSession = FakeSession(error: error)
             var returnedError: NSError?
 
             let performer = NetworkRequestPerformer(session: fakeSession)
-            performer.performRequest(exampleRequest()) { result in
+            _ = performer.performRequest(exampleRequest()) { result in
               returnedError = result.error?.rawError
             }
 

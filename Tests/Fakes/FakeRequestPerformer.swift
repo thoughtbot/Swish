@@ -2,30 +2,30 @@ import Foundation
 @testable import Swish
 import Result
 
-func serializeJSON(j: [String: AnyObject]) -> NSData? {
-  return try? NSJSONSerialization
-    .dataWithJSONObject(j, options: NSJSONWritingOptions(rawValue: 0))
+func serializeJSON(_ j: [String: AnyObject]) -> Data? {
+  return try? JSONSerialization
+    .data(withJSONObject: j, options: JSONSerialization.WritingOptions(rawValue: 0))
 }
 
 enum ResponseData {
-  case Data(NSData?)
-  case JSON([String: AnyObject])
+  case data(Data?)
+  case json([String: AnyObject])
 }
 
 extension ResponseData {
-  var data: NSData? {
+  var data: Data? {
     switch self {
-    case let .Data(d): return d
-    case let .JSON(j): return serializeJSON(j)
+    case let .data(d): return d
+    case let .json(j): return serializeJSON(j)
     }
   }
 }
 
 class FakeRequestPerformer: RequestPerformer {
   let statusCode: Int
-  let data: NSData?
+  let data: Data?
   let background: Bool
-  var passedRequest: NSURLRequest?
+  var passedRequest: URLRequest?
 
   init(responseData: ResponseData, statusCode: Int = 200, background: Bool = false) {
     self.data = responseData.data
@@ -33,25 +33,25 @@ class FakeRequestPerformer: RequestPerformer {
     self.background = background
   }
 
-  func performRequest(request: NSURLRequest, completionHandler: Result<HTTPResponse, SwishError> -> Void) -> NSURLSessionDataTask {
+  func performRequest(_ request: URLRequest, completionHandler: @escaping (Result<HTTPResponse, SwishError>) -> Void) -> URLSessionDataTask {
     passedRequest = request
 
-    let response = request.URL.flatMap {
-      NSHTTPURLResponse(URL: $0, statusCode: statusCode, HTTPVersion: .None, headerFields: .None)
+    let response = request.url.flatMap {
+      HTTPURLResponse(url: $0, statusCode: statusCode, httpVersion: .none, headerFields: .none)
     }
 
     let complete = { [data] in
       completionHandler(
-        .Success(HTTPResponse(data: data, response: response))
+        .success(HTTPResponse(data: data, response: response))
       )
     }
 
     if background {
-      dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), complete)
+      DispatchQueue.global().async(execute: complete)
     } else {
       complete()
     }
 
-    return NSURLSessionDataTask()
+    return URLSessionDataTask()
   }
 }
