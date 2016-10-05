@@ -35,13 +35,13 @@ struct StringParser: Parser {
     guard let data = j as? NSData else {
       let error = NSError.error("Bad data!")
 
-      return .Failure(.InvalidJSONResponse(error))
+      return .Failure(.DeserializationError(error))
     }
 
     let error = NSError.error("Couldn't convert to string!")
     let string = String(data: data, encoding: NSUTF8StringEncoding)
 
-    return Result(string, failWith: .InvalidJSONResponse(error))
+    return Result(string, failWith: .DeserializationError(error))
   }
 }
 ```
@@ -67,7 +67,7 @@ struct AuthorizedRequest: Request {
         return Result(false)
       default:
         let error = NSError.error("Unexpected response body!")
-        return Result(error: .InvalidJSONResponse(error))
+        return Result(error: .DeserializationError(error))
     }
   }
 }
