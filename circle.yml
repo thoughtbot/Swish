@@ -4,8 +4,9 @@ machine:
 
 dependencies:
   override:
-    - git submodule foreach --init --recursive 'git fetch --tags'
-    - git submodule update --init --recursive
+    - git submodule init
+    - git submodule foreach --recursive 'git fetch --tags'
+    - git submodule update --recursive
 
 test:
   override:
