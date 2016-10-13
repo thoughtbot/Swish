@@ -21,7 +21,7 @@ public extension SwishError {
     case let .deserializationError(e):
       return e
     case let .serverError(code, json):
-      return .error(code, data: json as AnyObject)
+      return .error(code, data: json)
     case let .argoError(e):
       return .error(String(describing: e))
     }

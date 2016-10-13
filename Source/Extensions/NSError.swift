@@ -13,21 +13,21 @@ extension NSError {
     return NSError(domain: swishDomain, code: 0, userInfo: info)
   }
 
-  static func error(_ statusCode: Int, data: AnyObject?, function: String = #function, file: String = #file, line: Int = #line) -> NSError {
+  static func error(_ statusCode: Int, data: Any?, function: String = #function, file: String = #file, line: Int = #line) -> NSError {
     var info = userInfoFor(function, file, line)
 
-    info[NSLocalizedDescriptionKey] = messageForStatusCode(statusCode) as AnyObject?
+    info[NSLocalizedDescriptionKey] = messageForStatusCode(statusCode)
     info[NetworkErrorDataKey] = data
 
     return NSError(domain: swishDomain, code: statusCode, userInfo: info)
   }
 }
 
-private func userInfoFor(_ function: String, _ file: String, _ line: Int) -> [String: AnyObject] {
+private func userInfoFor(_ function: String, _ file: String, _ line: Int) -> [String: Any] {
   return [
-    "\(swishDomain).function": function as AnyObject,
-    "\(swishDomain).file": file as AnyObject,
-    "\(swishDomain).line": line as AnyObject,
+    "\(swishDomain).function": function,
+    "\(swishDomain).file": file,
+    "\(swishDomain).line": line,
   ]
 }
 

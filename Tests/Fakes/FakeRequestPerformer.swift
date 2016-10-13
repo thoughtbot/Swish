@@ -2,14 +2,13 @@ import Foundation
 @testable import Swish
 import Result
 
-func serializeJSON(_ j: [String: AnyObject]) -> Data? {
-  return try? JSONSerialization
-    .data(withJSONObject: j, options: JSONSerialization.WritingOptions(rawValue: 0))
+func serializeJSON(_ j: Any) -> Data? {
+  return try? JSONSerialization.data(withJSONObject: j)
 }
 
 enum ResponseData {
   case data(Data?)
-  case json([String: AnyObject])
+  case json(Any)
 }
 
 extension ResponseData {
@@ -33,6 +32,7 @@ class FakeRequestPerformer: RequestPerformer {
     self.background = background
   }
 
+  @discardableResult
   func performRequest(_ request: URLRequest, completionHandler: @escaping (Result<HTTPResponse, SwishError>) -> Void) -> URLSessionDataTask {
     passedRequest = request
 

@@ -8,7 +8,7 @@ class NSURLRequestSpec: QuickSpec {
       context("when given an encodable object") {
         it("serializes and deserializes correctly") {
           var urlRequest = URLRequest(url: URL(string: "http://www.example.com")!)
-          urlRequest.jsonPayload = ["ids": [0, 1, 2]] as AnyObject
+          urlRequest.jsonPayload = ["ids": [0, 1, 2]]
 
           let payloadFromRequest = urlRequest.jsonPayload as? [String: AnyObject]
           let ids = payloadFromRequest?["ids"] as? [Int]
@@ -20,7 +20,7 @@ class NSURLRequestSpec: QuickSpec {
       context("when given an encodable array") {
         it("serializes and deserializes correctly") {
           var urlRequest = URLRequest(url: URL(string: "http://www.example.com")!)
-          urlRequest.jsonPayload = [["id": 1]] as AnyObject
+          urlRequest.jsonPayload = [["id": 1]]
 
           let payloadFromRequest = urlRequest.jsonPayload as? [[String: AnyObject]]
           let item = payloadFromRequest?[0]["id"] as? Int
