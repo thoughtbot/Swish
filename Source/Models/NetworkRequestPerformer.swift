@@ -11,7 +11,7 @@ public struct NetworkRequestPerformer: RequestPerformer {
 
 public extension NetworkRequestPerformer {
   @discardableResult
-  func performRequest(_ request: URLRequest, completionHandler: @escaping (Result<HTTPResponse, SwishError>) -> Void) -> URLSessionDataTask {
+  func perform(request: URLRequest, completionHandler: @escaping (Result<HTTPResponse, SwishError>) -> Void) -> URLSessionDataTask {
     let task = session.dataTask(with: request) { data, response, error in
       if let error = error {
         completionHandler(.failure(.urlSessionError(error as NSError)))

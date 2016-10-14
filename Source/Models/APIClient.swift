@@ -16,9 +16,8 @@ public struct APIClient {
 
 extension APIClient: Client {
   @discardableResult
-  public func performRequest<T: Request>(_ request: T, completionHandler: @escaping (Result<T.ResponseObject, SwishError>) -> Void) -> URLSessionDataTask {
-
-    return requestPerformer.performRequest(request.build()) { [schedule = scheduler] result in
+  public func perform<T: Request>(request: T, completionHandler: @escaping (Result<T.ResponseObject, SwishError>) -> Void) -> URLSessionDataTask {
+    return requestPerformer.perform(request: request.build()) { [schedule = scheduler] result in
       let object = result
         >>- self.validateResponse
         >>- self.deserializer.deserialize

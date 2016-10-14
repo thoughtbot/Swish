@@ -7,7 +7,7 @@ class APIClientSpec: QuickSpec {
   override func spec() {
     describe("APIClient") {
       context("when the status code is in the 200 range") {
-        describe("performRequest(completionHandler:") {
+        describe("perform(request:completionHandler:)") {
           it("passes the request's request object to the request performer") {
             let request = FakeRequest()
             let performer = FakeRequestPerformer(
@@ -15,7 +15,7 @@ class APIClientSpec: QuickSpec {
             )
             let client = APIClient(requestPerformer: performer)
 
-            client.performRequest(request) { _ in }
+            client.perform(request: request) { _ in }
 
             expect(performer.passedRequest).to(equal(request.build()))
           }
@@ -31,7 +31,7 @@ class APIClientSpec: QuickSpec {
                 let client = APIClient(requestPerformer: performer)
                 var result: Result<String, SwishError>?
 
-                client.performRequest(request) { result = $0 }
+                client.perform(request: request) { result = $0 }
 
                 expect(result?.value).toEventually(equal("hello world"))
               }
@@ -47,7 +47,7 @@ class APIClientSpec: QuickSpec {
                 let client = APIClient(requestPerformer: performer)
                 var error: SwishError?
 
-                client.performRequest(request) {
+                client.perform(request: request) {
                   error = $0.error
                 }
 
@@ -65,7 +65,7 @@ class APIClientSpec: QuickSpec {
                 let client = APIClient(requestPerformer: performer)
                 var result: Result<EmptyResponse, SwishError>?
 
-                client.performRequest(request) { result = $0 }
+                client.perform(request: request) { result = $0 }
 
                 expect(result?.value).toEventually(beVoid())
               }
@@ -81,7 +81,7 @@ class APIClientSpec: QuickSpec {
                 let client = APIClient(requestPerformer: performer)
                 var result: Result<EmptyResponse, SwishError>?
 
-                client.performRequest(request) { result = $0 }
+                client.perform(request: request) { result = $0 }
 
                 expect(result?.value).toEventually(beVoid())
               }
@@ -98,7 +98,7 @@ class APIClientSpec: QuickSpec {
               let client = APIClient(requestPerformer: performer)
               var isMainThread = false
 
-              client.performRequest(request) { _ in
+              client.perform(request: request) { _ in
                 isMainThread = Thread.isMainThread
               }
 
@@ -121,7 +121,7 @@ class APIClientSpec: QuickSpec {
           let client = APIClient(requestPerformer: performer)
           var error: SwishError?
 
-          client.performRequest(request) {
+          client.perform(request: request) {
             error = $0.error
           }
 
@@ -142,7 +142,7 @@ class APIClientSpec: QuickSpec {
           let client = APIClient(requestPerformer: performer)
           var error: SwishError?
 
-          client.performRequest(request) {
+          client.perform(request: request) {
             error = $0.error
           }
 
@@ -163,7 +163,7 @@ class APIClientSpec: QuickSpec {
           let client = APIClient(requestPerformer: performer)
           var error: SwishError?
 
-          client.performRequest(request) {
+          client.perform(request: request) {
             error = $0.error
           }
 
@@ -184,7 +184,7 @@ class APIClientSpec: QuickSpec {
           let client = APIClient(requestPerformer: performer)
           var error: SwishError?
 
-          client.performRequest(request) {
+          client.perform(request: request) {
             error = $0.error
           }
 
@@ -198,7 +198,7 @@ class APIClientSpec: QuickSpec {
           let client = APIClient(requestPerformer: performer)
 
           var isOnMain: Bool?
-          client.performRequest(FakeRequest()) { _ in
+          client.perform(request: FakeRequest()) { _ in
             isOnMain = Thread.isMainThread
           }
 
@@ -210,7 +210,7 @@ class APIClientSpec: QuickSpec {
           let client = APIClient(requestPerformer: performer, scheduler: immediateScheduler)
 
           var isOnMain: Bool?
-          client.performRequest(FakeRequest()) { _ in
+          client.perform(request: FakeRequest()) { _ in
             isOnMain = Thread.isMainThread
           }
 
@@ -228,7 +228,7 @@ class APIClientSpec: QuickSpec {
           let performer = FakeRequestPerformer(responseData: .json([:]), background: false)
           let client = APIClient(requestPerformer: performer, scheduler: noopScheduler)
 
-          client.performRequest(FakeRequest()) { _ in
+          client.perform(request: FakeRequest()) { _ in
             completed = true
           }
 

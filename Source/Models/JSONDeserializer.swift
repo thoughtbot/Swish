@@ -16,18 +16,18 @@ extension JSON: Parser {
   public typealias Representation = JSON
 
   public static func parse(_ j: Any) -> Result<JSON, SwishError> {
-    return Result(JSON.init(j))
+    return Result(JSON(j))
   }
 }
 
 private extension JSONDeserializer {
   func parseJSON(_ data: Data?) -> Result<Any, NSError> {
-    guard let d = data , d.count > 0 else {
+    guard let d = data, d.count > 0 else {
       return .success(NSNull())
     }
 
     return Result(
       attempt: { try JSONSerialization.jsonObject(with: d) }
-    ).map { $0 }
+    )
   }
 }
