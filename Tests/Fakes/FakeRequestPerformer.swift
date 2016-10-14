@@ -33,7 +33,7 @@ class FakeRequestPerformer: RequestPerformer {
   }
 
   @discardableResult
-  func perform(request: URLRequest, completionHandler: @escaping (Result<HTTPResponse, SwishError>) -> Void) -> URLSessionDataTask {
+  func perform(_ request: URLRequest, completionHandler: @escaping (Result<HTTPResponse, SwishError>) -> Void) -> URLSessionDataTask {
     passedRequest = request
 
     let response = request.url.flatMap {

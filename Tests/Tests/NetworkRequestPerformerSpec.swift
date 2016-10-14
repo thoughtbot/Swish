@@ -24,7 +24,7 @@ class RequestPerformerSpec: QuickSpec {
           let performer = NetworkRequestPerformer(session: fakeSession)
 
           let request = exampleRequest()
-          performer.perform(request: request) { _ in }
+          performer.perform(request) { _ in }
 
           expect(fakeSession.providedRequest).to(equal(request))
           expect(fakeSession.performedRequest).to(beTruthy())
@@ -37,7 +37,7 @@ class RequestPerformerSpec: QuickSpec {
             var returnedData: Data?
 
             let performer = NetworkRequestPerformer(session: fakeSession)
-            performer.perform(request: exampleRequest()) { result in
+            performer.perform(exampleRequest()) { result in
               returnedCode = result.value!.code
               returnedData = result.value!.data
             }
@@ -54,7 +54,7 @@ class RequestPerformerSpec: QuickSpec {
             var returnedError: NSError?
 
             let performer = NetworkRequestPerformer(session: fakeSession)
-            performer.perform(request: exampleRequest()) { result in
+            performer.perform(exampleRequest()) { result in
               returnedError = result.error?.rawError
             }
 
