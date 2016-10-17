@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
   spec.source_files = 'Source/**/*.{h,swift}'
 
   spec.dependency 'Argo', '~> 4.0.0'
-  spec.dependency 'Result', '~> 4.0.0'
+  spec.dependency 'Result', '~> 3.0.0'
 
   spec.requires_arc = true
 
