@@ -6,13 +6,13 @@ class FakeSession: URLSession {
 
   fileprivate let data: Data?
   fileprivate let response: URLResponse?
-  fileprivate let error: NSError?
+  fileprivate let error: Error?
 
   var performedRequest: Bool {
     return dataTask.resumedTask
   }
 
-  init(data: Data? = .none, response: URLResponse? = .none, error: NSError? = .none) {
+  init(data: Data? = .none, response: URLResponse? = .none, error: Error? = .none) {
     self.data = data
     self.response = response
     self.error = error

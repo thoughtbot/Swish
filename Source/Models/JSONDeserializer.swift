@@ -7,7 +7,7 @@ struct JSONDeserializer: Deserializer {
 
     return json.analysis(
       ifSuccess: Result<Any, SwishError>.init,
-      ifFailure: { .failure(.deserializationError($0)) }
+      ifFailure: { .failure(.deserializationError($0.error)) }
     )
   }
 }
@@ -21,7 +21,7 @@ extension JSON: Parser {
 }
 
 private extension JSONDeserializer {
-  func parseJSON(_ data: Data?) -> Result<Any, NSError> {
+  func parseJSON(_ data: Data?) -> Result<Any, AnyError> {
     guard let d = data, d.count > 0 else {
       return .success(NSNull())
     }

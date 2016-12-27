@@ -51,14 +51,14 @@ class RequestPerformerSpec: QuickSpec {
           it("returns a Result with the error") {
             let error = NSError(domain: "TestDomain", code: 1, userInfo: .none)
             let fakeSession = FakeSession(error: error)
-            var returnedError: NSError?
+            var returnedError: Error?
 
             let performer = NetworkRequestPerformer(session: fakeSession)
             performer.perform(exampleRequest()) { result in
-              returnedError = result.error?.rawError
+              returnedError = result.error
             }
 
-            expect(returnedError).to(matchError(error))
+            expect(returnedError).to(matchError(SwishError.urlSessionError(error)))
           }
         }
       }
