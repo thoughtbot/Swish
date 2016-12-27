@@ -16,12 +16,14 @@ We'll model this with the following struct, and implement Argo's `Decodable` pro
 import Argo
 import Curry
 
-struct Comment: Decodable {
+struct Comment {
   let id: Int
   let text: String
   let username: String
+}
 
-  static func decode(json: JSON) -> Decoded<Comment> {
+extension Comment: Decodable {
+  static func decode(_ json: JSON) -> Decoded<Comment> {
     return curry(Comment.init)
       <^> j <| "id"
       <*> j <| "commentText"
@@ -33,13 +35,16 @@ struct Comment: Decodable {
 We can model the request by defining a struct that implement's Swish's `Request` protocol:
 
 ```swift
+import Swish
+
 struct CommentRequest: Request {
   typealias ResponseObject = Comment
+
   let id: Int
 
-  func build() -> NSURLRequest {
-    let url = NSURL(string: "https://www.example.com/comments/\(id)")!
-    return NSURLRequest(URL: url)
+  func build() -> URLRequest {
+    let url = URL(string: "https://www.example.com/comments/\(id)")!
+    return URLRequest(URL: url)
   }
 }
 ```
@@ -47,12 +52,13 @@ struct CommentRequest: Request {
 We can then use the Swish's default `APIClient` to make the request:
 
 ```swift
-let request = CommentRequest(id: 1)
+let getComment = CommentRequest(id: 1)
 
-let dataTask = APIClient().performRequest(request) { (response: Result<Comment, SwishError>) in
-  if let value = response.value {
-    print("Here's the comment: \(value)")
-  } else if let error = response.error {
+APIClient().perform(getComment) { (response: Result<Comment, SwishError>) in
+  switch response {
+  case let .success(comment):
+    print("Here's the comment: \(comment)")
+  case let .failure(error):
     print("Oh no, an error: \(error)")
   }
 }
