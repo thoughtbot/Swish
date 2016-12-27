@@ -5,14 +5,14 @@ This documents each public protocol's intended use and the defaults for each tha
 At a  high level, here's what goes on:
 
 * A `Client` is told to perform a `Request`, which is done via the `RequestPerformer`.
-* The `RequestPerformer` will ensure it has a valid HTTP response code, and if so, hand the `NSData` from the `HTTPResponse` to the `Deserializer`.
-* The `Deserializer` will convert this `NSData` into a `Representation`, which is specified by the `Request`'s `ResponseParser`. The idea here is that the `Deserializer` can convert `NSData` into an intermediary form that can then be parsed into the `ResponseObject`.
+* The `RequestPerformer` will ensure it has a valid HTTP response code, and if so, hand the `Data` from the `HTTPResponse` to the `Deserializer`.
+* The `Deserializer` will convert this `Data` into a `Representation`, which is specified by the `Request`'s `ResponseParser`. The idea here is that the `Deserializer` can convert `Data` into an intermediary form that can then be parsed into the `ResponseObject`.
 
 In diagram form:
 
 ```swift
-Request —— RequestPerformer.performRequest ——> NSData
-        —— Deserializer.deserialize —————————> AnyObject
+Request —— RequestPerformer.perform —————————> Data
+        —— Deserializer.deserialize —————————> Any
         —— Parser.parse —————————————————————> Parser.Representation
         —— Request.parse ————————————————————> Request.ResponseObject
 ```
@@ -20,8 +20,8 @@ Request —— RequestPerformer.performRequest ——> NSData
 When translated into the concrete types given by the Swish defaults:
 
 ```swift
-Request —— NetworkRequestPerformer.performRequest ——> NSData
-        —— JSONDeserializer.deserialize ————————————> AnyObject
+Request —— NetworkRequestPerformer.perform —————————> Data
+        —— JSONDeserializer.deserialize ————————————> Any
         —— JSON.parse ——————————————————————————————> JSON
         —— Request.parse ———————————————————————————> Request.ResponseObject
 ```
@@ -31,19 +31,19 @@ Request —— NetworkRequestPerformer.performRequest ——> NSData
 The `Request` protocol models a requestable object (for example, a JSON endpoint). In addition, it defines two associated types:
 
 - A `ResponseObject` that defines what type of object to expect back from the request.
-- A `ResponseParser` that conforms to the `Parser` protocol, which provides a way to go from `AnyObject` into the `Parser.Representation`.
+- A `ResponseParser` that conforms to the `Parser` protocol, which provides a way to go from `Any` into the `Parser.Representation`.
 
 It is the job of a `Request` to convert from the `Parser.Representation` into the `ResponseObject`. It does the via the `parse` function.
 
 ### Parser ###
-The `Parser` protocol defines a way to convert `AnyObject` into a `Representation`. This `Representation` is then fed into the `Request.parse` function to produce a `ResponseObject`.
+The `Parser` protocol defines a way to convert `Any` into a `Representation`. This `Representation` is then fed into the `Request.parse` function to produce a `ResponseObject`.
 
 ### Deserializer ###
-The `Deserializer` protocol defines a way to convert `NSData?` into `AnyObject`. The `AnyObject` can then be fed into `Request.ResponseParser.parse`.
+The `Deserializer` protocol defines a way to convert `Data?` into `Any`. The `Any` can then be fed into `Request.ResponseParser.parse`.
 
 ### Client ###
 
-The `Client` protocol defines the core `performRequest` method that handles tying the other protocols together. It requires an object of type `Deserializer` that is responsible for dealing with the response's `NSData`.
+The `Client` protocol defines the core `perform` method that handles tying the other protocols together. It requires an object of type `Deserializer` that is responsible for dealing with the response's `Data`.
 
 The provided `Client` in Swish is `APIClient`. `APIClient` is instantiated (by default) with a `NetworkRequestPerformer` and a `JSONDeserializer`.
 
@@ -51,4 +51,4 @@ The provided `Client` in Swish is `APIClient`. `APIClient` is instantiated (by d
 
 The `RequestPerformer` protocol defines the layer that actually performs the raw networking.
 
-The default `RequestPerformer` is `NetworkRequestPerformer` that makes network requests via `NSURLSession`.
+The default `RequestPerformer` is `NetworkRequestPerformer` that makes network requests via `URLSession`.
