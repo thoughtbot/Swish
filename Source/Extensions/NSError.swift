@@ -8,7 +8,7 @@ extension NSError {
   static func error(_ message: String, function: String = #function, file: String = #file, line: Int = #line) -> NSError {
     var info = userInfoFor(function, file, line)
 
-    info[NSLocalizedDescriptionKey] = message as AnyObject?
+    info[NSLocalizedDescriptionKey] = message
 
     return NSError(domain: swishDomain, code: 0, userInfo: info)
   }

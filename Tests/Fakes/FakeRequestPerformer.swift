@@ -2,10 +2,6 @@ import Foundation
 @testable import Swish
 import Result
 
-func serializeJSON(_ j: Any) -> Data? {
-  return try? JSONSerialization.data(withJSONObject: j)
-}
-
 enum ResponseData {
   case data(Data?)
   case json(Any)
@@ -15,7 +11,7 @@ extension ResponseData {
   var data: Data? {
     switch self {
     case let .data(d): return d
-    case let .json(j): return serializeJSON(j)
+    case let .json(j): return try? JSONSerialization.data(withJSONObject: j)
     }
   }
 }

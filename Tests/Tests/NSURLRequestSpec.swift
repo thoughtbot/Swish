@@ -10,7 +10,7 @@ class NSURLRequestSpec: QuickSpec {
           var urlRequest = URLRequest(url: URL(string: "http://www.example.com")!)
           urlRequest.jsonPayload = ["ids": [0, 1, 2]]
 
-          let payloadFromRequest = urlRequest.jsonPayload as? [String: AnyObject]
+          let payloadFromRequest = urlRequest.jsonPayload as? [String: Any]
           let ids = payloadFromRequest?["ids"] as? [Int]
 
           expect(ids).to(equal([0, 1, 2]))
@@ -22,7 +22,7 @@ class NSURLRequestSpec: QuickSpec {
           var urlRequest = URLRequest(url: URL(string: "http://www.example.com")!)
           urlRequest.jsonPayload = [["id": 1]]
 
-          let payloadFromRequest = urlRequest.jsonPayload as? [[String: AnyObject]]
+          let payloadFromRequest = urlRequest.jsonPayload as? [[String: Any]]
           let item = payloadFromRequest?[0]["id"] as? Int
 
           expect(item).to(equal(1))
@@ -34,7 +34,7 @@ class NSURLRequestSpec: QuickSpec {
           var urlRequest = URLRequest(url: URL(string: "http://www.example.com")!)
           urlRequest.httpBody = Data()
 
-          let payloadFromRequest = urlRequest.jsonPayload as? [String: AnyObject]
+          let payloadFromRequest = urlRequest.jsonPayload as? [String: Any]
 
           expect(payloadFromRequest?.count).to(equal(0))
         }

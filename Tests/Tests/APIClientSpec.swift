@@ -25,7 +25,7 @@ class APIClientSpec: QuickSpec {
               it("returns the parsed object to the completion block") {
                 let request = FakeRequest()
                 let performer = FakeRequestPerformer(
-                  responseData: .json(["text": "hello world" as AnyObject])
+                  responseData: .json(["text": "hello world"])
                 )
 
                 let client = APIClient(requestPerformer: performer)
@@ -41,7 +41,7 @@ class APIClientSpec: QuickSpec {
               it("returns a failure state to the completion block") {
                 let request = FakeRequest()
                 let performer = FakeRequestPerformer(
-                  responseData: .json(["foo": "bar" as AnyObject])
+                  responseData: .json(["foo": "bar"])
                 )
 
                 let client = APIClient(requestPerformer: performer)
@@ -114,7 +114,7 @@ class APIClientSpec: QuickSpec {
           let expectedJSON = ["foo": "bar"]
           let expectedCode = 301
           let performer = FakeRequestPerformer(
-            responseData: .json(expectedJSON as [String : AnyObject]),
+            responseData: .json(expectedJSON),
             statusCode: expectedCode
           )
 
@@ -135,7 +135,7 @@ class APIClientSpec: QuickSpec {
           let expectedJSON = ["foo": "bar"]
           let expectedCode = 401
           let performer = FakeRequestPerformer(
-            responseData: .json(expectedJSON as [String : AnyObject]),
+            responseData: .json(expectedJSON),
             statusCode: expectedCode
           )
 
@@ -156,7 +156,7 @@ class APIClientSpec: QuickSpec {
           let expectedJSON = ["foo": "bar"]
           let expectedCode = 500
           let performer = FakeRequestPerformer(
-            responseData: .json(expectedJSON as [String : AnyObject]),
+            responseData: .json(expectedJSON),
             statusCode: expectedCode
           )
 
@@ -177,7 +177,7 @@ class APIClientSpec: QuickSpec {
           let expectedJSON = ["foo": "bar"]
           let expectedCode = 600
           let performer = FakeRequestPerformer(
-            responseData: .json(expectedJSON as [String : AnyObject]),
+            responseData: .json(expectedJSON),
             statusCode: expectedCode
           )
 
