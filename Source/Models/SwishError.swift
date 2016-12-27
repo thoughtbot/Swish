@@ -27,22 +27,3 @@ public extension SwishError {
     }
   }
 }
-
-extension SwishError: Equatable { }
-
-public func == (lhs: SwishError, rhs: SwishError) -> Bool {
-  switch (lhs, rhs) {
-  case let (.argoError(l), .argoError(r)):
-    return l == r
-  case let (.parseError(l), .parseError(r)):
-    return l == r
-  case let (.deserializationError(l), .deserializationError(r)):
-    return l == r
-  case let (.serverError(lCode, lData), .serverError(rCode, rData)):
-    return lCode == rCode && lData == rData
-  case let (.urlSessionError(l), .urlSessionError(r)):
-    return l == r
-  default:
-    return false
-  }
-}

@@ -51,7 +51,7 @@ class APIClientSpec: QuickSpec {
                   error = $0.error
                 }
 
-                expect(error).toEventually(equal(SwishError.argoError(.missingKey("text"))))
+                expect(error).toEventually(matchError(SwishError.argoError(.missingKey("text"))))
               }
             }
 
@@ -125,7 +125,7 @@ class APIClientSpec: QuickSpec {
             error = $0.error
           }
 
-          expect(error).toEventually(equal(SwishError.serverError(code: expectedCode, data: performer.data)))
+          expect(error).toEventually(matchError(SwishError.serverError(code: expectedCode, data: performer.data)))
         }
       }
 
@@ -146,7 +146,7 @@ class APIClientSpec: QuickSpec {
             error = $0.error
           }
 
-          expect(error).toEventually(equal(SwishError.serverError(code: expectedCode, data: performer.data)))
+          expect(error).toEventually(matchError(SwishError.serverError(code: expectedCode, data: performer.data)))
         }
       }
 
@@ -167,7 +167,7 @@ class APIClientSpec: QuickSpec {
             error = $0.error
           }
 
-          expect(error).toEventually(equal(SwishError.serverError(code: expectedCode, data: performer.data)))
+          expect(error).toEventually(matchError(SwishError.serverError(code: expectedCode, data: performer.data)))
         }
       }
 
@@ -188,7 +188,7 @@ class APIClientSpec: QuickSpec {
             error = $0.error
           }
 
-          expect(error).toEventually(equal(SwishError.serverError(code: expectedCode, data: performer.data)))
+          expect(error).toEventually(matchError(SwishError.serverError(code: expectedCode, data: performer.data)))
         }
       }
 

@@ -58,7 +58,7 @@ class RequestPerformerSpec: QuickSpec {
               returnedError = result.error?.rawError
             }
 
-            expect(returnedError).to(equal(error))
+            expect(returnedError).to(matchError(error))
           }
         }
       }
