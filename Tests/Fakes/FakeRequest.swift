@@ -11,7 +11,7 @@ struct FakeRequest: Request {
   }
 
   func parse(_ j: JSON) -> Result<String, SwishError> {
-    return .fromDecoded(j <| "text")
+    return Result(j <| "text")
   }
 }
 

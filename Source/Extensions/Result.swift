@@ -1,13 +1,13 @@
 import Argo
 import Result
 
-public extension Result {
-  static func fromDecoded<T>(_ decoded: Decoded<T>) -> Result<T, SwishError> {
+public extension ResultProtocol where Error == SwishError {
+  init(_ decoded: Decoded<Value>) {
     switch decoded {
     case let .success(obj):
-      return .success(obj)
+      self.init(value: obj)
     case let .failure(error):
-      return .failure(.argoError(error))
+      self.init(error: .argoError(error))
     }
   }
 }

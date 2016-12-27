@@ -14,13 +14,13 @@ public protocol Request {
 
 public extension Request where ResponseObject: Decodable, ResponseObject.DecodedType == ResponseObject {
   func parse(_ j: JSON) -> Result<ResponseObject, SwishError> {
-    return .fromDecoded(ResponseObject.decode(j))
+    return Result(ResponseObject.decode(j))
   }
 }
 
 public extension Request where ResponseObject: Collection, ResponseObject.Iterator.Element: Decodable, ResponseObject.Iterator.Element.DecodedType == ResponseObject.Iterator.Element {
   func parse(_ j: JSON) -> Result<[ResponseObject.Iterator.Element], SwishError> {
-    return .fromDecoded(ResponseObject.decode(j))
+    return Result(ResponseObject.decode(j))
   }
 }
 
