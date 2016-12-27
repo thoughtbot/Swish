@@ -19,7 +19,7 @@ extension APIClient: Client {
   public func perform<T: Request>(_ request: T, completionHandler: @escaping (Result<T.ResponseObject, SwishError>) -> Void) -> URLSessionDataTask {
     return requestPerformer.perform(request.build()) { [schedule = scheduler] result in
       let object = result
-        >>- self.validateResponse
+        >>- self.validate
         >>- self.deserializer.deserialize
         >>- T.ResponseParser.parse
         >>- request.parse
@@ -30,7 +30,7 @@ extension APIClient: Client {
 }
 
 private extension APIClient {
-  func validateResponse(_ httpResponse: HTTPResponse) -> Result<Data?, SwishError> {
+  func validate(_ httpResponse: HTTPResponse) -> Result<Data?, SwishError> {
     switch httpResponse.code {
     case (200...299):
       return .success(httpResponse.data)
