@@ -13,6 +13,29 @@ extension SwishError: Error { }
 
 extension SwishError: CustomNSError {
   public static let errorDomain = "com.thoughtbot.swish"
+
+  public var errorCode: Int {
+    switch self {
+    case .argoError:
+      return 1
+    case .deserializationError:
+      return 2
+    case .parseError:
+      return 3
+    case .serverError:
+      return 4
+    case .urlSessionError:
+      return 5
+    }
+  }
+
+#if !swift(>=3.1)
+  public var errorUserInfo: [String: Any] {
+    var userInfo: [String: Any] = [:]
+    userInfo[NSLocalizedDescriptionKey] = errorDescription
+    return userInfo
+  }
+#endif
 }
 
 extension SwishError: LocalizedError {
