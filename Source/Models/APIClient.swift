@@ -19,10 +19,10 @@ extension APIClient: Client {
   public func perform<T: Request>(_ request: T, completionHandler: @escaping (Result<T.ResponseObject, SwishError>) -> Void) -> URLSessionDataTask {
     return requestPerformer.perform(request.build()) { [schedule = scheduler] result in
       let object = result
-        >>- self.validate
-        >>- self.deserializer.deserialize
-        >>- T.ResponseParser.parse
-        >>- request.parse
+        .flatMap(self.validate)
+        .flatMap(self.deserializer.deserialize)
+        .flatMap(T.ResponseParser.parse)
+        .flatMap(request.parse)
 
       schedule { completionHandler(object) }
     }
