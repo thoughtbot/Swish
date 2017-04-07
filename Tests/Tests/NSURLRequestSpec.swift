@@ -4,16 +4,16 @@ import Nimble
 
 class NSURLRequestSpec: QuickSpec {
   override func spec() {
-    describe("formStylePayload") {
+    describe("urlEncodedPayload") {
       context("when given an encodable object") {
         it("serializes and deserializes correctly") {
           var urlRequest = URLRequest(url: URL(string: "http://www.example.com")!)
-          urlRequest.formStylePayload = [
+          urlRequest.urlEncodedPayload = [
             "firstKey": "firstValue",
             "secondKey": "secondValue=&"
           ]
 
-          let result = urlRequest.formStylePayload
+          let result = urlRequest.urlEncodedPayload
           let first = result?["firstKey"]
           let second = result?["secondKey"]
           expect(first).to(equal("firstValue"))
@@ -21,12 +21,12 @@ class NSURLRequestSpec: QuickSpec {
         }
       }
 
-      context("when the HTTPBody cannot be decoded") {
+      context("when the body cannot be decoded") {
         it("returns an empty dictionary") {
           var urlRequest = URLRequest(url: URL(string: "http://www.example.com")!)
           urlRequest.httpBody = Data()
 
-          let payloadFromRequest = urlRequest.formStylePayload
+          let payloadFromRequest = urlRequest.urlEncodedPayload
           expect(payloadFromRequest?.count).to(equal(0))
         }
       }
@@ -57,7 +57,7 @@ class NSURLRequestSpec: QuickSpec {
         }
       }
 
-      context("when the HTTPBody cannot be decoded") {
+      context("when the body cannot be decoded") {
         it("returns an empty dictionary") {
           var urlRequest = URLRequest(url: URL(string: "http://www.example.com")!)
           urlRequest.httpBody = Data()

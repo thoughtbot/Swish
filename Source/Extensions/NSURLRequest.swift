@@ -11,7 +11,7 @@ public extension URLRequest {
   }
 
   @available(macOSApplicationExtension 10.10, *)
-  var formStylePayload: [String: String]? {
+  var urlEncodedPayload: [String: String]? {
     get {
       return URLQueryItem.decode(httpBody)
         .reduce([:], queryItemToDictionary)
