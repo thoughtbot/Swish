@@ -21,7 +21,7 @@ public extension URLRequest {
     set {
       var components = URLComponents()
       components.queryItems = newValue
-      httpBody = components.query!.data(using: .utf8)
+      httpBody = components.query?.data(using: .utf8)
     }
   }
 }
