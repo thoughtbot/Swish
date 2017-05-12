@@ -4,20 +4,30 @@ import Nimble
 
 class NSURLRequestSpec: QuickSpec {
   override func spec() {
-    describe("urlEncodedPayload") {
+    describe("formURLEncodedPayload") {
       context("when given an encodable object") {
         it("serializes and deserializes correctly") {
-          var urlRequest = URLRequest(url: URL(string: "http://www.example.com")!)
-          urlRequest.urlEncodedPayload = [
-            "firstKey": "firstValue",
-            "secondKey": "secondValue=&"
+          let queryItems = [
+            URLQueryItem(name: "firstKey", value: "firstValue"),
+            URLQueryItem(name: "secondKey", value: "secondValue="),
           ]
 
-          let result = urlRequest.urlEncodedPayload
-          let first = result?["firstKey"]
-          let second = result?["secondKey"]
-          expect(first).to(equal("firstValue"))
-          expect(second).to(equal("secondValue=&"))
+          var urlRequest = URLRequest(url: URL(string: "http://www.example.com")!)
+          urlRequest.formURLEncodedPayload = queryItems
+
+          expect(urlRequest.formURLEncodedPayload).to(equal(queryItems))
+        }
+
+        it("handles query items with nil or empty values") {
+          let queryItems = [
+            URLQueryItem(name: "novalue", value: nil),
+            URLQueryItem(name: "empty", value: ""),
+          ]
+
+          var urlRequest = URLRequest(url: URL(string: "http://www.example.com")!)
+          urlRequest.formURLEncodedPayload = queryItems
+
+          expect(urlRequest.formURLEncodedPayload).to(equal(queryItems))
         }
       }
 
@@ -26,8 +36,8 @@ class NSURLRequestSpec: QuickSpec {
           var urlRequest = URLRequest(url: URL(string: "http://www.example.com")!)
           urlRequest.httpBody = Data()
 
-          let payloadFromRequest = urlRequest.urlEncodedPayload
-          expect(payloadFromRequest?.count).to(equal(0))
+          let payloadFromRequest = urlRequest.formURLEncodedPayload
+          expect(payloadFromRequest.count).to(equal(0))
         }
       }
     }

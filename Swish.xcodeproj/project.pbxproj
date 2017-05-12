@@ -33,17 +33,11 @@
 		4A05CC291CEFBA4B0076955E /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A05CC271CEFBA460076955E /* Scheduler.swift */; };
 		4A05CC2A1CEFBA4C0076955E /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A05CC271CEFBA460076955E /* Scheduler.swift */; };
 		4A05CC2B1CEFBA4C0076955E /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A05CC271CEFBA460076955E /* Scheduler.swift */; };
-		4A2D61E11E97DD33001B11B2 /* NSURLQueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA131C9D9FF80069B21D /* NSURLQueryItem.swift */; };
-		4A2D61E21E97DD34001B11B2 /* NSURLQueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA131C9D9FF80069B21D /* NSURLQueryItem.swift */; };
 		4A698B9E1E131ACE006951B2 /* Deprecations+Removals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A698B9D1E131ACE006951B2 /* Deprecations+Removals.swift */; };
 		4A698B9F1E131AD2006951B2 /* Deprecations+Removals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A698B9D1E131ACE006951B2 /* Deprecations+Removals.swift */; };
 		4A698BA01E131AD3006951B2 /* Deprecations+Removals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A698B9D1E131ACE006951B2 /* Deprecations+Removals.swift */; };
 		4A698BA11E131AD3006951B2 /* Deprecations+Removals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A698B9D1E131ACE006951B2 /* Deprecations+Removals.swift */; };
 		E506EC7E1BB5BE380032E941 /* NimbleMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */; };
-		E509EA141C9D9FF80069B21D /* NSURLQueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA131C9D9FF80069B21D /* NSURLQueryItem.swift */; };
-		E509EA151C9D9FF80069B21D /* NSURLQueryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA131C9D9FF80069B21D /* NSURLQueryItem.swift */; };
-		E509EA171C9DF3DB0069B21D /* NSURLQueryItemSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA161C9DF3DB0069B21D /* NSURLQueryItemSpec.swift */; };
-		E509EA181C9DF3DB0069B21D /* NSURLQueryItemSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E509EA161C9DF3DB0069B21D /* NSURLQueryItemSpec.swift */; };
 		E51722EF1CEE5D1000B0C915 /* JSONDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6361C91055200AD2CDE /* JSONDeserializer.swift */; };
 		E51722F01CEE5D1A00B0C915 /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6321C91049300AD2CDE /* Deserializer.swift */; };
 		E51722F11CEE5D1D00B0C915 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58AD6341C91053000AD2CDE /* Parser.swift */; };
@@ -153,8 +147,6 @@
 		4A05CC271CEFBA460076955E /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		4A698B9D1E131ACE006951B2 /* Deprecations+Removals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Deprecations+Removals.swift"; sourceTree = "<group>"; };
 		E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbleMatchers.swift; sourceTree = "<group>"; };
-		E509EA131C9D9FF80069B21D /* NSURLQueryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLQueryItem.swift; sourceTree = "<group>"; };
-		E509EA161C9DF3DB0069B21D /* NSURLQueryItemSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLQueryItemSpec.swift; sourceTree = "<group>"; };
 		E52E5D8F1CE7AE3400023C91 /* Swish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E52E5D981CE7AE3400023C91 /* Swish-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swish-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E52E5DB51CE7AF4D00023C91 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = "Carthage/Checkouts/Argo/build/Debug-appletvos/Argo.framework"; sourceTree = "<group>"; };
@@ -362,7 +354,6 @@
 			isa = PBXGroup;
 			children = (
 				E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */,
-				E509EA131C9D9FF80069B21D /* NSURLQueryItem.swift */,
 				F88ED0711B967C4A0069F56C /* Result.swift */,
 				4A698B9D1E131ACE006951B2 /* Deprecations+Removals.swift */,
 			);
@@ -423,7 +414,6 @@
 				F8A00DE61BB5C86200169A46 /* RequestSpec.swift */,
 				F88ED06E1B967BCB0069F56C /* APIClientSpec.swift */,
 				E5915B231BDAD1A3005E5D63 /* NSURLRequestSpec.swift */,
-				E509EA161C9DF3DB0069B21D /* NSURLQueryItemSpec.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -725,7 +715,6 @@
 				2C721E571BD5A7C500846414 /* Result.swift in Sources */,
 				F84374CE1C4032020092E844 /* SwishError.swift in Sources */,
 				4A698B9F1E131AD2006951B2 /* Deprecations+Removals.swift in Sources */,
-				E509EA151C9D9FF80069B21D /* NSURLQueryItem.swift in Sources */,
 				2C721E5B1BD5A7D400846414 /* Request.swift in Sources */,
 				2C721E5A1BD5A7D400846414 /* RequestPerformer.swift in Sources */,
 			);
@@ -736,7 +725,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C6DC9811BD5AA3B006B4C96 /* APIClientSpec.swift in Sources */,
-				E509EA181C9DF3DB0069B21D /* NSURLQueryItemSpec.swift in Sources */,
 				2C6DC97E1BD5AA3B006B4C96 /* FakeDataTask.swift in Sources */,
 				2C6DC97C1BD5AA3B006B4C96 /* FakeRequest.swift in Sources */,
 				E5915B251BDAD1A3005E5D63 /* NSURLRequestSpec.swift in Sources */,
@@ -760,7 +748,6 @@
 				E52E5DAC1CE7AF2500023C91 /* NetworkRequestPerformer.swift in Sources */,
 				E52E5DAD1CE7AF2500023C91 /* HTTPResponse.swift in Sources */,
 				E52E5DAE1CE7AF2500023C91 /* APIClient.swift in Sources */,
-				4A2D61E11E97DD33001B11B2 /* NSURLQueryItem.swift in Sources */,
 				E52E5DAF1CE7AF2500023C91 /* JSONDeserializer.swift in Sources */,
 				E52E5DB01CE7AF2500023C91 /* RequestPerformer.swift in Sources */,
 				E52E5DB11CE7AF2500023C91 /* Request.swift in Sources */,
@@ -799,7 +786,6 @@
 				E52E5DDB1CE7B36A00023C91 /* NetworkRequestPerformer.swift in Sources */,
 				E52E5DDC1CE7B36A00023C91 /* HTTPResponse.swift in Sources */,
 				E52E5DDD1CE7B36A00023C91 /* APIClient.swift in Sources */,
-				4A2D61E21E97DD34001B11B2 /* NSURLQueryItem.swift in Sources */,
 				E52E5DDE1CE7B36A00023C91 /* JSONDeserializer.swift in Sources */,
 				E52E5DDF1CE7B36A00023C91 /* RequestPerformer.swift in Sources */,
 				E52E5DE01CE7B36A00023C91 /* Request.swift in Sources */,
@@ -827,7 +813,6 @@
 				F88ED06D1B96736B0069F56C /* APIClient.swift in Sources */,
 				F8F59BB61C2B34B60020B5BE /* SwishError.swift in Sources */,
 				4A698B9E1E131ACE006951B2 /* Deprecations+Removals.swift in Sources */,
-				E509EA141C9D9FF80069B21D /* NSURLQueryItem.swift in Sources */,
 				E5915B211BDABC4B005E5D63 /* NSURLRequest.swift in Sources */,
 				F80695131B962C5300C61B4A /* NetworkRequestPerformer.swift in Sources */,
 			);
@@ -838,7 +823,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8DF3B881B964B20003177CD /* NetworkRequestPerformerSpec.swift in Sources */,
-				E509EA171C9DF3DB0069B21D /* NSURLQueryItemSpec.swift in Sources */,
 				F8A00DE71BB5C86200169A46 /* RequestSpec.swift in Sources */,
 				F8C39B511B969A71005E065F /* FakeDataTask.swift in Sources */,
 				E5915B241BDAD1A3005E5D63 /* NSURLRequestSpec.swift in Sources */,

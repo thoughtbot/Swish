@@ -11,41 +11,17 @@ public extension URLRequest {
   }
 
   @available(macOSApplicationExtension 10.10, *)
-  var urlEncodedPayload: [String: String]? {
+  var formURLEncodedPayload: [URLQueryItem] {
     get {
-      return URLQueryItem.decode(httpBody)
-        .reduce([:], queryItemToDictionary)
+      var components = URLComponents()
+      components.query = httpBody.flatMap { String(data: $0, encoding: .utf8) }
+      return components.queryItems ?? []
     }
 
     set {
-      if let parameters = newValue {
-        let queryString = parameters
-          .map { URLQueryItem.encode(key: $0.0, value: $0.1) }
-          .flatMap { $0 }
-          .queryString
-
-        httpBody = queryString.data(using: .utf8)
-      }
+      var components = URLComponents()
+      components.queryItems = newValue
+      httpBody = components.query!.data(using: .utf8)
     }
-  }
-
-  @available(macOSApplicationExtension 10.10, *)
-  private func queryItemToDictionary( accum: [String: String]?, el: URLQueryItem) -> [String: String]? {
-    guard let value = el.value else { return accum }
-    var accum = accum
-    accum?[el.name] = value
-    return accum
-  }
-}
-
-@available(macOSApplicationExtension 10.10, *)
-private extension Collection where Iterator.Element == URLQueryItem {
-  var queryString: String {
-    return sorted { $0.name < $1.name }
-      .reduce([]) { accum, el in
-        guard let v = el.value else { return accum }
-        return accum + ["\(el.name)=\(v)"]
-      }
-      .joined(separator: "&")
   }
 }
