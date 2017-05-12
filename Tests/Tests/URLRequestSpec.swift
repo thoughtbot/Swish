@@ -2,7 +2,7 @@ import Swish
 import Quick
 import Nimble
 
-class NSURLRequestSpec: QuickSpec {
+class URLRequestSpec: QuickSpec {
   override func spec() {
     describe("formURLEncodedPayload") {
       context("when given an encodable object") {
