@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'Swish'
-  spec.version = '2.0.2'
+  spec.version = '2.0.3'
   spec.summary = 'Nothing but net(working)'
   spec.homepage = 'https://github.com/thoughtbot/Swish'
   spec.license = { :type => 'MIT', :file => 'LICENSE' }
