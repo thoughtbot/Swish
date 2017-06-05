@@ -5,7 +5,7 @@ import Nimble
 import Result
 import Runes
 
-struct User: Decodable {
+struct User: Argo.Decodable {
   let name: String
 
   static func decode(_ json: JSON) -> Decoded<User> {
