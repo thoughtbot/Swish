@@ -45,13 +45,13 @@ class APIClientSpec: QuickSpec {
                 )
 
                 let client = APIClient(requestPerformer: performer)
-                var error: SwishError?
+                var error: Error?
 
                 client.perform(request) {
                   error = $0.error
                 }
 
-                expect(error).toEventually(matchError(SwishError.argoError(.missingKey("text"))))
+                expect(error).toEventually(matchError(SwishError.self))
               }
             }
 

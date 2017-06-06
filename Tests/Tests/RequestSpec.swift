@@ -1,16 +1,10 @@
 import Swish
-import Argo
 import Quick
 import Nimble
 import Result
-import Runes
 
-struct User: Argo.Decodable {
+struct User: Decodable {
   let name: String
-
-  static func decode(_ json: JSON) -> Decoded<User> {
-    return User.init <^> json <| "name"
-  }
 }
 
 struct DecodableRequest: Request {
@@ -37,6 +31,10 @@ struct EmptyResponseRequest: Request {
   }
 }
 
+func json(_ string: String) -> Data {
+  return string.data(using: .utf8)!
+}
+
 class RequestSpec: QuickSpec {
   override func spec() {
     describe("Request") {
@@ -44,8 +42,11 @@ class RequestSpec: QuickSpec {
         context("when the ResponseObject is decodable") {
           it("decodes the response as json") {
             let request = DecodableRequest()
-            let json = JSON(["name": "gvg"])
-            let result = request.parse(json)
+            let result = request.parse(json(
+              """
+              { "name": "gvg" }
+              """
+            ))
 
             expect(result.value?.name).to(equal("gvg"))
           }
@@ -54,11 +55,14 @@ class RequestSpec: QuickSpec {
         context("when the ResponseObject is a collection type of decodable objects") {
           it("decodes the collection as a json array") {
             let request = DecodableCollectionRequest()
-            let json = JSON([
-              ["name": "giles"],
-              ["name": "gordon"]
-            ])
-            let result = request.parse(json)
+            let result = request.parse(json(
+              """
+              [
+                { "name": "giles" },
+                { "name": "gordon" }
+              ]
+              """
+            ))
 
             expect(result.value?.count).to(equal(2))
             expect(result.value?.first?.name).to(equal("giles"))
@@ -68,7 +72,7 @@ class RequestSpec: QuickSpec {
         context("when the ResponseObject is an EmptyResponse") {
           it("should result in Success") {
             let request = EmptyResponseRequest()
-            let result = request.parse(JSON.null)
+            let result = request.parse(Data())
 
             expect(result).to(beSuccessful())
           }

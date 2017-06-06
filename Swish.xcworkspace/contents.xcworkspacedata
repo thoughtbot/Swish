@@ -5,9 +5,6 @@
       location = "group:Swish.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Carthage/Checkouts/Argo/Argo.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Carthage/Checkouts/Result/Result.xcodeproj">
    </FileRef>
    <FileRef
@@ -15,8 +12,5 @@
    </FileRef>
    <FileRef
       location = "group:Carthage/Checkouts/Nimble/Nimble.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Carthage/Checkouts/Runes/Runes.xcodeproj">
    </FileRef>
 </Workspace>

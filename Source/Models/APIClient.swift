@@ -1,15 +1,12 @@
 import Foundation
-import Argo
 import Result
 
 public struct APIClient {
   fileprivate let requestPerformer: RequestPerformer
-  fileprivate let deserializer: Deserializer
   fileprivate let scheduler: Scheduler
 
-  public init(requestPerformer: RequestPerformer = NetworkRequestPerformer(), deserializer: Deserializer = JSONDeserializer(), scheduler: @escaping Scheduler = mainQueueScheduler) {
+  public init(requestPerformer: RequestPerformer = NetworkRequestPerformer(), scheduler: @escaping Scheduler = mainQueueScheduler) {
     self.requestPerformer = requestPerformer
-    self.deserializer = deserializer
     self.scheduler = scheduler
   }
 }
@@ -20,8 +17,6 @@ extension APIClient: Client {
     return requestPerformer.perform(request.build()) { [schedule = scheduler] result in
       let object = result
         .flatMap(self.validate)
-        .flatMap(self.deserializer.deserialize)
-        .flatMap(T.ResponseParser.parse)
         .flatMap(request.parse)
 
       schedule { completionHandler(object) }

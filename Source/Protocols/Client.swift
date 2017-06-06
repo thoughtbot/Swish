@@ -1,5 +1,4 @@
 import Foundation
-import Argo
 import Result
 
 public protocol Client {

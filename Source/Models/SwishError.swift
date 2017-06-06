@@ -1,8 +1,7 @@
 import Foundation
-import Argo
 
 public enum SwishError {
-  case argoError(Argo.DecodeError)
+  case decodeError(Error)
   case deserializationError(Error)
   case parseError(Error)
   case serverError(code: Int, data: Data?)
@@ -16,7 +15,7 @@ extension SwishError: CustomNSError {
 
   public var errorCode: Int {
     switch self {
-    case .argoError:
+    case .decodeError:
       return 1
     case .deserializationError:
       return 2
@@ -44,16 +43,11 @@ extension SwishError: LocalizedError {
     case let .serverError(code, _):
       return message(forStatus: code)
 
-    case let .deserializationError(error),
+    case let .decodeError(error),
+         let .deserializationError(error),
          let .parseError(error),
          let .urlSessionError(error, _):
       return (error as? LocalizedError)?.errorDescription
-
-    case let .argoError(localizedError as LocalizedError):
-      return localizedError.errorDescription
-
-    case let .argoError(error):
-      return String(describing: error)
     }
   }
 }

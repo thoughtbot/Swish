@@ -1,31 +1,25 @@
 import Foundation
-import Argo
 import Result
 
 public typealias EmptyResponse = Void
 
 public protocol Request {
   associatedtype ResponseObject
-  associatedtype ResponseParser: Parser = JSON
 
   func build() -> URLRequest
-  func parse(_ j: ResponseParser.Representation) -> Result<ResponseObject, SwishError>
+  func parse(_ data: Data) -> Result<ResponseObject, SwishError>
 }
 
-public extension Request where ResponseObject: Argo.Decodable, ResponseObject.DecodedType == ResponseObject {
-  func parse(_ j: JSON) -> Result<ResponseObject, SwishError> {
-    return Result(ResponseObject.decode(j))
-  }
-}
-
-public extension Request where ResponseObject: Collection, ResponseObject.Iterator.Element: Argo.Decodable, ResponseObject.Iterator.Element.DecodedType == ResponseObject.Iterator.Element {
-  func parse(_ j: JSON) -> Result<[ResponseObject.Iterator.Element], SwishError> {
-    return Result(ResponseObject.decode(j))
+public extension Request where ResponseObject: Decodable {
+  func parse(_ data: Data) -> Result<ResponseObject, SwishError> {
+    let decoder = JSONDecoder()
+    let result = Result<ResponseObject, AnyError>(try decoder.decode(ResponseObject.self, from: data))
+    return result.mapError { SwishError.decodeError($0.error) }
   }
 }
 
 public extension Request where ResponseObject == EmptyResponse {
-  func parse(_ j: JSON) -> Result<ResponseObject, SwishError> {
+  func parse(_ data: Data) -> Result<ResponseObject, SwishError> {
     return .success(())
   }
 }
