@@ -10,13 +10,10 @@ struct FakeRequest: Request {
   }
 
   func parse(_ data: Data) throws -> String {
-    let body = try JSONDecoder().decode(FakeResponseBody.self, from: data)
+    struct Body: Codable { var text: String }
+    let body = try JSONDecoder().decode(Body.self, from: data)
     return body.text
   }
-}
-
-private struct FakeResponseBody: Codable {
-  var text: String
 }
 
 struct FakeEmptyDataRequest: Request {
