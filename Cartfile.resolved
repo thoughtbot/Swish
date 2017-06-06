@@ -1,5 +1,5 @@
-github "Quick/Nimble" "4cfe93e4b72f66fe63906df8f93729b6ed902a71"
+github "Quick/Nimble" "v7.0.1"
 github "Quick/Quick" "v1.1.0"
 github "antitypical/Result" "3.2.3"
 github "thoughtbot/Argo" "v4.1.2"
-github "thoughtbot/Runes" "v4.0.1"
+github "thoughtbot/Runes" "v4.1.0"

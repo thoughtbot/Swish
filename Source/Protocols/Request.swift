@@ -26,6 +26,6 @@ public extension Request where ResponseObject: Collection, ResponseObject.Iterat
 
 public extension Request where ResponseObject == EmptyResponse {
   func parse(_ j: JSON) -> Result<ResponseObject, SwishError> {
-    return .success()
+    return .success(())
   }
 }
