@@ -42,23 +42,27 @@ class RequestSpec: QuickSpec {
     describe("Request") {
       describe("default parse implementation") {
         context("when the ResponseObject is decodable") {
-          let request = DecodableRequest()
-          let json = JSON(["name": "gvg"])
-          let result = request.parse(json)
+          it("decodes the response as json") {
+            let request = DecodableRequest()
+            let json = JSON(["name": "gvg"])
+            let result = request.parse(json)
 
-          expect(result.value?.name).to(equal("gvg"))
+            expect(result.value?.name).to(equal("gvg"))
+          }
         }
 
         context("when the ResponseObject is a collection type of decodable objects") {
-          let request = DecodableCollectionRequest()
-          let json = JSON([
-            ["name": "giles"],
-            ["name": "gordon"]
-          ])
-          let result = request.parse(json)
+          it("decodes the collection as a json array") {
+            let request = DecodableCollectionRequest()
+            let json = JSON([
+              ["name": "giles"],
+              ["name": "gordon"]
+            ])
+            let result = request.parse(json)
 
-          expect(result.value?.count).to(equal(2))
-          expect(result.value?.first?.name).to(equal("giles"))
+            expect(result.value?.count).to(equal(2))
+            expect(result.value?.first?.name).to(equal("giles"))
+          }
         }
 
         context("when the ResponseObject is an EmptyResponse") {
