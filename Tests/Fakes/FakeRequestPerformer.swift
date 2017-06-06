@@ -3,22 +3,22 @@ import Swish
 import Result
 
 enum ResponseData {
-  case data(Data?)
+  case data(Data)
   case json(Any)
 }
 
 extension ResponseData {
-  var data: Data? {
+  var data: Data {
     switch self {
     case let .data(d): return d
-    case let .json(j): return try? JSONSerialization.data(withJSONObject: j)
+    case let .json(j): return (try? JSONSerialization.data(withJSONObject: j)) ?? Data()
     }
   }
 }
 
 class FakeRequestPerformer: RequestPerformer {
   let statusCode: Int
-  let data: Data?
+  let data: Data
   let background: Bool
   var passedRequest: URLRequest?
 
@@ -32,9 +32,7 @@ class FakeRequestPerformer: RequestPerformer {
   func perform(_ request: URLRequest, completionHandler: @escaping (Result<HTTPResponse, SwishError>) -> Void) -> URLSessionDataTask {
     passedRequest = request
 
-    let response = request.url.flatMap {
-      HTTPURLResponse(url: $0, statusCode: statusCode, httpVersion: .none, headerFields: .none)
-    }
+    let response = HTTPURLResponse(url: request.url!, statusCode: statusCode, httpVersion: .none, headerFields: .none)!
 
     let complete = { [data] in
       completionHandler(

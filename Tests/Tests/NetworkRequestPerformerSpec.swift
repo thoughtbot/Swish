@@ -11,7 +11,7 @@ func fakeData() -> Data {
   return "Hello World".data(using: .utf8, allowLossyConversion: false)!
 }
 
-func fakeResponse(_ code: Int) -> URLResponse {
+func fakeResponse(_ code: Int) -> HTTPURLResponse {
   return HTTPURLResponse(url: URL(string: "https://example.com")!, statusCode: code, httpVersion: .none, headerFields: .none)!
 }
 
@@ -58,7 +58,7 @@ class RequestPerformerSpec: QuickSpec {
               returnedError = result.error
             }
 
-            expect(returnedError).to(matchError(SwishError.urlSessionError(error)))
+            expect(returnedError).to(matchError(SwishError.urlSessionError(error, response: nil)))
           }
         }
       }

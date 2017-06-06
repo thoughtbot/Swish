@@ -30,7 +30,7 @@ extension APIClient: Client {
 }
 
 private extension APIClient {
-  func validate(_ httpResponse: HTTPResponse) -> Result<Data?, SwishError> {
+  func validate(_ httpResponse: HTTPResponse) -> Result<Data, SwishError> {
     switch httpResponse.code {
     case (200...299):
       return .success(httpResponse.data)

@@ -6,7 +6,7 @@ public enum SwishError {
   case deserializationError(Error)
   case parseError(Error)
   case serverError(code: Int, data: Data?)
-  case urlSessionError(Error)
+  case urlSessionError(Error, response: HTTPURLResponse?)
 }
 
 extension SwishError: Error { }
@@ -46,7 +46,7 @@ extension SwishError: LocalizedError {
 
     case let .deserializationError(error),
          let .parseError(error),
-         let .urlSessionError(error):
+         let .urlSessionError(error, _):
       return (error as? LocalizedError)?.errorDescription
 
     case let .argoError(localizedError as LocalizedError):

@@ -75,7 +75,7 @@ class APIClientSpec: QuickSpec {
               it("returns a null JSON object") {
                 let request = FakeEmptyDataRequest()
                 let performer = FakeRequestPerformer(
-                  responseData: .data(.none)
+                  responseData: .data(Data())
                 )
 
                 let client = APIClient(requestPerformer: performer)
