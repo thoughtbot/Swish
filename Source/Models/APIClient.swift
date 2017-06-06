@@ -14,10 +14,19 @@ public struct APIClient {
 extension APIClient: Client {
   @discardableResult
   public func perform<T: Request>(_ request: T, completionHandler: @escaping (Result<T.ResponseObject, SwishError>) -> Void) -> URLSessionDataTask {
+    func parse(_ data: Data) -> Result<T.ResponseObject, SwishError> {
+      do {
+        let parsed = try request.parse(data)
+        return .success(parsed)
+      } catch {
+        return .failure(.decodingError(error))
+      }
+    }
+
     return requestPerformer.perform(request.build()) { [schedule = scheduler] result in
       let object = result
         .flatMap(self.validate)
-        .flatMap(request.parse)
+        .flatMap(parse)
 
       schedule { completionHandler(object) }
     }

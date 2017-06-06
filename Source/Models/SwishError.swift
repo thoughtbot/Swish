@@ -1,9 +1,7 @@
 import Foundation
 
 public enum SwishError {
-  case decodeError(Error)
-  case deserializationError(Error)
-  case parseError(Error)
+  case decodingError(Error)
   case serverError(code: Int, data: Data?)
   case urlSessionError(Error, response: HTTPURLResponse?)
 }
@@ -15,12 +13,8 @@ extension SwishError: CustomNSError {
 
   public var errorCode: Int {
     switch self {
-    case .decodeError:
+    case .decodingError:
       return 1
-    case .deserializationError:
-      return 2
-    case .parseError:
-      return 3
     case .serverError:
       return 4
     case .urlSessionError:
@@ -43,9 +37,7 @@ extension SwishError: LocalizedError {
     case let .serverError(code, _):
       return message(forStatus: code)
 
-    case let .decodeError(error),
-         let .deserializationError(error),
-         let .parseError(error),
+    case let .decodingError(error),
          let .urlSessionError(error, _):
       return (error as? LocalizedError)?.errorDescription
     }

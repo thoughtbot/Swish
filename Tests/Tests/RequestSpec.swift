@@ -42,20 +42,20 @@ class RequestSpec: QuickSpec {
         context("when the ResponseObject is decodable") {
           it("decodes the response as json") {
             let request = DecodableRequest()
-            let result = request.parse(json(
+            let result = try? request.parse(json(
               """
               { "name": "gvg" }
               """
             ))
 
-            expect(result.value?.name).to(equal("gvg"))
+            expect(result?.name).to(equal("gvg"))
           }
         }
 
         context("when the ResponseObject is a collection type of decodable objects") {
           it("decodes the collection as a json array") {
             let request = DecodableCollectionRequest()
-            let result = request.parse(json(
+            let result = try? request.parse(json(
               """
               [
                 { "name": "giles" },
@@ -64,18 +64,32 @@ class RequestSpec: QuickSpec {
               """
             ))
 
-            expect(result.value?.count).to(equal(2))
-            expect(result.value?.first?.name).to(equal("giles"))
+            expect(result?.count).to(equal(2))
+            expect(result?.first?.name).to(equal("giles"))
           }
         }
 
         context("when the ResponseObject is an EmptyResponse") {
           it("should result in Success") {
             let request = EmptyResponseRequest()
-            let result = request.parse(Data())
-
-            expect(result).to(beSuccessful())
+            expect { try request.parse(Data()) }.toNot(throwError())
           }
+        }
+      }
+
+      describe("custom parse implementation") {
+        it("uses the custom parse function instead of json") {
+          let request = FakeStringRequest()
+          let data = "Hello, world!".data(using: .utf8)!
+
+          expect { try request.parse(data) }.to(equal("Hello, world!"))
+        }
+
+        it("wraps any custom error if parsing fails") {
+          let request = FakeStringRequest()
+          let data = "Hello, world!".data(using: .utf16)!
+
+          expect { try request.parse(data) }.to(throwError(FakeError(message: "invalid UTF-8")))
         }
       }
     }
