@@ -1,5 +1,5 @@
 import Foundation
-@testable import Swish
+import Swish
 import Result
 
 enum ResponseData {

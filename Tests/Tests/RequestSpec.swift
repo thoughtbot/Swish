@@ -1,4 +1,4 @@
-@testable import Swish
+import Swish
 import Argo
 import Quick
 import Nimble
