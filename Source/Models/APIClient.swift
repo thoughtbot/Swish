@@ -3,9 +3,9 @@ import Argo
 import Result
 
 public struct APIClient {
+  public let scheduler: Scheduler
   fileprivate let requestPerformer: RequestPerformer
   fileprivate let deserializer: Deserializer
-  fileprivate let scheduler: Scheduler
 
   public init(requestPerformer: RequestPerformer = NetworkRequestPerformer(), deserializer: Deserializer = JSONDeserializer(), scheduler: @escaping Scheduler = mainQueueScheduler) {
     self.requestPerformer = requestPerformer
