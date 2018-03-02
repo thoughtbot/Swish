@@ -6,17 +6,18 @@
 Nothing but net(working).
 
 Swish is a networking library that is particularly meant for requesting and
-decoding JSON via [Argo](http://github.com/thoughtbot/Argo). It is protocol
-based, and so aims to be easy to test and customize.
+decoding JSON via `Decodable`. It is protocol based, and so aims to be easy
+to test and customize.
 
 ## Version Compatibility
 
 Here is the current Swift compatibility breakdown:
 
 | Swift Version | Swish Version |
-| ------------- | ------------ |
-| 3.X           | 2.X          |
-| 2.X           | 1.X          |
+| ------------- | ------------  |
+|           4.X | >= 3.0.0      |
+|           3.X | > 2.0, < 3.0  |
+|           2.X | 1.X           |
 
 ## Installation
 
@@ -66,8 +67,17 @@ target.
 
 ## Usage
 
-- tl;dr: [Basic Usage](Documentation/Basics.md)
-- Otherwise, see the [Documentation](Documentation)
+### Basic Playground
+
+You can see an example of Swish in action via the included `SwishExamples.playground`.
+
+To use that, clone this repository and run `carthage bootstrap --platform iOS`.
+When that finishes, open the `Swish.xcworkspace` and click the `SwishExamples`
+playground on the left.
+
+### Documentation
+
+- [Basic Usage](Documentation/Basics.md)
 
 ## License
 
