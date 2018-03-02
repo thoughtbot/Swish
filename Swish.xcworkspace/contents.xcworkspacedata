@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SwishExamples.playground">
+   </FileRef>
+   <FileRef
       location = "group:Swish.xcodeproj">
    </FileRef>
    <FileRef
