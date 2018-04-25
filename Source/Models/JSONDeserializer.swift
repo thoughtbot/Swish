@@ -1,8 +1,8 @@
 import Argo
 import Result
 
-struct JSONDeserializer: Deserializer {
-  func deserialize(_ data: Data?) -> Result<Any, SwishError> {
+public struct JSONDeserializer: Deserializer {
+  public func deserialize(_ data: Data?) -> Result<Any, SwishError> {
     let json = parseJSON(data)
 
     return json.analysis(
@@ -10,6 +10,8 @@ struct JSONDeserializer: Deserializer {
       ifFailure: { .failure(.deserializationError($0.error)) }
     )
   }
+
+  public init() {}
 }
 
 extension JSON: Parser {
