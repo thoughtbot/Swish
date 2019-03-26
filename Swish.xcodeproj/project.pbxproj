@@ -7,25 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F1BF4F521C3F4FC004162F1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF4F421C3F4FC004162F1 /* Result.framework */; };
 		1F1BF4F821C3F516004162F1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF4F621C3F516004162F1 /* Quick.framework */; };
 		1F1BF4F921C3F516004162F1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF4F721C3F516004162F1 /* Nimble.framework */; };
 		1F1BF4FB21C416F4004162F1 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1BF4F721C3F516004162F1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F1BF4FC21C416F4004162F1 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1BF4F621C3F516004162F1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1F1BF4FD21C416F4004162F1 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1BF4F421C3F4FC004162F1 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1F1BF50621CD33F6004162F1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF50521CD33F6004162F1 /* Result.framework */; };
 		1F1BF50921CD342D004162F1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF50721CD342D004162F1 /* Nimble.framework */; };
 		1F1BF50A21CD342D004162F1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF50821CD342D004162F1 /* Quick.framework */; };
-		1F1BF51321CD35A2004162F1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF51221CD35A2004162F1 /* Result.framework */; };
 		1F1BF51621CD35E1004162F1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF51421CD35E1004162F1 /* Nimble.framework */; };
 		1F1BF51721CD35E1004162F1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF51521CD35E1004162F1 /* Quick.framework */; };
 		1F1BF52621CD371F004162F1 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1BF50721CD342D004162F1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F1BF52721CD3725004162F1 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1BF50821CD342D004162F1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1F1BF52821CD3733004162F1 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1BF50521CD33F6004162F1 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F1BF52921CD3760004162F1 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1BF51421CD35E1004162F1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F1BF52A21CD3763004162F1 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1BF51521CD35E1004162F1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1F1BF52B21CD3768004162F1 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1BF51221CD35A2004162F1 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1F1BF52D21CD3790004162F1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF52C21CD3790004162F1 /* Result.framework */; };
 		2C61A39E1BD726E10087B295 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867938B1BD29E37007D9E98 /* RequestMethod.swift */; };
 		2C6DC97A1BD5AA3B006B4C96 /* NimbleMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */; };
 		2C6DC97B1BD5AA3B006B4C96 /* FakeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B811B964B20003177CD /* FakeSession.swift */; };
@@ -51,6 +44,10 @@
 		4A698B9F1E131AD2006951B2 /* Deprecations+Removals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A698B9D1E131ACE006951B2 /* Deprecations+Removals.swift */; };
 		4A698BA01E131AD3006951B2 /* Deprecations+Removals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A698B9D1E131ACE006951B2 /* Deprecations+Removals.swift */; };
 		4A698BA11E131AD3006951B2 /* Deprecations+Removals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A698B9D1E131ACE006951B2 /* Deprecations+Removals.swift */; };
+		9B8E744C224A67DD0038C99B /* Result+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8E744B224A67DD0038C99B /* Result+Value.swift */; };
+		9B8E744D224A67DD0038C99B /* Result+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8E744B224A67DD0038C99B /* Result+Value.swift */; };
+		9B8E744E224A67DD0038C99B /* Result+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8E744B224A67DD0038C99B /* Result+Value.swift */; };
+		9B8E744F224A67DD0038C99B /* Result+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8E744B224A67DD0038C99B /* Result+Value.swift */; };
 		E506EC7E1BB5BE380032E941 /* NimbleMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */; };
 		E52E5D991CE7AE3400023C91 /* Swish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52E5D8F1CE7AE3400023C91 /* Swish.framework */; };
 		E52E5DA71CE7AF2500023C91 /* NSURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */; };
@@ -139,7 +136,6 @@
 			files = (
 				1F1BF4FB21C416F4004162F1 /* Nimble.framework in CopyFiles */,
 				1F1BF4FC21C416F4004162F1 /* Quick.framework in CopyFiles */,
-				1F1BF4FD21C416F4004162F1 /* Result.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +147,6 @@
 			files = (
 				1F1BF52621CD371F004162F1 /* Nimble.framework in CopyFiles */,
 				1F1BF52721CD3725004162F1 /* Quick.framework in CopyFiles */,
-				1F1BF52821CD3733004162F1 /* Result.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,27 +158,23 @@
 			files = (
 				1F1BF52921CD3760004162F1 /* Nimble.framework in CopyFiles */,
 				1F1BF52A21CD3763004162F1 /* Quick.framework in CopyFiles */,
-				1F1BF52B21CD3768004162F1 /* Result.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1F1BF4F421C3F4FC004162F1 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		1F1BF4F621C3F516004162F1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		1F1BF4F721C3F516004162F1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		1F1BF50521CD33F6004162F1 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		1F1BF50721CD342D004162F1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		1F1BF50821CD342D004162F1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
-		1F1BF51221CD35A2004162F1 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/tvOS/Result.framework; sourceTree = "<group>"; };
 		1F1BF51421CD35E1004162F1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = "<group>"; };
 		1F1BF51521CD35E1004162F1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/tvOS/Quick.framework; sourceTree = "<group>"; };
-		1F1BF52C21CD3790004162F1 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/watchOS/Result.framework; sourceTree = "<group>"; };
 		2C721E401BD5A77700846414 /* Swish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C721E491BD5A77700846414 /* Swish-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swish-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A05CC271CEFBA460076955E /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		4A698B9D1E131ACE006951B2 /* Deprecations+Removals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Deprecations+Removals.swift"; sourceTree = "<group>"; };
+		9B8E744B224A67DD0038C99B /* Result+Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Value.swift"; sourceTree = "<group>"; };
 		E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbleMatchers.swift; sourceTree = "<group>"; };
 		E52E5D8F1CE7AE3400023C91 /* Swish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E52E5D981CE7AE3400023C91 /* Swish-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swish-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,7 +210,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F1BF50621CD33F6004162F1 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +227,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F1BF51321CD35A2004162F1 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +244,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F1BF52D21CD3790004162F1 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +251,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F1BF4F521C3F4FC004162F1 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +359,7 @@
 			children = (
 				E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */,
 				4A698B9D1E131ACE006951B2 /* Deprecations+Removals.swift */,
+				9B8E744B224A67DD0038C99B /* Result+Value.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -379,16 +367,12 @@
 		F8DF3B7E1B964AF4003177CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1F1BF52C21CD3790004162F1 /* Result.framework */,
 				1F1BF51421CD35E1004162F1 /* Nimble.framework */,
 				1F1BF51521CD35E1004162F1 /* Quick.framework */,
-				1F1BF51221CD35A2004162F1 /* Result.framework */,
 				1F1BF50721CD342D004162F1 /* Nimble.framework */,
 				1F1BF50821CD342D004162F1 /* Quick.framework */,
-				1F1BF50521CD33F6004162F1 /* Result.framework */,
 				1F1BF4F721C3F516004162F1 /* Nimble.framework */,
 				1F1BF4F621C3F516004162F1 /* Quick.framework */,
-				1F1BF4F421C3F4FC004162F1 /* Result.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -613,11 +597,11 @@
 				TargetAttributes = {
 					2C721E3F1BD5A77700846414 = {
 						CreatedOnToolsVersion = 7.0.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1020;
 					};
 					2C721E481BD5A77700846414 = {
 						CreatedOnToolsVersion = 7.0.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1020;
 					};
 					E52E5D8E1CE7AE3400023C91 = {
 						CreatedOnToolsVersion = 7.3;
@@ -647,6 +631,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = F80694E71B962BB900C61B4A;
 			productRefGroup = F80694F21B962BB900C61B4A /* Products */;
@@ -721,6 +706,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8E744D224A67DD0038C99B /* Result+Value.swift in Sources */,
 				2C61A39E1BD726E10087B295 /* RequestMethod.swift in Sources */,
 				4A05CC291CEFBA4B0076955E /* Scheduler.swift in Sources */,
 				2C721E5D1BD5A7E800846414 /* APIClient.swift in Sources */,
@@ -755,6 +741,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8E744E224A67DD0038C99B /* Result+Value.swift in Sources */,
 				E52E5DA71CE7AF2500023C91 /* NSURLRequest.swift in Sources */,
 				4A05CC2A1CEFBA4C0076955E /* Scheduler.swift in Sources */,
 				E52E5DAA1CE7AF2500023C91 /* SwishError.swift in Sources */,
@@ -789,6 +776,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8E744F224A67DD0038C99B /* Result+Value.swift in Sources */,
 				E52E5DD61CE7B36A00023C91 /* NSURLRequest.swift in Sources */,
 				4A05CC2B1CEFBA4C0076955E /* Scheduler.swift in Sources */,
 				E52E5DD91CE7B36A00023C91 /* SwishError.swift in Sources */,
@@ -807,6 +795,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B8E744C224A67DD0038C99B /* Result+Value.swift in Sources */,
 				F867938C1BD29E37007D9E98 /* RequestMethod.swift in Sources */,
 				E5D7E0A11BBF2021002A3738 /* Client.swift in Sources */,
 				4A05CC281CEFBA460076955E /* Scheduler.swift in Sources */,
@@ -880,7 +869,7 @@
 				PRODUCT_NAME = Swish;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -906,7 +895,7 @@
 				PRODUCT_NAME = Swish;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -924,7 +913,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.SwishTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -942,7 +931,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.SwishTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -968,7 +957,7 @@
 				PRODUCT_NAME = Swish;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Debug;
@@ -995,7 +984,7 @@
 				PRODUCT_NAME = Swish;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Release;
@@ -1015,7 +1004,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thoughtbot.Swish-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1034,7 +1023,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thoughtbot.Swish-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1061,7 +1050,7 @@
 				PRODUCT_NAME = Swish;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 			};
 			name = Debug;
@@ -1089,7 +1078,7 @@
 				PRODUCT_NAME = Swish;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 			};
 			name = Release;
@@ -1146,6 +1135,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1199,6 +1189,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
@@ -1229,7 +1220,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.Swish;
 				PRODUCT_NAME = Swish;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1254,7 +1245,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.Swish;
 				PRODUCT_NAME = Swish;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1269,7 +1260,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.SwishTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1284,7 +1275,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.SwishTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

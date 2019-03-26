@@ -1,7 +1,6 @@
 import Swish
 import Quick
 import Nimble
-import Result
 
 func exampleRequest() -> URLRequest {
   return URLRequest(url: URL(string: "https://example.com")!)

@@ -1,7 +1,6 @@
 import Swish
 import Quick
 import Nimble
-import Result
 
 struct User: Decodable {
   let name: String

@@ -1,5 +1,4 @@
 import Foundation
-import Result
 
 public typealias EmptyResponse = Void
 

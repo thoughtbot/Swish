@@ -1,7 +1,6 @@
 import Swish
 import Quick
 import Nimble
-import Result
 
 class APIClientSpec: QuickSpec {
   override func spec() {
@@ -45,7 +44,7 @@ class APIClientSpec: QuickSpec {
                 )
 
                 let client = APIClient(requestPerformer: performer)
-                var error: Error?
+                var error: SwishError?
 
                 client.perform(request) {
                   error = $0.error

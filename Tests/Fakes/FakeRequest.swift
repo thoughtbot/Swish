@@ -1,6 +1,5 @@
 import Foundation
 import Swish
-import Result
 
 struct FakeRequest: Request {
   typealias ResponseObject = String

@@ -1,6 +1,5 @@
 import PlaygroundSupport
 import Swish
-import Result
 
 PlaygroundPage.current.needsIndefiniteExecution = true
 
