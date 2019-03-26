@@ -13,7 +13,7 @@ public extension Request where ResponseObject: Decodable {
   func parse(_ data: Data) throws -> ResponseObject {
     let decoder = JSONDecoder()
     decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
-    return try JSONDecoder().decode(ResponseObject.self, from: data)
+    return try decoder.decode(ResponseObject.self, from: data)
   }
 }
 
