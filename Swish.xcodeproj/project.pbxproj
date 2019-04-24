@@ -44,10 +44,6 @@
 		4A698B9F1E131AD2006951B2 /* Deprecations+Removals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A698B9D1E131ACE006951B2 /* Deprecations+Removals.swift */; };
 		4A698BA01E131AD3006951B2 /* Deprecations+Removals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A698B9D1E131ACE006951B2 /* Deprecations+Removals.swift */; };
 		4A698BA11E131AD3006951B2 /* Deprecations+Removals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A698B9D1E131ACE006951B2 /* Deprecations+Removals.swift */; };
-		9B8E744C224A67DD0038C99B /* Result+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8E744B224A67DD0038C99B /* Result+Value.swift */; };
-		9B8E744D224A67DD0038C99B /* Result+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8E744B224A67DD0038C99B /* Result+Value.swift */; };
-		9B8E744E224A67DD0038C99B /* Result+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8E744B224A67DD0038C99B /* Result+Value.swift */; };
-		9B8E744F224A67DD0038C99B /* Result+Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8E744B224A67DD0038C99B /* Result+Value.swift */; };
 		E506EC7E1BB5BE380032E941 /* NimbleMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */; };
 		E52E5D991CE7AE3400023C91 /* Swish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E52E5D8F1CE7AE3400023C91 /* Swish.framework */; };
 		E52E5DA71CE7AF2500023C91 /* NSURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */; };
@@ -174,7 +170,6 @@
 		2C721E491BD5A77700846414 /* Swish-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swish-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A05CC271CEFBA460076955E /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		4A698B9D1E131ACE006951B2 /* Deprecations+Removals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Deprecations+Removals.swift"; sourceTree = "<group>"; };
-		9B8E744B224A67DD0038C99B /* Result+Value.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Value.swift"; sourceTree = "<group>"; };
 		E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbleMatchers.swift; sourceTree = "<group>"; };
 		E52E5D8F1CE7AE3400023C91 /* Swish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E52E5D981CE7AE3400023C91 /* Swish-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swish-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -359,7 +354,6 @@
 			children = (
 				E5915B201BDABC4B005E5D63 /* NSURLRequest.swift */,
 				4A698B9D1E131ACE006951B2 /* Deprecations+Removals.swift */,
-				9B8E744B224A67DD0038C99B /* Result+Value.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -630,6 +624,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -706,7 +701,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B8E744D224A67DD0038C99B /* Result+Value.swift in Sources */,
 				2C61A39E1BD726E10087B295 /* RequestMethod.swift in Sources */,
 				4A05CC291CEFBA4B0076955E /* Scheduler.swift in Sources */,
 				2C721E5D1BD5A7E800846414 /* APIClient.swift in Sources */,
@@ -741,7 +735,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B8E744E224A67DD0038C99B /* Result+Value.swift in Sources */,
 				E52E5DA71CE7AF2500023C91 /* NSURLRequest.swift in Sources */,
 				4A05CC2A1CEFBA4C0076955E /* Scheduler.swift in Sources */,
 				E52E5DAA1CE7AF2500023C91 /* SwishError.swift in Sources */,
@@ -776,7 +769,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B8E744F224A67DD0038C99B /* Result+Value.swift in Sources */,
 				E52E5DD61CE7B36A00023C91 /* NSURLRequest.swift in Sources */,
 				4A05CC2B1CEFBA4C0076955E /* Scheduler.swift in Sources */,
 				E52E5DD91CE7B36A00023C91 /* SwishError.swift in Sources */,
@@ -795,7 +787,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B8E744C224A67DD0038C99B /* Result+Value.swift in Sources */,
 				F867938C1BD29E37007D9E98 /* RequestMethod.swift in Sources */,
 				E5D7E0A11BBF2021002A3738 /* Client.swift in Sources */,
 				4A05CC281CEFBA460076955E /* Scheduler.swift in Sources */,

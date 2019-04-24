@@ -1,9 +1,6 @@
 # OS X Finder
 .DS_Store
 
-# Xcode workspace checks
-IDEWorkspaceChecks.plist
-
 # Xcode per-user config
 *.mode1
 *.mode1v3

@@ -37,8 +37,10 @@ class RequestPerformerSpec: QuickSpec {
 
             let performer = NetworkRequestPerformer(session: fakeSession)
             performer.perform(exampleRequest()) { result in
-              returnedCode = result.value!.code
-              returnedData = result.value!.data
+              if case let .success(value) = result {
+                returnedCode = value.code
+                returnedData = value.data
+              }
             }
 
             expect(returnedCode).to(equal(200))
@@ -54,7 +56,9 @@ class RequestPerformerSpec: QuickSpec {
 
             let performer = NetworkRequestPerformer(session: fakeSession)
             performer.perform(exampleRequest()) { result in
-              returnedError = result.error
+              if case .failure(let error) = result {
+                returnedError = error
+              }
             }
 
             expect(returnedError).to(matchError(SwishError.urlSessionError(error, response: nil)))

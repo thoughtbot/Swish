@@ -32,7 +32,14 @@ class APIClientSpec: QuickSpec {
 
                 client.perform(request) { result = $0 }
 
-                expect(result?.value).toEventually(equal("hello world"))
+                func value(_ result: Result<String, SwishError>?) -> String? {
+                  if case .success(let value)? = result {
+                    return value
+                  }
+                  return nil
+                }
+                
+                expect(value(result)).toEventually(equal("hello world"))
               }
             }
 
@@ -46,8 +53,10 @@ class APIClientSpec: QuickSpec {
                 let client = APIClient(requestPerformer: performer)
                 var error: SwishError?
 
-                client.perform(request) {
-                  error = $0.error
+                client.perform(request) { result in
+                  if case let .failure(resultError) = result {
+                    error = resultError
+                  }
                 }
 
                 expect(error).toEventually(matchError(SwishError.self))
@@ -65,8 +74,15 @@ class APIClientSpec: QuickSpec {
                 var result: Result<EmptyResponse, SwishError>?
 
                 client.perform(request) { result = $0 }
+                
+                func value(_ result: Result<EmptyResponse, SwishError>?) -> EmptyResponse? {
+                  if case .success(let value)? = result {
+                    return value
+                  }
+                  return nil
+                }
 
-                expect(result?.value).toEventually(beVoid())
+                expect(value(result)).toEventually(beVoid())
               }
             }
 
@@ -82,7 +98,14 @@ class APIClientSpec: QuickSpec {
 
                 client.perform(request) { result = $0 }
 
-                expect(result?.value).toEventually(beVoid())
+                func value(_ result: Result<EmptyResponse, SwishError>?) -> EmptyResponse? {
+                  if case .success(let value)? = result {
+                    return value
+                  }
+                  return nil
+                }
+                
+                expect(value(result)).toEventually(beVoid())
               }
             }
           }
@@ -120,8 +143,10 @@ class APIClientSpec: QuickSpec {
           let client = APIClient(requestPerformer: performer)
           var error: SwishError?
 
-          client.perform(request) {
-            error = $0.error
+          client.perform(request) { result in
+            if case let .failure(resultError) = result {
+              error = resultError
+            }
           }
 
           expect(error).toEventually(matchError(SwishError.serverError(code: expectedCode, data: performer.data)))
@@ -141,8 +166,10 @@ class APIClientSpec: QuickSpec {
           let client = APIClient(requestPerformer: performer)
           var error: SwishError?
 
-          client.perform(request) {
-            error = $0.error
+          client.perform(request) { result in
+            if case let .failure(resultError) = result {
+              error = resultError
+            }
           }
 
           expect(error).toEventually(matchError(SwishError.serverError(code: expectedCode, data: performer.data)))
@@ -162,8 +189,10 @@ class APIClientSpec: QuickSpec {
           let client = APIClient(requestPerformer: performer)
           var error: SwishError?
 
-          client.perform(request) {
-            error = $0.error
+          client.perform(request) { result in
+            if case let .failure(resultError) = result {
+              error = resultError
+            }
           }
 
           expect(error).toEventually(matchError(SwishError.serverError(code: expectedCode, data: performer.data)))
@@ -183,8 +212,10 @@ class APIClientSpec: QuickSpec {
           let client = APIClient(requestPerformer: performer)
           var error: SwishError?
 
-          client.perform(request) {
-            error = $0.error
+          client.perform(request) { result in
+            if case let .failure(resultError) = result {
+              error = resultError
+            }
           }
 
           expect(error).toEventually(matchError(SwishError.serverError(code: expectedCode, data: performer.data)))
