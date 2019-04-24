@@ -31,15 +31,8 @@ class APIClientSpec: QuickSpec {
                 var result: Result<String, SwishError>?
 
                 client.perform(request) { result = $0 }
-
-                func value(_ result: Result<String, SwishError>?) -> String? {
-                  if case .success(let value)? = result {
-                    return value
-                  }
-                  return nil
-                }
                 
-                expect(value(result)).toEventually(equal("hello world"))
+                expect { try result?.get() }.toEventually(equal("hello world"))
               }
             }
 
@@ -75,14 +68,7 @@ class APIClientSpec: QuickSpec {
 
                 client.perform(request) { result = $0 }
                 
-                func value(_ result: Result<EmptyResponse, SwishError>?) -> EmptyResponse? {
-                  if case .success(let value)? = result {
-                    return value
-                  }
-                  return nil
-                }
-
-                expect(value(result)).toEventually(beVoid())
+                expect { try result?.get() }.toEventually(beVoid())
               }
             }
 
@@ -97,15 +83,8 @@ class APIClientSpec: QuickSpec {
                 var result: Result<EmptyResponse, SwishError>?
 
                 client.perform(request) { result = $0 }
-
-                func value(_ result: Result<EmptyResponse, SwishError>?) -> EmptyResponse? {
-                  if case .success(let value)? = result {
-                    return value
-                  }
-                  return nil
-                }
                 
-                expect(value(result)).toEventually(beVoid())
+                expect { try result?.get() }.toEventually(beVoid())
               }
             }
           }
@@ -141,15 +120,13 @@ class APIClientSpec: QuickSpec {
           )
 
           let client = APIClient(requestPerformer: performer)
-          var error: SwishError?
-
-          client.perform(request) { result in
-            if case let .failure(resultError) = result {
-              error = resultError
-            }
+          var result: Result<String, SwishError>?
+          
+          client.perform(request) {
+            result = $0
           }
-
-          expect(error).toEventually(matchError(SwishError.serverError(code: expectedCode, data: performer.data)))
+          
+          expect { try result?.get() }.toEventually(throwError(SwishError.serverError(code: expectedCode, data: performer.data)))
         }
       }
 
@@ -164,15 +141,13 @@ class APIClientSpec: QuickSpec {
           )
 
           let client = APIClient(requestPerformer: performer)
-          var error: SwishError?
+          var result: Result<String, SwishError>?
 
-          client.perform(request) { result in
-            if case let .failure(resultError) = result {
-              error = resultError
-            }
+          client.perform(request) {
+            result = $0
           }
 
-          expect(error).toEventually(matchError(SwishError.serverError(code: expectedCode, data: performer.data)))
+          expect { try result?.get() }.toEventually(throwError(SwishError.serverError(code: expectedCode, data: performer.data)))
         }
       }
 
@@ -187,15 +162,13 @@ class APIClientSpec: QuickSpec {
           )
 
           let client = APIClient(requestPerformer: performer)
-          var error: SwishError?
+          var result: Result<String, SwishError>?
 
-          client.perform(request) { result in
-            if case let .failure(resultError) = result {
-              error = resultError
-            }
+          client.perform(request) {
+            result = $0
           }
-
-          expect(error).toEventually(matchError(SwishError.serverError(code: expectedCode, data: performer.data)))
+          
+          expect { try result?.get() }.toEventually(throwError(SwishError.serverError(code: expectedCode, data: performer.data)))
         }
       }
 
@@ -210,15 +183,13 @@ class APIClientSpec: QuickSpec {
           )
 
           let client = APIClient(requestPerformer: performer)
-          var error: SwishError?
-
-          client.perform(request) { result in
-            if case let .failure(resultError) = result {
-              error = resultError
-            }
+          var result: Result<String, SwishError>?
+          
+          client.perform(request) {
+            result = $0
           }
-
-          expect(error).toEventually(matchError(SwishError.serverError(code: expectedCode, data: performer.data)))
+          
+          expect { try result?.get() }.toEventually(throwError(SwishError.serverError(code: expectedCode, data: performer.data)))
         }
       }
 

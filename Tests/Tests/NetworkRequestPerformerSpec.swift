@@ -32,15 +32,14 @@ class RequestPerformerSpec: QuickSpec {
         context("when the request didn't produce an error") {
           it("returns a Result with the HTTPResponse") {
             let fakeSession = FakeSession(data: fakeData(), response: fakeResponse(200))
-            var returnedCode: Int = 0
+            var returnedCode: Int?
             var returnedData: Data?
 
             let performer = NetworkRequestPerformer(session: fakeSession)
             performer.perform(exampleRequest()) { result in
-              if case let .success(value) = result {
-                returnedCode = value.code
-                returnedData = value.data
-              }
+              let value = try? result.get()
+              returnedCode = value?.code
+              returnedData = value?.data
             }
 
             expect(returnedCode).to(equal(200))
