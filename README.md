@@ -82,7 +82,7 @@ playground on the left.
 
 ## License
 
-Swish is Copyright (c) 2016 thoughtbot, inc. It is free software, and may be
+Swish is Copyright (c) 2019 thoughtbot, inc. It is free software, and may be
 redistributed under the terms specified in the [LICENSE] file.
 
 [LICENSE]: /LICENSE
