@@ -15,6 +15,7 @@ Here is the current Swift compatibility breakdown:
 
 | Swift Version | Swish Version |
 | ------------- | ------------  |
+|           5.X | >= 4.0.0      |
 |           4.X | >= 3.0.0      |
 |           3.X | > 2.0, < 3.0  |
 |           2.X | 1.X           |
