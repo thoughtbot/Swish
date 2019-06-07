@@ -7,25 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F1BF4F521C3F4FC004162F1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF4F421C3F4FC004162F1 /* Result.framework */; };
 		1F1BF4F821C3F516004162F1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF4F621C3F516004162F1 /* Quick.framework */; };
 		1F1BF4F921C3F516004162F1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF4F721C3F516004162F1 /* Nimble.framework */; };
 		1F1BF4FB21C416F4004162F1 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1BF4F721C3F516004162F1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F1BF4FC21C416F4004162F1 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1BF4F621C3F516004162F1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1F1BF4FD21C416F4004162F1 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1BF4F421C3F4FC004162F1 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1F1BF50621CD33F6004162F1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF50521CD33F6004162F1 /* Result.framework */; };
 		1F1BF50921CD342D004162F1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF50721CD342D004162F1 /* Nimble.framework */; };
 		1F1BF50A21CD342D004162F1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF50821CD342D004162F1 /* Quick.framework */; };
-		1F1BF51321CD35A2004162F1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF51221CD35A2004162F1 /* Result.framework */; };
 		1F1BF51621CD35E1004162F1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF51421CD35E1004162F1 /* Nimble.framework */; };
 		1F1BF51721CD35E1004162F1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF51521CD35E1004162F1 /* Quick.framework */; };
 		1F1BF52621CD371F004162F1 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1BF50721CD342D004162F1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F1BF52721CD3725004162F1 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1BF50821CD342D004162F1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1F1BF52821CD3733004162F1 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1BF50521CD33F6004162F1 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F1BF52921CD3760004162F1 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1BF51421CD35E1004162F1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F1BF52A21CD3763004162F1 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1BF51521CD35E1004162F1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1F1BF52B21CD3768004162F1 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1F1BF51221CD35A2004162F1 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1F1BF52D21CD3790004162F1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F1BF52C21CD3790004162F1 /* Result.framework */; };
 		2C61A39E1BD726E10087B295 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867938B1BD29E37007D9E98 /* RequestMethod.swift */; };
 		2C6DC97A1BD5AA3B006B4C96 /* NimbleMatchers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E506EC7D1BB5BE380032E941 /* NimbleMatchers.swift */; };
 		2C6DC97B1BD5AA3B006B4C96 /* FakeSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3B811B964B20003177CD /* FakeSession.swift */; };
@@ -139,7 +132,6 @@
 			files = (
 				1F1BF4FB21C416F4004162F1 /* Nimble.framework in CopyFiles */,
 				1F1BF4FC21C416F4004162F1 /* Quick.framework in CopyFiles */,
-				1F1BF4FD21C416F4004162F1 /* Result.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +143,6 @@
 			files = (
 				1F1BF52621CD371F004162F1 /* Nimble.framework in CopyFiles */,
 				1F1BF52721CD3725004162F1 /* Quick.framework in CopyFiles */,
-				1F1BF52821CD3733004162F1 /* Result.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,23 +154,18 @@
 			files = (
 				1F1BF52921CD3760004162F1 /* Nimble.framework in CopyFiles */,
 				1F1BF52A21CD3763004162F1 /* Quick.framework in CopyFiles */,
-				1F1BF52B21CD3768004162F1 /* Result.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1F1BF4F421C3F4FC004162F1 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		1F1BF4F621C3F516004162F1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		1F1BF4F721C3F516004162F1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		1F1BF50521CD33F6004162F1 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		1F1BF50721CD342D004162F1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
 		1F1BF50821CD342D004162F1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
-		1F1BF51221CD35A2004162F1 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/tvOS/Result.framework; sourceTree = "<group>"; };
 		1F1BF51421CD35E1004162F1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = "<group>"; };
 		1F1BF51521CD35E1004162F1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/tvOS/Quick.framework; sourceTree = "<group>"; };
-		1F1BF52C21CD3790004162F1 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/watchOS/Result.framework; sourceTree = "<group>"; };
 		2C721E401BD5A77700846414 /* Swish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C721E491BD5A77700846414 /* Swish-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swish-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A05CC271CEFBA460076955E /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
@@ -219,7 +205,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F1BF50621CD33F6004162F1 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +222,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F1BF51321CD35A2004162F1 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +239,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F1BF52D21CD3790004162F1 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +246,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F1BF4F521C3F4FC004162F1 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,16 +361,12 @@
 		F8DF3B7E1B964AF4003177CD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1F1BF52C21CD3790004162F1 /* Result.framework */,
 				1F1BF51421CD35E1004162F1 /* Nimble.framework */,
 				1F1BF51521CD35E1004162F1 /* Quick.framework */,
-				1F1BF51221CD35A2004162F1 /* Result.framework */,
 				1F1BF50721CD342D004162F1 /* Nimble.framework */,
 				1F1BF50821CD342D004162F1 /* Quick.framework */,
-				1F1BF50521CD33F6004162F1 /* Result.framework */,
 				1F1BF4F721C3F516004162F1 /* Nimble.framework */,
 				1F1BF4F621C3F516004162F1 /* Quick.framework */,
-				1F1BF4F421C3F4FC004162F1 /* Result.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -613,11 +591,11 @@
 				TargetAttributes = {
 					2C721E3F1BD5A77700846414 = {
 						CreatedOnToolsVersion = 7.0.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1020;
 					};
 					2C721E481BD5A77700846414 = {
 						CreatedOnToolsVersion = 7.0.1;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1020;
 					};
 					E52E5D8E1CE7AE3400023C91 = {
 						CreatedOnToolsVersion = 7.3;
@@ -646,7 +624,9 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
+				Base,
 			);
 			mainGroup = F80694E71B962BB900C61B4A;
 			productRefGroup = F80694F21B962BB900C61B4A /* Products */;
@@ -880,7 +860,7 @@
 				PRODUCT_NAME = Swish;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -906,7 +886,7 @@
 				PRODUCT_NAME = Swish;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -924,7 +904,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.SwishTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -942,7 +922,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.SwishTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -957,8 +937,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Argo/build/Debug-appletvos",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Result/build/Debug-appletvos",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
 				INFOPLIST_FILE = Source/Resources/Info.plist;
@@ -968,7 +946,7 @@
 				PRODUCT_NAME = Swish;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Debug;
@@ -984,8 +962,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Argo/build/Debug-appletvos",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Result/build/Debug-appletvos",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
 				INFOPLIST_FILE = Source/Resources/Info.plist;
@@ -995,7 +971,7 @@
 				PRODUCT_NAME = Swish;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Release;
@@ -1006,8 +982,6 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Quick/build/Debug-appletvos",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Nimble/build/Debug-appletvos",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
 				INFOPLIST_FILE = Tests/Resources/Info.plist;
@@ -1015,7 +989,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thoughtbot.Swish-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Debug;
 		};
@@ -1025,8 +1000,6 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Quick/build/Debug-appletvos",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Nimble/build/Debug-appletvos",
 					"$(PROJECT_DIR)/Carthage/Build/tvOS",
 				);
 				INFOPLIST_FILE = Tests/Resources/Info.plist;
@@ -1034,7 +1007,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thoughtbot.Swish-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Release;
 		};
@@ -1050,8 +1024,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Argo/build/Debug-watchos",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Result/build/Debug-watchos",
 					"$(PROJECT_DIR)/Carthage/Build/watchOS",
 				);
 				INFOPLIST_FILE = Source/Resources/Info.plist;
@@ -1061,7 +1033,7 @@
 				PRODUCT_NAME = Swish;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 			};
 			name = Debug;
@@ -1078,8 +1050,6 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Argo/build/Debug-watchos",
-					"$(PROJECT_DIR)/Carthage/Checkouts/Result/build/Debug-watchos",
 					"$(PROJECT_DIR)/Carthage/Build/watchOS",
 				);
 				INFOPLIST_FILE = Source/Resources/Info.plist;
@@ -1089,7 +1059,7 @@
 				PRODUCT_NAME = Swish;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 			};
 			name = Release;
@@ -1146,6 +1116,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1199,6 +1170,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
@@ -1229,7 +1201,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.Swish;
 				PRODUCT_NAME = Swish;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1254,7 +1226,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.Swish;
 				PRODUCT_NAME = Swish;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1269,7 +1241,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.SwishTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1284,7 +1256,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thoughtbot.SwishTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
