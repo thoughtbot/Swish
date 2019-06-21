@@ -86,7 +86,7 @@ class RequestSpec: QuickSpec {
         context("when the ResponseObject is an optional type") {
           it("should result in Success") {
             let request = OptionalResponseRequest()
-            expect { try request.parse(Data()) }.toNot(throwError())
+            expect { request.parse(Data()) }.to(beNil())
           }
         }
       }

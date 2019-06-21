@@ -10,7 +10,7 @@ public protocol Request {
 }
 
 public extension Request where ResponseObject: Decodable {
-  func parse<Wrapped>(_ data: Data) throws -> ResponseObject where ResponseObject == Optional<Wrapped> {
+  func parse<Wrapped>(_ data: Data) -> ResponseObject where ResponseObject == Optional<Wrapped> {
     return try? JSONDecoder().decode(ResponseObject.self, from: data)
   }
 
