@@ -79,6 +79,7 @@ playground on the left.
 ### Documentation
 
 - [Basic Usage](Documentation/Basics.md)
+- [Testing](Documentation/Testing.md)
 
 ## License
 
