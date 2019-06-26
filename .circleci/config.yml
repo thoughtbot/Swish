@@ -2,7 +2,7 @@ version: 2
 jobs:
   build-and-test:
     macos:
-      xcode: "10.1.0"
+      xcode: "10.2.1"
     working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
