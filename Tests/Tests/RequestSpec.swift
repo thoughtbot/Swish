@@ -30,6 +30,14 @@ struct EmptyResponseRequest: Request {
   }
 }
 
+struct OptionalResponseRequest: Request {
+  typealias ResponseObject = User?
+
+  func build() -> URLRequest {
+    return URLRequest(url: URL(string: "https://example.com")!)
+  }
+}
+
 func json(_ string: String) -> Data {
   return string.data(using: .utf8)!
 }
@@ -72,6 +80,13 @@ class RequestSpec: QuickSpec {
           it("should result in Success") {
             let request = EmptyResponseRequest()
             expect { try request.parse(Data()) }.toNot(throwError())
+          }
+        }
+
+        context("when the ResponseObject is an optional type") {
+          it("should result in Success") {
+            let request = OptionalResponseRequest()
+            expect { request.parse(Data()) }.to(beNil())
           }
         }
       }
