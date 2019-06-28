@@ -13,8 +13,6 @@ Pod::Spec.new do |spec|
   spec.source = { :git => 'https://github.com/thoughtbot/Swish.git', :tag => "v#{spec.version}" }
   spec.source_files = 'Source/**/*.{h,swift}'
 
-  spec.dependency 'Result', '~> 4.0'
-
   spec.requires_arc = true
 
   spec.ios.deployment_target = '8.0'
