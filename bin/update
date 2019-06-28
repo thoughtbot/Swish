@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+carthage update --use-submodules --no-build --no-use-binaries

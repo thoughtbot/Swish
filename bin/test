@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+set -e -o pipefail
+
+xcrun xcodebuild \
+  -project Swish.xcodeproj \
+  -scheme Swish-Package \
+  test
