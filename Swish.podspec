@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'Swish'
-  spec.version = '3.0.0'
+  spec.version = '4.0.0'
   spec.summary = 'Nothing but net(working)'
   spec.homepage = 'https://github.com/thoughtbot/Swish'
   spec.license = { :type => 'MIT', :file => 'LICENSE' }
@@ -12,8 +12,6 @@ Pod::Spec.new do |spec|
   spec.social_media_url = 'http://twitter.com/thoughtbot'
   spec.source = { :git => 'https://github.com/thoughtbot/Swish.git', :tag => "v#{spec.version}" }
   spec.source_files = 'Source/**/*.{h,swift}'
-
-  spec.dependency 'Result', '~> 4.0'
 
   spec.requires_arc = true
 
