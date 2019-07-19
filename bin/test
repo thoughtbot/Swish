@@ -2,7 +2,4 @@
 
 set -e -o pipefail
 
-xcrun xcodebuild \
-  -project Swish.xcodeproj \
-  -scheme Swish-Package \
-  test
+swift test
