@@ -1,0 +1,4 @@
+--exclude Carthage
+--indent 2
+--ifdef outdent
+--self init-only

@@ -1,9 +1,9 @@
 import Foundation
 
 class FakeDataTask: URLSessionDataTask {
-    var resumedTask = false
+  var resumedTask = false
 
-    override func resume() {
-        resumedTask = true
-    }
+  override func resume() {
+    resumedTask = true
+  }
 }
