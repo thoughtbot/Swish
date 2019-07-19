@@ -1,22 +1,8 @@
+# Created by https://www.gitignore.io/api/swift,xcode,swiftpm
+# Edit at https://www.gitignore.io/?templates=swift,xcode,swiftpm
+
 # OS X Finder
 .DS_Store
-
-# Xcode per-user config
-*.mode1
-*.mode1v3
-*.mode2v3
-*.perspective
-*.perspectivev3
-*.pbxuser
-xcuserdata
-*.xccheckout
-*.xcscmblueprint
-
-# Build products
-build/
-*.o
-*.LinkFileList
-*.hmap
 
 # Automatic backup files
 *~.nib/
@@ -25,25 +11,14 @@ build/
 *.dat
 *.dep
 
-# Cocoapods
-Pods
-
-# Carthage
-Carthage/Build
-
-# AppCode specific files
-.idea/
-*.iml
-
-# Created by https://www.gitignore.io/api/swift,xcode,swiftpm
-# Edit at https://www.gitignore.io/?templates=swift,xcode,swiftpm
-
 ### Swift ###
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## Build generated
+*.o
+*.LinkFileList
 build/
 DerivedData/
 
@@ -87,6 +62,8 @@ playground.xcworkspace
 # Pods/
 # Add this line if you want to avoid checking in source code from the Xcode workspace
 # *.xcworkspace
+
+Pods
 
 # Carthage
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
