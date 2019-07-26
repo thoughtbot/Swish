@@ -15,6 +15,16 @@ struct FakeRequest: Request {
   }
 }
 
+struct FakeRequestWithArguments: Request, Equatable {
+  typealias ResponseObject = Bool
+
+  func build() -> URLRequest {
+    return URLRequest(url: URL(string: "http://example.com")!)
+  }
+
+  let arg: String
+}
+
 struct FakeEmptyDataRequest: Request {
   typealias ResponseObject = EmptyResponse
 
