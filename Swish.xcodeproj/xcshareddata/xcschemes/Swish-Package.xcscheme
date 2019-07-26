@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "Swish::Swoosh"
+               BuildableName = "Swoosh.framework"
+               BlueprintName = "Swoosh"
+               ReferencedContainer = "container:Swish.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "Swish::Swish"
                BuildableName = "Swish.framework"
                BlueprintName = "Swish"
@@ -55,9 +69,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Swish::Swish"
-            BuildableName = "Swish.framework"
-            BlueprintName = "Swish"
+            BlueprintIdentifier = "Swish::Swoosh"
+            BuildableName = "Swoosh.framework"
+            BlueprintName = "Swoosh"
             ReferencedContainer = "container:Swish.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
