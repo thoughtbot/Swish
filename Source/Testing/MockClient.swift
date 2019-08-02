@@ -23,57 +23,57 @@ public class MockClient: Client {
     let identifier = ObjectIdentifier(clazz)
     if var existing = self.mocks[identifier] {
       existing.append(matcher)
-      self.mocks[identifier] = existing
+      mocks[identifier] = existing
     } else {
-      self.mocks[identifier] = [matcher]
+      mocks[identifier] = [matcher]
     }
   }
 
   public func when<T>(_ clazz: T.Type, _ response: T.ResponseObject) -> MockClient where T: Request {
     let matcher = AnyRequestMatcher<T>(response: .success(response))
-    self.insert(clazz, matcher)
+    insert(clazz, matcher)
     return self
   }
 
   public func when<T>(_ clazz: T.Type, _ response: SwishError) -> MockClient where T: Request {
     let matcher = AnyRequestMatcher<T>(response: .failure(response))
-    self.insert(clazz, matcher)
+    insert(clazz, matcher)
     return self
   }
 
-  public func when<T>(_ request: T, _ response: T.ResponseObject) -> MockClient  where T: Request, T: Equatable {
+  public func when<T>(_ request: T, _ response: T.ResponseObject) -> MockClient where T: Request, T: Equatable {
     let matcher = EqRequestMatcher(request: request, response: .success(response))
-    self.insert(T.self, matcher)
+    insert(T.self, matcher)
     return self
   }
 
   public func when<T>(_ request: T, _ response: SwishError) -> MockClient where T: Request, T: Equatable {
     let matcher = EqRequestMatcher(request: request, response: .failure(response))
-    self.insert(T.self, matcher)
+    insert(T.self, matcher)
     return self
   }
 
   public func when<T>(_ matchFn: @escaping (T) -> T.ResponseObject?) -> MockClient where T: Request {
     let matcher = PredicateRequestMatcher { req in
-      return matchFn(req).map { .success($0) }
+      matchFn(req).map { .success($0) }
     }
-    self.insert(T.self, matcher)
+    insert(T.self, matcher)
     return self
   }
 
   public func when<T>(_ matchFn: @escaping (T) -> SwishError?) -> MockClient where T: Request {
     let matcher = PredicateRequestMatcher { req in
-      return matchFn(req).map { .failure($0) }
+      matchFn(req).map { .failure($0) }
     }
-    self.insert(T.self, matcher)
+    insert(T.self, matcher)
     return self
   }
 
   public func when<T>(_ matchFn: @escaping (T) -> Result<T.ResponseObject, SwishError>?) -> MockClient where T: Request {
     let matcher = PredicateRequestMatcher { req in
-      return matchFn(req)
+      matchFn(req)
     }
-    self.insert(T.self, matcher)
+    insert(T.self, matcher)
     return self
   }
 }

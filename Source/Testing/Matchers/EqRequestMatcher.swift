@@ -3,7 +3,7 @@ internal struct EqRequestMatcher<T: Request>: RequestMatcher where T: Equatable 
     if S.self == T.self,
       let request = request as? T,
       self.request == request {
-      return self.response as? Result<S.ResponseObject, SwishError>
+      return response as? Result<S.ResponseObject, SwishError>
     } else {
       return .none
     }

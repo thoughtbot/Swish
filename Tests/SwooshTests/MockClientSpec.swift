@@ -7,7 +7,7 @@ import Swoosh
 class MockClientSpec: QuickSpec {
   override func spec() {
     describe("MockClient") {
-      context("when with a metatype") {
+      context("when() with a metatype") {
         it("succeeds when given a successful response") {
           let client = MockClient()
             .when(FakeRequest.self, "Yay")
@@ -31,7 +31,7 @@ class MockClientSpec: QuickSpec {
         }
       }
 
-      context("when with a request instance") {
+      context("when() with a request instance") {
         it("succeeds when given a successful response") {
           let client = MockClient()
             .when(FakeRequest(), "Yay")
@@ -55,10 +55,10 @@ class MockClientSpec: QuickSpec {
         }
       }
 
-      context("when given a matching function") {
+      context("when() given a matching function") {
         it("succeeds when the fn returns a response object") {
           let client = MockClient()
-            .when { (_: FakeRequest) -> FakeRequest.ResponseObject? in
+            .when { (_: FakeRequest) in
               "Yay"
             }
 
@@ -69,7 +69,7 @@ class MockClientSpec: QuickSpec {
 
         it("fails when the fn returns an error") {
           let client = MockClient()
-            .when { (_: FakeRequest) -> SwishError? in
+            .when { (_: FakeRequest) in
               .serverError(code: 404, data: nil)
             }
 

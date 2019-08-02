@@ -1,7 +1,7 @@
 import Foundation
-import Swish
-import Quick
 import Nimble
+import Quick
+import Swish
 
 class MockClientSpec: QuickSpec {
   override func spec() {
@@ -39,7 +39,7 @@ class MockClientSpec: QuickSpec {
         }
 
         context("when using a predicate matcher") {
-          it ("it returns the appropriate response") {
+          it("it returns the appropriate response") {
             let client = MockClient()
               .when(FakeRequestWithArguments(arg: "xyz"), true)
               .when { (req: FakeRequestWithArguments) -> Bool? in
@@ -48,7 +48,7 @@ class MockClientSpec: QuickSpec {
                 } else {
                   return .some(false)
                 }
-            }
+              }
 
             self.expectResponse(client, FakeRequestWithArguments(arg: "xyz"), true)
             self.expectResponse(client, FakeRequestWithArguments(arg: "abc"), false)
