@@ -29,7 +29,7 @@ let package = Package(
     ),
     .testTarget(
       name: "SwishTests",
-      dependencies: ["Swish", "Quick", "Nimble"]
+      dependencies: ["Swish", "Swoosh", "Quick", "Nimble"]
     ),
   ]
 )

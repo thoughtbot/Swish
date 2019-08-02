@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		1FB0B26E22F487BD00218209 /* MockClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB0B24A22F4830700218209 /* MockClientSpec.swift */; };
 		OBJ_159 /* AdapterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_81 /* AdapterProtocols.swift */; };
 		OBJ_160 /* AssertionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_82 /* AssertionDispatcher.swift */; };
 		OBJ_161 /* AssertionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_83 /* AssertionRecorder.swift */; };
@@ -188,6 +189,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1FB0B24A22F4830700218209 /* MockClientSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockClientSpec.swift; sourceTree = "<group>"; };
+		1FB0B26B22F4874D00218209 /* SwishTests copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SwishTests copy-Info.plist"; path = "/Users/sid/c/Swish/SwishTests copy-Info.plist"; sourceTree = "<absolute>"; };
 		"Nimble::Nimble::Product" /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* Deprecations+Removals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deprecations+Removals.swift"; sourceTree = "<group>"; };
 		OBJ_100 /* BeAnInstanceOf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeAnInstanceOf.swift; sourceTree = "<group>"; };
@@ -362,6 +365,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FB0B24922F482E500218209 /* SwooshTests */ = {
+			isa = PBXGroup;
+			children = (
+				1FB0B24A22F4830700218209 /* MockClientSpec.swift */,
+			);
+			name = SwooshTests;
+			path = Tests/SwooshTests;
+			sourceTree = "<group>";
+		};
 		OBJ_12 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +446,7 @@
 		OBJ_30 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				1FB0B24922F482E500218209 /* SwooshTests */,
 				OBJ_31 /* SwishTests */,
 			);
 			name = Tests;
@@ -527,7 +540,7 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -543,8 +556,8 @@
 				OBJ_150 /* LICENSE */,
 				OBJ_152 /* README.md */,
 				OBJ_153 /* Cartfile.private */,
+				1FB0B26B22F4874D00218209 /* SwishTests copy-Info.plist */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_52 /* DSL */ = {
@@ -879,7 +892,7 @@
 				English,
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_137 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1049,6 +1062,7 @@
 				OBJ_301 /* FakeSession.swift in Sources */,
 				OBJ_302 /* NimbleMatchers.swift in Sources */,
 				OBJ_303 /* NSURLRequestSpec.swift in Sources */,
+				1FB0B26E22F487BD00218209 /* MockClientSpec.swift in Sources */,
 				OBJ_304 /* NetworkRequestPerformerSpec.swift in Sources */,
 				OBJ_305 /* RequestSpec.swift in Sources */,
 				OBJ_306 /* XCTestManifests.swift in Sources */,

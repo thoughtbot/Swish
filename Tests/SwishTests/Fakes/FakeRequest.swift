@@ -1,7 +1,7 @@
 import Foundation
 @testable import Swish
 
-struct FakeRequest: Request {
+struct FakeRequest: Request, Equatable {
   typealias ResponseObject = String
 
   func build() -> URLRequest {
