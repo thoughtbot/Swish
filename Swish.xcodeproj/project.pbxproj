@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		1FB0B26E22F487BD00218209 /* MockClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB0B24A22F4830700218209 /* MockClientSpec.swift */; };
+		B5A002F622F4F9E500102125 /* Swoosh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Swish::Swoosh::Product" /* Swoosh.framework */; };
 		OBJ_159 /* AdapterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_81 /* AdapterProtocols.swift */; };
 		OBJ_160 /* AssertionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_82 /* AssertionDispatcher.swift */; };
 		OBJ_161 /* AssertionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_83 /* AssertionRecorder.swift */; };
@@ -347,6 +348,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
+				B5A002F622F4F9E500102125 /* Swoosh.framework in Frameworks */,
 				OBJ_308 /* Nimble.framework in Frameworks */,
 				OBJ_309 /* Quick.framework in Frameworks */,
 				OBJ_310 /* QuickSpecBase.framework in Frameworks */,
@@ -372,6 +374,13 @@
 			);
 			name = SwooshTests;
 			path = Tests/SwooshTests;
+			sourceTree = "<group>";
+		};
+		B5A002F522F4F9E500102125 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		OBJ_12 /* Models */ = {
@@ -557,6 +566,7 @@
 				OBJ_152 /* README.md */,
 				OBJ_153 /* Cartfile.private */,
 				1FB0B26B22F4874D00218209 /* SwishTests copy-Info.plist */,
+				B5A002F522F4F9E500102125 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
