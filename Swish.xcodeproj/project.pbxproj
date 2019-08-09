@@ -367,15 +367,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1FB0B24922F482E500218209 /* SwooshTests */ = {
-			isa = PBXGroup;
-			children = (
-				1FB0B24A22F4830700218209 /* MockClientSpec.swift */,
-			);
-			name = SwooshTests;
-			path = Tests/SwooshTests;
-			sourceTree = "<group>";
-		};
 		B5A002F522F4F9E500102125 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,7 +446,6 @@
 		OBJ_30 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				1FB0B24922F482E500218209 /* SwooshTests */,
 				OBJ_31 /* SwishTests */,
 			);
 			name = Tests;
@@ -464,6 +454,7 @@
 		OBJ_31 /* SwishTests */ = {
 			isa = PBXGroup;
 			children = (
+				1FB0B24A22F4830700218209 /* MockClientSpec.swift */,
 				OBJ_32 /* APIClientSpec.swift */,
 				OBJ_33 /* Fakes */,
 				OBJ_38 /* Helpers */,
