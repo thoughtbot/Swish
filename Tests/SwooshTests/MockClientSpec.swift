@@ -11,7 +11,7 @@ class MockClientSpec: QuickSpec {
         it("shouldn't give a result") {
           let client = MockClient()
 
-          client.perform(FakeRequest()) { result in
+          client.perform(FakeRequest()) { _ in
             fail()
           }
         }
@@ -66,7 +66,7 @@ class MockClientSpec: QuickSpec {
           let client = MockClient()
             .when { (_: FakeRequest) in
               "Yay"
-          }
+            }
 
           self.expectResponse(client, FakeRequest(), "Yay")
         }
@@ -75,7 +75,7 @@ class MockClientSpec: QuickSpec {
           let client = MockClient()
             .when { (_: FakeRequest) in
               .serverError(code: 404, data: nil)
-          }
+            }
 
           self.expectResponse(client, FakeRequest()) { result in
             switch result {
@@ -129,7 +129,7 @@ class MockClientSpec: QuickSpec {
               } else {
                 return .some(false)
               }
-          }
+            }
 
           self.expectResponse(client, FakeRequestWithArguments(arg: "xyz"), true)
           self.expectResponse(client, FakeRequestWithArguments(arg: "abc"), false)
@@ -138,7 +138,6 @@ class MockClientSpec: QuickSpec {
         }
       }
     }
-
   }
 
   private func expectResponse<T>(_ client: Client, _ request: T, _ expectedResponse: T.ResponseObject) where T: Request, T.ResponseObject: Equatable {
