@@ -1,7 +1,8 @@
 import Foundation
 import Nimble
 import Quick
-@testable import Swish
+import Swish
+import Swoosh
 
 class APIClientSpec: QuickSpec {
   override func spec() {

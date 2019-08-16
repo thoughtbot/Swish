@@ -1,7 +1,7 @@
 import Foundation
 @testable import Swish
 
-struct FakeRequest: Request {
+struct FakeRequest: Request, Equatable {
   typealias ResponseObject = String
 
   func build() -> URLRequest {
@@ -13,6 +13,16 @@ struct FakeRequest: Request {
     let body = try JSONDecoder().decode(Body.self, from: data)
     return body.text
   }
+}
+
+struct FakeRequestWithArguments: Request, Equatable {
+  typealias ResponseObject = Bool
+
+  func build() -> URLRequest {
+    return URLRequest(url: URL(string: "http://example.com")!)
+  }
+
+  let arg: String
 }
 
 struct FakeEmptyDataRequest: Request {

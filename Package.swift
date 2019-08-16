@@ -9,6 +9,10 @@ let package = Package(
       name: "Swish",
       targets: ["Swish"]
     ),
+    .library(
+      name: "Swoosh",
+      targets: ["Swoosh"]
+    ),
   ],
   dependencies: [
     .package(url: "https://github.com/Quick/Quick", .upToNextMajor(from: "2.0.0")),
@@ -19,9 +23,13 @@ let package = Package(
       name: "Swish",
       dependencies: []
     ),
+    .target(
+      name: "Swoosh",
+      dependencies: ["Swish"]
+    ),
     .testTarget(
       name: "SwishTests",
-      dependencies: ["Swish", "Quick", "Nimble"]
+      dependencies: ["Swish", "Swoosh", "Quick", "Nimble"]
     ),
   ]
 )
